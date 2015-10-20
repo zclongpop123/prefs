@@ -1,0 +1,24 @@
+global proc alienCameras ()
+{
+	global int $vettoreCamere;
+	global string $gMainWindow;
+	$vettoreCamere = 0;
+	int $hotbox = 0;
+	$menus = `window -q -ma $gMainWindow`;
+	for ($menu in $menus)
+	{
+		string $label = `menu -q -label $menu`;
+		if (match("[Hh]ot[Bb]ox",$label) != "" || match("[Cc]enter",$label) != "" || match("3",$label) != "")
+		{
+			menu -e -dai $menu;
+			$hotbox = 1;
+		}
+	}
+	
+	if ($hotbox != 1)
+	{
+		deleteUI tempMM;
+		popupMenu -button 1 -ctl 1 -alt 0 -aob true -p viewPanes -mm 1 tempMM;
+		source alienCameras.mel;
+	}
+}

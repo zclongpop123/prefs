@@ -1,0 +1,19 @@
+//Maya Preference 2014 (Release 1)
+//
+//
+windowPref -topLeftCorner 225 150 -widthHeight 250 400 -maximized false outlinerPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 700 400 -maximized false hyperGraphPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 660 400 -maximized false graphEditor1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 660 400 -maximized false dopeSheetPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 660 400 -maximized false clipEditorPanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 524 470 -maximized false devicePanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 700 400 -maximized false hyperShadePanel1Window;
+windowPref -topLeftCorner 250 200 -widthHeight 700 400 -maximized false dynPaintScriptedPanelWindow;
+windowPref -topLeftCorner 250 200 -widthHeight 550 562 -maximized false blindDataEditor1Window;
+windowPref -topLeftCorner 167 463 -widthHeight 817 582 -maximized false scriptEditorPanel1Window;
+windowPref -topLeftCorner 76 -5 -widthHeight 1280 751 -maximized true MayaWindow;
+windowPref -topLeftCorner 80 342 -widthHeight 620 600 -maximized false expressionEditorWin;
+windowPref -topLeftCorner 57 543 -widthHeight 546 350 -maximized false OptionBoxWindow;
+windowPref -topLeftCorner 216 231 -widthHeight 475 325 -maximized false polyTexturePlacementPanel1Window;
+windowPref -topLeftCorner 100 426 -widthHeight 550 539 -maximized false pluginManagerWindow;
+windowPref -topLeftCorner 221 426 -widthHeight 470 553 -maximized false shelfEditor;

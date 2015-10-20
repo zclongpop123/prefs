@@ -1,0 +1,154 @@
+//Maya Preference 2014 (Release 1)
+//
+//
+
+nameCommand
+	-annotation "AddAttributeNameCommand"
+	-sourceType "mel"
+	-command ("AddAttribute")
+	AddAttributeNameCommand;
+
+nameCommand
+	-annotation "ExpressionEditorNameCommand"
+	-sourceType "mel"
+	-command ("ExpressionEditor")
+	ExpressionEditorNameCommand;
+
+nameCommand
+	-annotation "SetDrivenKeyOptionsNameCommand"
+	-sourceType "mel"
+	-command ("SetDrivenKeyOptions")
+	SetDrivenKeyOptionsNameCommand;
+
+nameCommand
+	-annotation "DeleteHistoryNameCommand"
+	-sourceType "mel"
+	-command ("DeleteHistory")
+	DeleteHistoryNameCommand;
+
+nameCommand
+	-annotation "CenterPivotNameCommand"
+	-sourceType "mel"
+	-command ("CenterPivot")
+	CenterPivotNameCommand;
+
+nameCommand
+	-annotation "FreezeTransformationsNameCommand"
+	-sourceType "mel"
+	-command ("FreezeTransformations")
+	FreezeTransformationsNameCommand;
+
+nameCommand
+	-annotation "SetDrivenKeyNameCommand"
+	-sourceType "mel"
+	-command ("SetDrivenKey")
+	SetDrivenKeyNameCommand;
+
+nameCommand
+	-annotation "ConnectionEditorNameCommand"
+	-sourceType "mel"
+	-command ("ConnectionEditor")
+	ConnectionEditorNameCommand;
+
+nameCommand
+	-annotation "ResetTransformationsOptionsNameCommand"
+	-sourceType "mel"
+	-command ("ResetTransformationsOptions")
+	ResetTransformationsOptionsNameCommand;
+
+nameCommand
+	-annotation "CreateLocatorNameCommand"
+	-sourceType "mel"
+	-command ("CreateLocator")
+	CreateLocatorNameCommand;
+
+nameCommand
+	-annotation "FreezeTransformationsOptionsNameCommand"
+	-sourceType "mel"
+	-command ("FreezeTransformationsOptions")
+	FreezeTransformationsOptionsNameCommand;
+
+nameCommand
+	-annotation "ChannelControlEditorNameCommand"
+	-sourceType "mel"
+	-command ("ChannelControlEditor")
+	ChannelControlEditorNameCommand;
+
+nameCommand
+	-annotation "SaveSceneAsNameCommand"
+	-sourceType "mel"
+	-command ("SaveSceneAs")
+	SaveSceneAsNameCommand;
+
+nameCommand
+	-annotation "HypershadeWindowNameCommand"
+	-sourceType "mel"
+	-command ("HypershadeWindow")
+	HypershadeWindowNameCommand;
+
+nameCommand
+	-annotation "HypergraphWindowNameCommand"
+	-sourceType "mel"
+	-command ("HypergraphWindow")
+	HypergraphWindowNameCommand;
+
+nameCommand
+	-annotation "HypergraphHierarchyWindowNameCommand"
+	-sourceType "mel"
+	-command ("HypergraphHierarchyWindow")
+	HypergraphHierarchyWindowNameCommand;
+
+nameCommand
+	-annotation "OutlinerWindowNameCommand"
+	-sourceType "mel"
+	-command ("OutlinerWindow")
+	OutlinerWindowNameCommand;
+
+nameCommand
+	-annotation "shapeparentNameCommand"
+	-sourceType "mel"
+	-command ("shapeparent")
+	shapeparentNameCommand;
+
+nameCommand
+	-annotation "createCurveNameCommand"
+	-sourceType "mel"
+	-command ("createCurve")
+	createCurveNameCommand;
+
+nameCommand
+	-annotation "VisorWindowNameCommand"
+	-sourceType "mel"
+	-command ("VisorWindow")
+	VisorWindowNameCommand;
+
+nameCommand
+	-annotation "ctrlColorNameCommand"
+	-sourceType "mel"
+	-command ("ctrlColor")
+	ctrlColorNameCommand;
+
+nameCommand
+	-annotation "JiedianNameCommand"
+	-sourceType "mel"
+	-command ("Jiedian")
+	JiedianNameCommand;
+
+nameCommand
+	-annotation "createNODE_R_ReleaseNameCommand"
+	-sourceType "mel"
+	-command ("createNODE_R_Release")
+	createNODE_R_ReleaseNameCommand;
+
+nameCommand
+	-annotation "NODEcreater_PressNameCommand"
+	-sourceType "mel"
+	-command ("NODEcreater_Press")
+	NODEcreater_PressNameCommand;
+
+nameCommand
+	-annotation "NODEcreater_ReleaseNameCommand"
+	-sourceType "mel"
+	-command ("NODEcreater_Release")
+	NODEcreater_ReleaseNameCommand;
+

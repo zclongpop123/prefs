@@ -1,0 +1,949 @@
+global proc shelf_zclpop123_yahoo_cn_bd_QQ_136166416 () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "CTM;" 
+        -enableBackground 0
+        -align "center" 
+        -label "CTM;" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "d:/My Documents/maya/2009/prefs/icons/ctm.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/ctm.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CTM;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Cluster" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -imageOverlayLabel "Clu" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconDeformations.xpm" 
+        -image1 "menuIconDeformations.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CreateCluster" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Lattice" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "lattice.xpm" 
+        -image1 "lattice.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CreateLattice" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Customize the joint scale" 
+        -enableBackground 0
+        -align "center" 
+        -label "Joint Size..." 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -imageOverlayLabel "JS" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconDisplay.xpm" 
+        -image1 "menuIconDisplay.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "jdsWin" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Customize the IK handle scale" 
+        -enableBackground 0
+        -align "center" 
+        -label "IK Handle Size..." 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -imageOverlayLabel "IHS" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "menuIconDisplay.xpm" 
+        -image1 "menuIconDisplay.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ikHdsWin" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "ToggleSelectionHandles;\rpickWalk -d down;\rsetAttr \".visibility\" ..." 
+        -enableBackground 0
+        -align "center" 
+        -label "ToggleSelectionHandles;\rpickWalk -d down;\rsetAttr \".visibility\" ..." 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "d:/My Documents/maya/2009/prefs/icons/displayhandle.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/displayhandle.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ToggleSelectionHandles;\nstring $obj;\nstring $selection[] = `ls -sl`;\nstring $selectionShape[] = `listRelatives -s -path $selection`;\nfor($obj in $selectionShape)\n{\nsetAttr ($obj + \".visibility\")0;\n}\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Toggle local rotation axis visibility" 
+        -enableBackground 0
+        -align "center" 
+        -label "Local Rotation Axes" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "LRA" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconDisplay.png" 
+        -image1 "menuIconDisplay.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ToggleLocalRotationAxes" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Adjust Blend Shape weights" 
+        -enableBackground 0
+        -align "center" 
+        -label "Blend Shape" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "d:/My Documents/maya/2009/prefs/icons/blendshape.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/blendshape.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "BlendShapeEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 32
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "ntMBS;" 
+        -enableBackground 0
+        -align "center" 
+        -label "ntMBS;" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "d:/My Documents/maya/2009/prefs/icons/mirrow_blendshap.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/mirrow_blendshap.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ntMBS;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Joint tool options" 
+        -enableBackground 0
+        -align "center" 
+        -label "skeletonDialogItem" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinJoint.xpm" 
+        -image1 "kinJoint.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "JointToolOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "IK handle tool options" 
+        -enableBackground 0
+        -align "center" 
+        -label "handleDialogItem" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinHandle.xpm" 
+        -image1 "kinHandle.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "IKHandleToolOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "IK spline handle tool options" 
+        -enableBackground 0
+        -align "center" 
+        -label "handleSplineDialogItem" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinSplineHandle.xpm" 
+        -image1 "kinSplineHandle.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "IKSplineHandleToolOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Mirror joint options" 
+        -enableBackground 0
+        -align "center" 
+        -label "mirrorJointOptionItem" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinMirrorJoint_S.xpm" 
+        -image1 "kinMirrorJoint_S.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "MirrorJointOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Orient joint options" 
+        -enableBackground 0
+        -align "center" 
+        -label "orientJointOptionItem" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "orientJoint.xpm" 
+        -image1 "orientJoint.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "OrientJointOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Skin cluster options" 
+        -enableBackground 0
+        -align "center" 
+        -label "skinClusterDialog" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "d:/My Documents/maya/2009/prefs/icons/skin.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/skin.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "SmoothBindSkinOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Paint skin weights tool options" 
+        -enableBackground 0
+        -align "center" 
+        -label "skinWeightPaintDialogItem" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "paintSkinWeights.xpm" 
+        -image1 "paintSkinWeights.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ArtPaintSkinWeightsToolOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Edit various component values for the selected object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Component Editor" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "d:/My Documents/maya/2009/prefs/icons/hack.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/hack.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ComponentEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Mirror skin weights options" 
+        -enableBackground 0
+        -align "center" 
+        -label "mirrorSkinWeightsDialog" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "d:/My Documents/maya/2009/prefs/icons/mirroskin.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/mirroskin.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "MirrorSkinWeightsOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "EP curve tool options" 
+        -enableBackground 0
+        -align "center" 
+        -label "menuItem1757" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "curveEP.xpm" 
+        -image1 "curveEP.xpm" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "EPCurveToolOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined MEL command" 
+        -enableBackground 0
+        -align "center" 
+        -label "MEL Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "d:/My Documents/maya/2009/prefs/icons/to.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/to.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "moveToObjPivot;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Set the wireframe color of all selected objects" 
+        -enableBackground 0
+        -align "center" 
+        -label "Wireframe Color..." 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "d:/My Documents/maya/2009/prefs/icons/wireframecoor.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/wireframecoor.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "{\nglobal proc blue()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  6;   \n}\n}\nglobal proc red()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  13;   \n}\n}\nglobal proc yello()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  17;   \n}\n}\nglobal proc suiji()\n{\nfloat $yanse = trunc(rand(0,31));\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  $yanse;   \n}\n}\nglobal proc moren()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  0;   \n}\n}\nglobal proc lock()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideDisplayType\") 2;  \n}\n}\nglobal proc unlock()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 0;\nsetAttr ($lock + \".overrideDisplayType\") 0;\n}\n}\n{\nstring $biaoti = \"colorWindow\";\nif (`window -ex $biaoti`) deleteUI -wnd $biaoti;\nif (`windowPref -ex $biaoti`) windowPref -r $biaoti;\nwindow -t \"color\" -w 110 -h 250 $biaoti;\ncolumnLayout;\nbutton -label \"Red£¨º죩\" -w 100 -h 30 -bgc 1 0 0 -c (\"red\");\nbutton -label \"Blue£¨À¶£©\" -w 100 -h 30  -bgc 0 0 1 -c (\"blue\");\nbutton -label \"Yello£¨»ƣ©\" -w 100 -h 30 -bgc 1 1 0 -c (\"yello\");\nbutton -label \"Rand£¨Ëæú»£©\" -w 100 -h 30 -bgc .11 .520 7.0 -c (\"suiji\");\nbutton -label \"Default£¨ĬÈϣ©\" -w 100 -h 30 -bgc .409 .600 100.0  -c (\"moren\");\nbutton -label \"Lock£¨Ëø¶¨£©\" -w 100 -h 30 -bgc 8 .50 .10 -c (\"lock\");\nbutton -label \"Unlock£¨½âËø£©\" -w 100 -h 30 -bgc .212 .913 90.0 -c (\"unlock\");\nshowWindow $biaoti;\n}\n}\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "curve -d 1 -p -0.0285975 0.0096853 0 -p 0.355828 0.150253 0 -p 2..." 
+        -enableBackground 0
+        -align "center" 
+        -label "curve -d 1 -p -0.0285975 0.0096853 0 -p 0.355828 0.150253 0 -p 2..." 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "d:/My Documents/maya/2009/prefs/icons/bianxingjingang1.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/bianxingjingang1.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "curve -d 1 -p -0.0285975 0.0096853 0 -p 0.355828 0.150253 0 -p 2.873473 1.294638 0 -p 3.445666 5.162657 0 -p 0.355828 0.150253 0 -p -0.0285975 0.0096853 0 -p 3.634619 5.659324 0 -p 4.009303 9.257781 0 -p 2.818402 7.918016 0 -p 1.46003 7.527252 0 -p 1.312691 6.586987 0 -p 2.710433 7.004868 0 -p 2.724842 6.716674 0 -p 1.211823 6.342022 0 -p 1.154184 5.592717 0 -p 2.595155 6.125876 0 -p 2.595155 5.808862 0 -p 0.765122 5.304523 0 -p -0.0562309 4.353482 0 -p 0.0177943 4.633899 0 -p 0.928971 5.778426 0 -p 1.595686 9.489805 0 -p 0.373376 7.956361 0 -p -0.0395267 7.961448 0 -p -0.0395267 7.087873 0 -p 0.297035 7.096879 0 -p -0.0519462 6.049935 0 -p -0.355009 7.096879 0 -p -0.0395267 7.087873 0 -p -0.0395267 7.961448 0 -p -0.47113 7.967473 0 -p -1.671216 9.367574 0 -p -1.004502 5.80065 0 -p 0.0177943 4.633899 0 -p -0.0562309 4.353482 0 -p -0.906404 5.318932 0 -p -2.664388 5.794453 0 -p -2.708126 6.113056 0 -p -1.200891 5.666468 0 -p -1.312538 6.373566 0 -p -2.838381 6.708507 0 -p -2.856989 7.02484 0 -p -1.349754 6.559644 0 -p -1.498617 7.527252 0 -p -3.024459 7.992448 0 -p -4.233969 9.369428 0 -p -3.601302 5.573429 0 -p -0.0285975 0.0096853 0 -p -0.468129 0.173141 0 -p -3.580855 5.139769 0 -p -2.985775 1.248862 0 -p -0.468129 0.173141 0 -p -0.0285975 0.0096853 0 -p 0.0100532 3.231358 0 -p 0.59829 3.723541 0 -p 1.844194 4.42877 0 -p 2.290838 5.086983 0 -p 1.138965 4.734369 0 -p 0.59829 3.723541 0 -p 0.0100532 3.231358 0 -p -0.666751 3.718527 0 -p -1.231077 4.701545 0 -p -2.359727 5.029218 0 -p -1.92283 4.373872 0 -p -0.666751 3.718527 0 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 -k 26 -k 27 -k 28 -k 29 -k 30 -k 31 -k 32 -k 33 -k 34 -k 35 -k 36 -k 37 -k 38 -k 39 -k 40 -k 41 -k 42 -k 43 -k 44 -k 45 -k 46 -k 47 -k 48 -k 49 -k 50 -k 51 -k 52 -k 53 -k 54 -k 55 -k 56 -k 57 -k 58 -k 59 -k 60 -k 61 -k 62 -k 63 -k 64 ;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "curve -d 1 -p 2.33105 -1.001384 0 -p 4.009218 0.568198 0 -p 4.43..." 
+        -enableBackground 0
+        -align "center" 
+        -label "curve -d 1 -p 2.33105 -1.001384 0 -p 4.009218 0.568198 0 -p 4.43..." 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "d:/My Documents/maya/2009/prefs/icons/bianxingjingang.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/bianxingjingang.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "curve -d 1 -p 2.33105 -1.001384 0 -p 4.009218 0.568198 0 -p 4.433696 4.605673 0 -p 3.140519 3.687617 0 -p 3.110905 3.184166 0 -p 2.386266 2.69946 0 -p 2.33105 -1.001384 0 -p 2.072005 -1.016696 0 -p 2.160776 2.608131 0 -p 0.947569 3.244325 0 -p 0.917978 0.729139 0 -p -0.931423 0.729139 0 -p -0.931423 3.25912 0 -p -2.144631 2.682107 0 -p -2.174221 -0.987105 0 -p -1.478846 -1.623299 0 -p -0.916628 -0.128983 0 -p 0.888388 -0.128983 0 -p 1.465401 -1.667685 0 -p 2.072005 -1.016696 0 -p 1.465401 -1.667685 0 -p 1.302654 -1.667685 0 -p 0.814412 -0.276935 0 -p -0.842652 -0.306525 0 -p -1.286508 -1.638094 0 -p 1.302654 -1.667685 0 -p -1.286508 -1.638094 0 -p -1.478846 -1.623299 0 -p -2.174221 -0.987105 0 -p -2.336968 -0.898334 0 -p -2.351764 2.652517 0 -p -3.076729 3.19994 0 -p -3.106319 3.673386 0 -p -4.363912 4.575894 0 -p -4.068008 0.625573 0 -p -2.336968 -0.898334 0 -p -2.174221 -0.987105 0 -p -2.144631 2.682107 0 -p -0.931423 3.25912 0 -p -0.999017 3.473012 0 -p -1.228515 5.642813 0 -p -3.189682 7.082394 0 -p -3.377453 7.979523 0 -p -5.150849 8.083841 0 -p -4.587535 4.850001 0 -p -3.022774 3.7651 0 -p -0.999017 3.473012 0 -p -1.812692 4.11978 0 -p -1.812692 4.537049 0 -p -4.170265 6.206127 0 -p -4.045085 5.601087 0 -p -1.812692 4.11978 0 -p -1.812692 4.537049 0 -p -1.91701 5.058636 0 -p -1.958737 5.455042 0 -p -4.295446 7.040667 0 -p -4.253719 6.602534 0 -p -1.91701 5.058636 0 -p -1.812692 4.537049 0 -p -1.812692 4.11978 0 -p -0.999017 3.473012 0 -p -1.228515 5.642813 0 -p -3.189682 7.082394 0 -p -2.918457 7.165847 0 -p -0.0392965 5.162953 0 -p 3.027635 7.144984 0 -p 3.152816 7.896069 0 -p 2.193096 8.334202 0 -p 1.275103 8.521974 0 -p 0.00243043 8.626291 0 -p -1.040744 8.542837 0 -p -2.000464 8.355066 0 -p -2.814139 8.083841 0 -p -3.085365 7.979523 0 -p -2.918457 7.165847 0 -p -0.0392965 5.162953 0 -p -0.0184331 4.808274 0 -p -1.08247 5.62195 0 -p -0.811245 3.598193 0 -p -0.811245 0.844213 0 -p 0.753516 0.844213 0 -p 0.753516 3.28524 0 -p 1.087331 5.601087 0 -p -0.0184331 4.808274 0 -p -0.0392965 5.162953 0 -p 0.00243043 6.477353 0 -p 1.671509 7.4788 0 -p -1.624921 7.457936 0 -p 0.00243043 6.477353 0 -p -0.0392965 5.162953 0 -p 3.027635 7.144984 0 -p 3.194543 6.99894 0 -p 3.424041 8.02125 0 -p 5.176573 8.02125 0 -p 4.571532 4.870865 0 -p 3.111089 3.806827 0 -p 0.89956 3.389558 0 -p 1.671509 4.078053 0 -p 4.091672 5.642813 0 -p 4.19599 6.185264 0 -p 1.754963 4.620503 0 -p 1.671509 4.078053 0 -p 1.754963 4.620503 0 -p 1.85928 5.058636 0 -p 4.321171 6.64426 0 -p 4.342034 7.124121 0 -p 1.942734 5.517633 0 -p 1.85928 5.058636 0 -p 1.754963 4.620503 0 -p 1.671509 4.078053 0 -p 0.89956 3.389558 0 -p 1.212512 5.663677 0 -p 3.194543 6.99894 0 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 -k 26 -k 27 -k 28 -k 29 -k 30 -k 31 -k 32 -k 33 -k 34 -k 35 -k 36 -k 37 -k 38 -k 39 -k 40 -k 41 -k 42 -k 43 -k 44 -k 45 -k 46 -k 47 -k 48 -k 49 -k 50 -k 51 -k 52 -k 53 -k 54 -k 55 -k 56 -k 57 -k 58 -k 59 -k 60 -k 61 -k 62 -k 63 -k 64 -k 65 -k 66 -k 67 -k 68 -k 69 -k 70 -k 71 -k 72 -k 73 -k 74 -k 75 -k 76 -k 77 -k 78 -k 79 -k 80 -k 81 -k 82 -k 83 -k 84 -k 85 -k 86 -k 87 -k 88 -k 89 -k 90 -k 91 -k 92 -k 93 -k 94 -k 95 -k 96 -k 97 -k 98 -k 99 -k 100 -k 101 -k 102 -k 103 -k 104 -k 105 -k 106 -k 107 -k 108 -k 109 -k 110 -k 111 -k 112 ;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "curve -d 1 -p 2.105708 13.824294 0 -p 3.754494 10.508603 0 -p 3...." 
+        -enableBackground 0
+        -align "center" 
+        -label "curve -d 1 -p 2.105708 13.824294 0 -p 3.754494 10.508603 0 -p 3...." 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "d:/My Documents/maya/2009/prefs/icons/zhizhuxia1.bmp" 
+        -image1 "d:/My Documents/maya/2009/prefs/icons/zhizhuxia1.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "curve -d 1 -p 2.105708 13.824294 0 -p 3.754494 10.508603 0 -p 3.410242 9.946929 0 -p 3.138464 8.896054 0 -p 3.029753 8.135076 0 -p 1.852049 8.443091 0 -p 1.254137 8.805462 0 -p 0.710582 8.424973 0 -p 1.399086 8.551802 0 -p 2.93916 7.790824 0 -p 4.04439 9.07724 0 -p 4.66042 9.675151 0 -p 4.243694 12.7553 0 -p 4.91408 9.584558 0 -p 3.265294 7.337861 0 -p 2.902923 7.247269 0 -p 1.47156 8.135076 0 -p 0.783056 8.026365 0 -p 1.634626 7.84518 0 -p 2.703619 6.975491 0 -p 3.68202 7.35598 0 -p 4.461116 7.555284 0 -p 5.530109 8.642395 0 -p 6.50851 9.349018 0 -p 5.548228 8.406854 0 -p 4.696657 7.35598 0 -p 3.826968 7.029846 0 -p 3.102227 6.558765 0 -p 2.486197 6.576883 0 -p 1.562152 7.500928 0 -p 0.801174 7.573402 0 -p 1.670863 7.22915 0 -p 2.250656 6.196394 0 -p 3.120346 5.38106 0 -p 3.229057 4.239593 0 -p 4.207457 1.793592 0 -p 5.222095 -0.0907344 0 -p 3.935679 1.793592 0 -p 3.120346 3.496734 0 -p 2.757975 4.52949 0 -p 2.703619 5.036808 0 -p 1.978878 5.978972 0 -p 1.47156 6.921135 0 -p 0.873648 7.156676 0 -p 1.000478 6.73995 0 -p 1.091071 6.142039 0 -p 1.000478 5.526009 0 -p 0.746819 5.054927 0 -p 0.221381 4.638201 0 -p 0.11267 4.366423 0 -p 0.00395904 4.511371 0 -p -0.195345 4.348304 0 -p -0.213463 4.583845 0 -p -0.738901 4.982453 0 -p -1.065034 5.471653 0 -p -1.155627 6.069564 0 -p -1.137508 6.685594 0 -p -0.938204 7.120439 0 -p -1.572353 6.921135 0 -p -2.09779 5.924616 0 -p -2.750057 5.01869 0 -p -3.166783 3.605445 0 -p -3.69222 2.463978 0 -p -4.874642 0.400654 0 -p -5.225414 -0.0457831 0 -p -4.141209 2.106683 0 -p -3.694772 3.127111 0 -p -3.264279 4.450479 0 -p -3.216446 5.327409 0 -p -2.562735 5.917344 0 -p -2.100353 6.523223 0 -p -1.781469 7.176935 0 -p -0.920483 7.57554 0 -p -1.637971 7.495819 0 -p -2.514902 6.618888 0 -p -3.136725 6.555112 0 -p -3.949879 7.049381 0 -p -4.763033 7.320433 0 -p -5.544298 8.293028 0 -p -6.69228 9.361289 0 -p -5.432689 8.484359 0 -p -4.571702 7.543651 0 -p -3.639827 7.291627 0 -p -2.82493 6.943938 0 -p -1.770997 7.834892 0 -p -1.09735 7.878353 0 -p -0.825717 7.987006 0 -p -1.4885 8.13912 0 -p -2.977044 7.269897 0 -p -3.324734 7.345954 0 -p -4.1179 8.573731 0 -p -4.987123 9.573338 0 -p -4.737221 10.572944 0 -p -4.400397 12.593888 0 -p -4.617703 10.594675 0 -p -4.748087 9.681991 0 -p -3.911459 8.801902 0 -p -3.085697 7.780565 0 -p -2.270801 8.095659 0 -p -1.553692 8.562866 0 -p -1.162541 8.399887 0 -p -0.782256 8.34556 0 -p -1.11908 8.682384 0 -p -1.347251 8.780172 0 -p -2.140417 8.399887 0 -p -3.053102 8.128255 0 -p -3.205216 9.051804 0 -p -3.433387 9.801509 0 -p -3.802806 10.496887 0 -p -2.173013 13.930319 0 -p -3.400791 10.551214 0 -p -2.944449 9.356032 0 -p -2.770604 8.671519 0 -p -2.020899 8.801902 0 -p -1.30379 9.279975 0 -p -0.521489 8.638923 0 -p -0.488893 8.89969 0 -p -0.249857 9.095265 0 -p -0.315049 8.89969 0 -p -0.336779 8.660654 0 -p -0.260722 8.671519 0 -p -0.195531 8.791037 0 -p -0.130339 8.791037 0 -p -0.108608 8.69325 0 -p 0.0109099 8.69325 0 -p 0.0543711 8.791037 0 -p 0.141293 8.769307 0 -p 0.184755 8.671519 0 -p 0.271677 8.671519 0 -p 0.285144 8.903952 0 -p 0.133401 9.106276 0 -p 0.432997 8.911733 0 -p 0.475796 8.654937 0 -p 1.2179 9.280046 0 -p 1.866587 8.859601 0 -p 2.45521 8.67941 0 -p 2.623388 8.667397 0 -p 3.007795 9.65244 0 -p 3.356164 10.541381 0 -p 2.096507 13.818443 0 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 -k 26 -k 27 -k 28 -k 29 -k 30 -k 31 -k 32 -k 33 -k 34 -k 35 -k 36 -k 37 -k 38 -k 39 -k 40 -k 41 -k 42 -k 43 -k 44 -k 45 -k 46 -k 47 -k 48 -k 49 -k 50 -k 51 -k 52 -k 53 -k 54 -k 55 -k 56 -k 57 -k 58 -k 59 -k 60 -k 61 -k 62 -k 63 -k 64 -k 65 -k 66 -k 67 -k 68 -k 69 -k 70 -k 71 -k 72 -k 73 -k 74 -k 75 -k 76 -k 77 -k 78 -k 79 -k 80 -k 81 -k 82 -k 83 -k 84 -k 85 -k 86 -k 87 -k 88 -k 89 -k 90 -k 91 -k 92 -k 93 -k 94 -k 95 -k 96 -k 97 -k 98 -k 99 -k 100 -k 101 -k 102 -k 103 -k 104 -k 105 -k 106 -k 107 -k 108 -k 109 -k 110 -k 111 -k 112 -k 113 -k 114 -k 115 -k 116 -k 117 -k 118 -k 119 -k 120 -k 121 -k 122 -k 123 -k 124 -k 125 -k 126 -k 127 -k 128 -k 129 -k 130 -k 131 -k 132 -k 133 -k 134 -k 135 -k 136 -k 137 -k 138 -k 139 ;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined MEL command" 
+        -enableBackground 0
+        -align "center" 
+        -label "MEL Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/quanzhong.bmp" 
+        -image1 "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/quanzhong.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "/* This file downloaded from Highend3d.com\n''  \n''  Highend3d.com File Information:\n''  \n''    Script Name: Skinny\n''    Author:  \n''    Last Updated: Apr 16, 2007\n''    Update/Change this file at:\n''    http://Highend3d.com/maya/downloads/mel_scripts/modeling/misc/2950.html\n''  \n''  Please do not alter any information above this line\n''  it is generated dynamically by Highend3d.com and will\n''  be changed automatically on any updates.\n*/\n//-------------------------------------------------------------------------------------------------------------------------------------//\n//-------------------------------------------------------------------------------------------------------------------------------------//\n//\tSCRIPT:\tAS_Skinny v 3.9\n//\tAUTHOR:\tAsi Sudai Character TD, Animator\n//\t\t\tasi@asimation.com | www.reel.asimation.com\n//\n//\tDATE:\t\t01/4/2007 18:00\n//\n//\tDESCRIPTION:\tSkinny is skinning tool/UI.  Skinny main advantage, on Maya\n//\t\t\t\t\tPaint Weight tool, is it's presets list of joints & Influences.\n//\t\t\t\t\tthe Presets of joints makes the skinning process much more efficient. \n//\n//\tUpdate\t3.8: \n//\t\t\t\t- User can paint on selected vertex's ( isolate mode )\n//\t\t\t\t- Copy one Vertex weight to other ( solve crazy vertex's problem, and matching weight between diffrent mesh's )\n//\t\t\t\t\n//\n//\n//-------------------------------------------------------------------------------------------------------------------------------------//\n//\n//\tRun Proc: AS_Skinny\n//\n//-------------------------------------------------------------------------------------------------------------------------------------//\n\nAS_Skinny;\n//////////////////////////////\n//\tWeight Tools features\t//\n//////////////////////////////\n\n// Assign Joint to Vertex's:\nglobal proc SkinnyVertex.assignValue()\n{\n\tglobal string $Skinny_vertexFrameCol;\n\n\tstring $joint[] =`textScrollList -q -si jointScrollList`;\n\t$joint[0] = `AS_SkinnyTokenize $joint[0]`;\n\tfloat $Value = `textFieldButtonGrp -q -tx ( $Skinny_vertexFrameCol + \"|assignValue\" )`;\n\tstring $target[] =`ls -fl -sl`;\n\tif (size($target)==0){print \"Skinny: Select Vertex's to assign\\n\";return;}\t\n\tstring $trns[] =`listTransforms $target[0]`;\n\tstring $skinCluster = `findRelatedSkinCluster $trns[0]`;\n\tif ($skinCluster==\"\"){print \"Skinny: Select Vertex's aren't skinned\\n\";return;}\t\n\tskinPercent -nrm 1 -tv $joint[0] $Value $skinCluster $target;\n\tprint (\"Skinny: Assign selection to \" + $joint[0] + \"  Value: \" + $Value +\"\\n\");\n}\n\n\n// Zero skin value on point. before copying new value.\nproc SkinnyVertex.zeroValue(string $item, string $T_skincluster){\n\tstring $joints[] = `skinPercent -ib 0.001 -q -t $T_skincluster $item`;\n\tfor ($i=0;$i<`size($joints)`;$i++)\n\t\t skinPercent -nrm 0 -tv $joints[$i] 0 $T_skincluster $item;\t\n}//End fun\n\n// Update UI with selected Vertex:\nglobal proc SkinnyVertex.getSource()\n{\n\t// If selected item, isn't Vertex or CV or Lattice, exit:\n\tstring $ls[0] = `ls -fl -sl -hd 1 `;\n\tif (`objectType $ls[0]` != \"nurbsSurface\" && `objectType $ls[0]` != \"mesh\" &&\n\t\t`objectType $ls[0]` != \"lattice\")\n\t\t{\n\t\t\twarning (\"Works only on Vertexs,CV's,Lattice points.\\n\");\n\t\t\treturn;\t\t\n\t\t}\n\ttextFieldButtonGrp -e -tx $ls[0] SourceV;\n}// End Fun\n\n// Copy Skin Value:\nglobal proc SkinnyVertex.copyValue()\n{\n\tglobal string $Skinny_vertexFrameCol;\n\t\n\t//Time Debug:\n\t$startTime = `timerX`;\n\t// Get Source Values:\n\tstring $Source = `textFieldButtonGrp -q -tx ( $Skinny_vertexFrameCol + \"|SourceV\" )`;\n\tif (!`objExists $Source`){ warning \"Please Select one Vertex or Cv point to copy weights from\";return;}\n\tstring $S_trns[] = `listRelatives -p $Source`;\n\tstring $S_skincluster = `findRelatedSkinCluster $S_trns[0]`;\n\tstring $joints[] = `skinPercent -ib 0.002 -q -t $S_skincluster $Source`;\n\tfloat $values[]= `skinPercent -ib 0.002 -q -v $S_skincluster $Source`;\n\t// Optimize: turn off skinCluster\n\tsetAttr ($S_skincluster + \".envelope\") 0;\n\tsetAttr ($S_skincluster + \".normalizeWeights\") 0;\n\tsetAttr ($S_skincluster + \".nodeState\") 1;\n\t// Copy skinValue to targets:\n\tstring $targets[] = `ls -sl`;\n\tstring $numParents[] = `listRelatives -ap $targets`;\n\t\n\tstring $T_trns[];\n\tstring $T_skincluster;\n\tif (`size($numParents)`==1){\n\t\t$T_trns = `listRelatives -p $targets[0]`;\n\t\t$T_skincluster = `findRelatedSkinCluster $T_trns[0]`;\n\n\t\tfor ($item in $targets){\n\t\t\tSkinnyVertex.zeroValue($item, $T_skincluster);\n\t\t\tfor ($i=0;$i<`size($joints)`;$i++)\n\t\t\t\tskinPercent -nrm 0 -tv $joints[$i] $values[$i] $T_skincluster $item;\n\t\t\t}\n\t} else {\n\t\t\tfor ($item in $targets){\n\t\t\t\t$T_trns = `listRelatives -p $item`;\n\t\t\t\t$T_skincluster = `findRelatedSkinCluster $T_trns[0]`;\n\t\t\t\tSkinnyVertex.zeroValue($item, $T_skincluster);\n\t\t\t\tfor ($i=0;$i<`size($joints)`;$i++){\n\t\t\t\t\tcatchQuiet (`skinPercent -nrm 0 -tv $joints[$i] $values[$i] $T_skincluster $item`);\n\t\t\t\t\tprint $i;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n// Optimization off:\nsetAttr ($S_skincluster + \".envelope\") 1;\nsetAttr ($S_skincluster + \".normalizeWeights\") 1;\nsetAttr ($S_skincluster + \".nodeState\") 0;\n//Time Debug:\n$totalTime = `timerX -startTime $startTime`;\nprint (\"\\nSkinny Copy Total Time: \"+$totalTime+\"\\n\");\nprint (\"Skinny Copy Weight - Done\\n\");\n\n\n}// End Fun\n\n\n\n\n//This procedure transfers skinCluster weight between two influence objects.\n//We either loop through all the points in the skinCluster set, or use the current selection of points.\n//We speed this process up by not acting on points that have a zero value per-infuence.\n//This should work on all surface types, curves, and lattices.\n//NOTE: $infB is the destination influence, $infA is the source influence.\n//ST_TransferInfluence joint2 joint1 skinCluster1 1 1 100;\nproc ST_TransferInfluence(string $infB, string $infA, string $skinCluster, int $mode, int $componentsCheck, float $percent)\n{\n//Report errors.\nif ((! `objExists $skinCluster`) || (`nodeType $skinCluster` != \"skinCluster\"))\n\terror \"Skin cluster specified incorrectly. Try again.\";\n//If either $obj1 or $obj2 are not in the influence list for the skinCluster, report an error.\nstring $influences[] = `skinCluster -q -inf $skinCluster`;\n//DOESN´T WORK: if ((! `stringArrayCount($infB, $influences)`) || (! `stringArrayCount($infB, $influences)`))\nint $obj1Count = stringArrayCount($infB, $influences);\nint $obj2Count = stringArrayCount($infA, $influences);\nif (! $obj1Count)\n\terror ($infB + \" is not in the list of influences for \" + $skinCluster + \". Try again.\");\nif (! $obj2Count)\n\terror ($infA + \" is not in the list of influences for \" + $skinCluster + \". Try again.\");\n\n\n//Let´s time the operation, using the `timerX` cmd.\n$startTime = `timerX`;\n\n//Get the value of the skinCluster.normalizeWeights attr. Turn it off. Later turn it back on.\n//This isn´t really necessary, but is a precaution.\nint $normalize = `getAttr ($skinCluster + \".normalizeWeights\")`;\nif ($normalize)\n\tsetAttr ($skinCluster + \".normalizeWeights\") 0;\n\t\n//Get the cluster set.\nstring $skinClusterSet[] = `listConnections -type objectSet $skinCluster`;\n\n//Assign the components - either all points in set, or selected points.\nstring $components[];\nif ($componentsCheck == 1)\n\t{\n\t$components = `sets -q $skinClusterSet[0]`;\n\tif (! `size $components`)\n\t\terror ($skinCluster + \" has no members. Try again.\");\n\t//filter set membership: 36 - subD mesh points; 28 - CV´s; 31 - polygon mesh vertices; 46 - lattice points.\n\t$components = `filterExpand -sm 36 -sm 28 -sm 31 -sm 46 $components`;\n\t}\nelse if ($componentsCheck == 2)\n\t{\n\t$components = `ls -sl -fl`;\n\tif (! `size $components`)\n\t\terror (\"Select some points and try again.\");\n\t\n\t//Check if the user has selected components, or (by mistake) the object.\n\tstring $objectSelection[] = `ls -sl -o`;\n\tif ($objectSelection[0] == $components[0])\n\t\terror (\"Select some points and try again.\");\n\t}\n\n//Set \"Hold\" off for both joints.\nint $hold1 = `getAttr ($infB + \".lockInfluenceWeights\")`;\nint $hold2 = `getAttr ($infA + \".lockInfluenceWeights\")`;\nif ($hold1)\n\tsetAttr ($infB + \".lockInfluenceWeights\") 0;\nif ($hold2)\n\tsetAttr ($infB + \".lockInfluenceWeights\") 0;\n\t\n\t\n//WE NEED TO QUERY THE VALUE OF EACH POINT IN BOTH OBJS, AND TRANSFER THIS.\n//Start the progress bar.\nglobal string $gMainProgressBar;\nint $numberOfPoints = `size $components`;\t//-maxValue for progressBar\nprogressBar \t\n\t-edit \n\t-beginProgress \n\t-isInterruptable 1 \n\t-status (\"Transferring skin weights between \" + $infA + \" and \" + $infB + \"...\") \n\t-maxValue $numberOfPoints\n\t$gMainProgressBar;\n\nfloat $infAValue;\t\t//Source weight.\t\nfloat $infBValue;\t\t//Destination weight.\n//print ($mode + \"\\n\");\nfor ($c in $components)\n\t{\n\t//Query values of both influences for current component.\n\t$infAValue = `skinPercent -t $infA -q -v $skinCluster $c`;\n\tif ($mode == 2)\n\t\t$infBValue = `skinPercent -t $infB -q -v $skinCluster $c`;\n\n\t//Reset component values to zero first. This allows us to transfer values only if the original value was greater than zero.\n\t//If the original value was zero, it will remain zero, and we can go to the next iteration *much* faster by not touching it.\n\tif ($infAValue > 0.0)\n\t\tskinPercent -tv $infA 0 $skinCluster $c;\n\tif (($infBValue > 0.0) && ($mode == 2))\n\t\tskinPercent -tv $infB 0 $skinCluster $c;\n\t\n\t//print (\"The mode is: \" + $mode + \"\\n\");\n\t//print (\"Influence \" + $infB + \"'s original value is \" + `skinPercent -t $infB -q -v $skinCluster $c` + \"\\n\");\n\n\t//Transfer component values between influences, only if the original value was greater than zero.\n\tif ($infAValue > 0.0)\n\t\t{\n\t\t//print (\"The weight of \" + $infA + \" is \" + $infAValue + \"\\n\");\n\t\t//print (\"The percentage is: \" +  $percent + \"\\n\");\n\t\t//print (\"The percent value is: \" + ($infAValue * ($percent/100)) + \"\\n\");\n\t\t\n\t\t//Transfer the $infAValue onto $infB - use relative mode in order to add to any existing weight.\n\t\tskinPercent -tv $infB ($infAValue * ($percent/100)) -relative 1 $skinCluster $c;\n\t\t//Now, because of the percent factor, we need to put back any weight that remains on infA.\n\t\tif ($percent < 100)\n\t\t\tskinPercent -tv $infA ($infAValue * ((100 - $percent)/100)) -relative 1 $skinCluster $c;\n\t\t}\n\tif (($infBValue > 0.0) && ($mode == 2))\n\t\t{\n\t\t//Transfer the $infBValue onto $infA\n\t\tskinPercent -tv $infA ($infBValue * ($percent/100)) -relative 1 $skinCluster $c;\n\t\t//And put back any remaining weight onto $infB\n\t\tif ($percent < 100)\n\t\t\tskinPercent -tv $infB ($infBValue * ((100 - $percent)/100)) -relative 1 $skinCluster $c;\n\t\t}\n\t\n\t//print (\"Influence \" + $infB + \"'s new value is \" + `skinPercent -t $infB -q -v $skinCluster $c` + \"\\n\");\n\n\n\n\t\t\n\tif (`progressBar -q -isCancelled $gMainProgressBar`)\n\t\t{\n\t\tprogressBar -edit -endProgress $gMainProgressBar;\n\t\tbreak;\n\t\t}\n\n\t//Increase the progress bar.\n\tprogressBar -edit -step 1 $gMainProgressBar;\n\t}\n\t\n//End progress bar.\nprogressBar -edit -endProgress $gMainProgressBar;\n\n\n\n//Turn on \"Hold\".\nif ($hold1)\n\tsetAttr ($infB + \".liw\") 1;\nif ($hold2)\n\tsetAttr ($infB + \".liw\") 1;\n\t\n//Turn normalizeWeights back on.\nif ($normalize)\n\tsetAttr ($skinCluster + \".normalizeWeights\") 1;\n\t\n\t\n//How long did it take?\n$totalTime = `timerX -startTime $startTime`;\nprint (\"Total Time: \" + $totalTime + \" seconds. \\n\");\n}\n\n\nglobal proc SkinnyVertex.transferValue(){\n\tglobal string $g_skinnySelOrder[];\n\t\n\tstring $source = `AS_SkinnyTokenize $g_skinnySelOrder[0]`;\n\tstring $target = `AS_SkinnyTokenize $g_skinnySelOrder[1]`;\n\tstring $ls[0] = `ls -sl`;\n\tstring $skinCluster;\n\tstring $lsPoints[];\n\tprint `objectType $ls[0]`;\n\t// can work on entire mesh or selected point:\n\tif (`objectType $ls[0]` == \"nurbsSurface\" || `objectType $ls[0]` == \"mesh\" ||\n\t\t`objectType $ls[0]` == \"lattice\")\n\t\t{\n\t\t\tstring $trns[] =`listTransforms $ls[0]`;\n\t\t\t$skinCluster = `findRelatedSkinCluster $trns[0]`;\n\t\t\tif ($skinCluster==\"\"){ warning \"Select Skinned object\"; return;}\n\t\t\tST_TransferInfluence $target $source $skinCluster 1 2 100;\t\t\t\n\t\t}else{\n\t\t\t$skinCluster = `findRelatedSkinCluster $ls[0]`;\n\t\t\tif ($skinCluster==\"\"){ warning \"Select Skinned object ot vertex\"; return;}\n\t\t\tST_TransferInfluence $target $source $skinCluster 1 1 100;\n\t\t}\n\t\ttextScrollList -e -da -si $g_skinnySelOrder[1] jointScrollList;\n\t\tsetSmoothSkinInfluence $target;\n\t\n\t//ST_TransferInfluence joint2 joint3 skinCluster1 1 1 100;\n}//End Proc\n\n\n//////////////////////\n//\tCLUSTER FEATURE\t//\n//////////////////////\n\n// Append string to String Arry. return New Arry\nproc string[] Skinny_AppendStringtoArry(string $Arry[],string $string) {\t\n\tint $size=size($Arry);\n\t$Arry[$size]=$string;\n\treturn $Arry;\n}//END Proc\n\n//-----------------------------\n// find related Cluster deformer connected to given object\n//-----------------------------\nproc string[] findRelatedClusters(string $obj) {\n\t\n\tstring $ClusterList[];\t// The return array of all related Clusters\n\tstring $objShape[]=`listRelatives -noIntermediate -shapes $obj`;\n\tif (!size($objShape)) return {\"\",\"\"};\n\tstring $ListObjSets[]=`listConnections -d on -s off -type objectSet $objShape[0]`;\n\tfor ($set in $ListObjSets) {\n\t\tstring $foundCluster[0]=`listConnections -type cluster $set`;\n\t\tif (size($foundCluster))\n\t\t\tSkinny_AppendStringtoArry $ClusterList $foundCluster[0];\n\t}\t\n\treturn $ClusterList;\n}\n// End findRelatedClusters\n\n\n//-------------------------------\n// Prunce Cluster weight less then threshold\n// \tif member weight below threshold, remove it\n//-------------------------------\nproc skinny_pruneCluster() {\n\n\tstring $Cluster[0]=`textScrollList -q -si jointScrollList`;\n\tif ($Cluster[0]==\"\") { warning \"Select cluster to purne\"; return; }\n\tstring $ClusterSet[0]=`listConnections -type objectSet $Cluster[0]`;\n\tstring $ClusterMembers[]=`sets -q $ClusterSet[0]`;\n\t// filterExpand 31= vertex,28 =CVs, 36=Subdivision, 46=Lattice Points. \n\t$ClusterMembers=`filterExpand -sm 31 -sm 28 -sm 36 -sm 46 $ClusterMembers`;\t\n\tint $i=0;\n\tfloat $PurneValue=`floatField -q -v PurneClusterWeightField`;\n\tfor ($member in $ClusterMembers) {\n\t\tfloat $memberWeight[]=`percent -q -v $Cluster[0] $member`;\n\t\tif ($memberWeight[0] <= $PurneValue) {\n\t\t\tsets -remove $ClusterSet[0] $member;\n\t\t\t$i++;\n\t\t}\n\t}\n\tprint (\"\\t Number of members removed: \"+$i+\"\\n\");\n}\n// End skinny_pruneCluster\n\n\n\n//---------------------------\n// create attrFieldSliderGrp\n//---------------------------\nproc Skinny_createClusterSlider(string $label, float $min,\n\t\tfloat $max, float $cw[],string $at, string $SliderName, int $resetValue) \n{\t\nattrFieldSliderGrp\n\t-parent \"skinnyClustercolumn\"\n\t-at $at\n\t-l $label\t\n\t-pre 1\n\t-step 0.2\n\t-en true\n\t-min $min\t\t\t\t\t\n\t-max $max\n\t-cw 1 $cw[0]\t\t\t\t\t\n\t-cw 2 $cw[1]\n\t-cw 3 $cw[2]\t\t\t\t\t\n\t-cat 1 \"right\" 0\n\t-cat 2 \"both\" 2\n\t-cat 3 \"both\" 2\n\t-cal 3 \"center\"\n\t$SliderName;\n\n\t// Clusters PopupMenu\t\t\n\tpopupMenu -parent $SliderName;\t\n\t\tmenuItem -l \"Reset\" -c (\"setAttr \" + $at + \" \"+ $resetValue);\n}\n// End Skinny_attrFieldSliderGrp\n\n//-----------------------\n// Edit Cluster Members\n// to paint members need to turn off Skinny \n//-----------------------\nglobal proc Skinny_clusterEditMembers() {\n\tstring $Cluster[0]=`textScrollList -q -si jointScrollList`;\n\tif (`size($Cluster)`==0) return;\n\tcheckBoxGrp -e -v1 0 ScriptJobBox;\n\tSkinny_ScriptJob;\n\t// Open Edit Painter\n\tPaintSetMembershipTool;\n\t//setEditPaintToolScript 4; Note: working only in ver Maya 5\n\ttoolPropertyWindow -inMainWindow true;\t\n\tstring $ClusterSet[0]=`listConnections -type objectSet $Cluster[0]`;\n\ttextScrollList -e -si $ClusterSet[0] artSetPaintScrollList;\n\t//setEditPaintCtx -e -settomodify $ClusterSet[0] `currentCtx`; Note: working only in ver Maya 5\t\n\tartSetScrollListClick artSetPaintCtx;\n\ttextScrollList -e -si $ClusterSet[0] artSetPaintScrollList;\t\n}\n// End Skinny_clusterEditMembers\n\n\n//\tCluster Reset transformation proc\n//\t$function = reset All or Selected\n//--------------------\nglobal proc Skinny_ClusterTranformReset (string $function) {\n\tstring $allItems[];\n\tint $reset;\n\tif ($function==\"All\")\n\t\t$allItems=`textScrollList -q -ai jointScrollList`;\n\t \telse \n\t\t\t$allItems=`textScrollList -q -si jointScrollList`;\n\t\n\tstring $transform[]={\"translate\",\"rotate\",\"scale\"};\n\t\n\tfor ($item in $allItems) {\n\t\tstring $clusterHandle=`cluster -q -weightedNode $item`;\n\t\tfor ($trans in $transform) {\n\t\t\tif ($trans!=\"scale\") { $reset=0; } else { $reset=1; }\n\t\t\tsetAttr ( $clusterHandle + \".\" + $trans + \"X\" ) $reset;\n\t\t\tsetAttr ( $clusterHandle + \".\" + $trans + \"Y\" ) $reset;\n\t\t\tsetAttr ( $clusterHandle + \".\" + $trans + \"Z\" ) $reset;\n\t\t}\n\t}\n}\n// End Skinny_ClusterTranformReset //\n\n\n\n//---------------------------\n// manipulte the cluster by it's UI sliders\n// create ClusterSlider from selected cluster\n// in scroollList.\n//---------------------------\nglobal proc Skinny_ClusterTranformProc(string $transform) {\n\t// Delete existsing Sliders\n\tcolumnLayout -e -m 0 skinnyJNTRotMaincolumn;\n\tif (`attrFieldSliderGrp -ex \"ClusterSliderX\"`) deleteUI ClusterSliderX;\n\tif (`attrFieldSliderGrp -ex \"ClusterSliderY\"`) deleteUI ClusterSliderY;\n\tif (`attrFieldSliderGrp -ex \"ClusterSliderZ\"`) deleteUI ClusterSliderZ;\n\t// Create new ones\n\tint $reset; int $min; int $max;\t\n\tif ($transform!=\"scale\") { $reset=0; } else { $reset=1; } // Set Reset Value\n\tif ($transform!=\"rotate\") { $min=\"-10\"; $max=\"10\";  } \t// Set Min Max value\n\t\telse { $min=\"-180\"; $max=\"180\";  }\t\t\t\n\tstring $selItem[]=`textScrollList -q -si jointScrollList`;\n\tif (size($selItem)==0) return;\n\tstring $clusterHandle=`cluster -q -weightedNode $selItem[0]`;\n\tSkinny_createClusterSlider (\"X\", $min, $max, {15,48,225},\n\t\t($clusterHandle+\".\"+$transform+\"X\") , \"ClusterSliderX\", $reset);\n\tSkinny_createClusterSlider (\"Y\",  $min, $max, {15,48,225},\n\t\t($clusterHandle+\".\"+$transform+\"Y\") , \"ClusterSliderY\", $reset);\t\n\tSkinny_createClusterSlider (\"Z\",  $min, $max, {15,48,225},\n\t\t($clusterHandle+\".\"+$transform+\"Z\") , \"ClusterSliderZ\", $reset);\n\t// Create Reset All button.\n\tif (`rowColumnLayout -q -exists skinnyClusterResetColumn`) deleteUI \"skinnyClusterResetColumn\";\n\trowColumnLayout -parent \"skinnyClustercolumn\" -numberOfRows 1 -rowHeight 1 22 \"skinnyClusterResetColumn\";\n\t\tbutton -bgc 0.756 0.857 0.955 -w 240 -l \"Reset Selected\" -c (\"Skinny_ClusterTranformReset Select\") -ann \"Reset Selected Cluster\";\n\t\tbutton -bgc 0.636 0.817 0.915 -w 50 -l \"All\" -c (\"Skinny_ClusterTranformReset All\") -ann \"Reset All Clusters\";\n\t\t\n\tcolumnLayout -e -m 1 skinnyJNTRotMaincolumn;\n}\n// End Skinny_ClusterTranformProc\t\n\n\t\n//-------------------\n// Skinny UI switcher between Skin / Cluster\n// Change Skinny UI to current Mode\n//-------------------\nglobal proc Skinny_UISwitcher(string $mode) {\t\n\t\n// Global string of current contextTool in Skinny.\n// Skin = artAttrSkinContext , Cluster = artAttrContext.\nglobal string $Skinny_CurrentCtx;\n\nif ($mode==\"cluster\")\n{\n\t// CurrentCtx\n\t$Skinny_CurrentCtx = \"artAttrContext\";\n\t\n\t// Call updateSetsScrollList\n\tSkinny_updateSetsScrollList;\n\t\n\t// Create SkinnyClusterSets Node\n\tif (!`objExists \"SkinnyClusterSets\"`)\n\t\t{\n\t\t\tstring $lsSel[]=`ls -sl`;\n\t\t\tcreateNode objectSet -n \"SkinnyClusterSets\";\n\t\t\tselect $lsSel;\n\t\t}\n\t\n\t// MenuBar\n\t\tint $SetToolStatus=`menuItem -q -cb Skinny_SetsTool`;\n\tmenu -e -deleteAllItems -l \"Cluster Sets\" SkinToolPreset;\t\t\n\t\tmenuItem -p \"SkinToolPreset\" -cb $SetToolStatus -label \"Sets Tool\" -c ( \"Skinny_SetsTool\" ) Skinny_SetsTool;\n\t\tmenuItem -p \"SkinToolPreset\" -d 1;\n\t\tmenuItem -p \"SkinToolPreset\" -cb 1 -label \"All Clusters\" -c ( \"AS_SkinnyFullSet\" ) Skinny_FullSet;\n\tSkinny_findSets;\t\n\tmenu -e -vis 0 -en 0 SkinToolOrder;\n\t\n\t\n\t// ScrollList\n\ttextScrollList -e -removeAll jointScrollList;\n\ttextScrollList -e -allowMultiSelection 1 -dcc ( \"\" ) jointScrollList;\n\t// PopupMenu for Clusters Create\n\tpopupMenu -e -dai jointScrollListPopup;\n\t\tmenuItem -p jointScrollListPopup -l \"Edit Membership\" -c ( \"Skinny_clusterEditMembers\" );\n\t\n\t// Lock & unLock Weight buttons:\n\trowColumnLayout -e -m 0 Skinny_LockweightColumn;\n\trowColumnLayout -e -m 0 Skinny_unLockweightColumn;\n\tif (!`button -exists Skinny_editMembership`)\n\t\tbutton -bgc 0.756 0.857 0.955 -parent LockUnlockColumn -h 20 -label \"Edit Membership\" \n\t\t\t\t-c ( \"Skinny_clusterEditMembers\" ) Skinny_editMembership;\n\t\n\tbutton -e -en 1 -m 1 Skinny_editMembership;\t\n\t\n\t// Influnce Frame\n\tframeLayout -e -m 0 skinnyInfluenceFrame;\n\t\n\t// UI Buttons\t\n\tcolumnLayout -e -enable 1 LockUnlockColumn ;\n\t\n\t// Joint Rotation / Cluster Translation\n\tframeLayout -e -label \"Cluster Transform\" skinnyJNTRotFrame;\t\t\n\tcolumnLayout -e -m 0  skinnyJNTRotcolumn;\n\tif (!`columnLayout -exists skinnyClustercolumn`) {\n\t\tcolumnLayout -parent \"skinnyJNTRotMaincolumn\" -adj 1 -rs 1 skinnyClustercolumn;\n\t\t// clusters transformation radioButton\n\t\tradioButtonGrp -label \"\" \n\t\t\t\t    -numberOfRadioButtons 3\n\t\t\t\t    -label1 \"Translate\"\n\t\t\t\t    -label2 \"Rotate\"\n\t\t\t\t    -label3 \"Scale\"\t\n\t\t\t\t\t-on1 (\"Skinny_ClusterTranformProc translate\")\n\t\t\t\t\t-on2 (\"Skinny_ClusterTranformProc rotate\")\n\t\t\t\t\t-on3 (\"Skinny_ClusterTranformProc scale\")\n\t\t\t\t\t-cw 1 10   -cw 2 80\n\t\t\t\t    -cw 3 70  -cw 4 70\n\t\t\t\t    -select 1 skinnyClusterTransRadio;\t\t\n\t\tseparator -h 2 -w 10 -style single -horizontal on -bgc 0.4 0.7 1;\n\t\t// Delete existsing Sliders\n\t\tif (`attrFieldSliderGrp -ex \"ClusterSliderX\"`) deleteUI ClusterSliderX;\n\t\tif (`attrFieldSliderGrp -ex \"ClusterSliderY\"`) deleteUI ClusterSliderY;\n\t\tif (`attrFieldSliderGrp -ex \"ClusterSliderZ\"`) deleteUI ClusterSliderZ;\n\t\t} else {\n\t\t\tcolumnLayout -e -m 1 skinnyClustercolumn;\n\t\t}// End of cluster coulmn building\n\t\t\n\t// Util Frame\n\t\tformLayout -e -m 0 skinnyUtilForm; // Disable Skin Util FormLayout\n\t\tif (!`rowColumnLayout -ex skinnyClusterUtilColumn`) {\n\t\trowColumnLayout -parent skinnyUtilCoulmn -cw 2 33 -nc 2 skinnyClusterUtilColumn;\n\t\t\t//symbolButton -image \"AS_SkinnyPurne.XPM\" -c (\"skinny_pruneCluster\") -ann \"Prune members ( vertex, cv's ) that have zero weight. from all related clusters\" PurneClusterWeight;\n\t\t\tbutton -l \"Prune Weight\" -c (\"skinny_pruneCluster\") -ann \"Prune members ( vertex, cv's ) that have zero weight. from all related clusters\" PurneClusterWeight;\n\t\t\tfloatField -v 0.01 -minValue 0.001 -maxValue 1 -precision 2 -step .001 PurneClusterWeightField;\n\t\t\n\t\t//button  -enable 0 -l \"Purne Cluster Memebers\" \n\t\t//\t\t\t-c (\"string $SelObj[1]=`ls -sl -hd 1`; cluster -e -prune $SelObj[0];\");\n\t\t} else { \n\t\t\trowColumnLayout -e -m 1 skinnyClusterUtilColumn;\n\t\t}\t\t\t\t\n\n\t// Update ScrollList\n\tSkinny_UpdateCluster;\n\t// Update ScriptJob\n\tSkinny_ScriptJob;\n\t// Update Skinny UI\n\tSkinny_QueryUI;\t\n}\n\t\nif ($mode==\"skin\")\n{\t\n\t// CurrentCtx\n\t$Skinny_CurrentCtx = \"artAttrSkinContext\";\n\t\n\t// Call updateSetsScrollList\n\tSkinny_updateSetsScrollList;\n\t\n\t// Sets menuBar\n\tint $SetToolStatus=`menuItem -q -cb Skinny_SetsTool`;\n\tmenu -e -dai -l \"Skin Sets\" SkinToolPreset;\n\t\tmenuItem -p \"SkinToolPreset\" -cb $SetToolStatus -label \"Sets Tool\" -c ( \"Skinny_SetsTool\" ) Skinny_SetsTool;\n\t\tmenuItem -p \"SkinToolPreset\" -d 1;\n\t\tmenuItem -p \"SkinToolPreset\" -cb 1 -label \"All Bind Set\" -c ( \"AS_SkinnyFullSet\" ) Skinny_FullSet;\n\tSkinny_findSets;\n\tmenu -e -vis 1 -en 1 SkinToolOrder;\n\t\n\t// ScrollList\n\ttextScrollList -e -removeAll jointScrollList; // Clear before switching\n\ttextScrollList -e -allowMultiSelection 1\n\t\t-dcc ( \"Skinny_Function DubbleClickHold\" ) \"jointScrollList\";\t\n\t\n\t// scrollList PopupMenu create again\n\t\tmenuItem -p jointScrollListPopup -l \"Lock Selected\" -c ( \"AS_SkinnyLockFunction Selected 1\" );\n\t\tmenuItem -p jointScrollListPopup -l \"UnLock Selected\" -c ( \"AS_SkinnyLockFunction Selected 0\" );\n\t\tmenuItem -p jointScrollListPopup -d 1;\n\t\tmenuItem -p jointScrollListPopup -l \"Lock All\" -c ( \"AS_SkinnyLockFunction All 1\" );\n\t\tmenuItem -p jointScrollListPopup -l \"UnLock All\" -c ( \"AS_SkinnyLockFunction All 0\" );\n\t\tmenuItem -p jointScrollListPopup -d 1;\n\t\t//menuItem -p jointScrollListPopup -l \"Set Selected\" -c ( \"AS_SkinnySetsMakerUI\" );\n\t\n\t// Lock & unLock Weight buttons:\n\trowColumnLayout -e -m 1 Skinny_LockweightColumn;\n\trowColumnLayout -e -m 1 Skinny_unLockweightColumn;\n\tbutton -e -m 0 Skinny_editMembership;\t\n\t\n\t// Influnce Frame\n\tframeLayout -e -m 1 skinnyInfluenceFrame;\n\t\n\t// UI Buttons\t\n\tcolumnLayout -e -enable 1 LockUnlockColumn;\n\t\n\t// Joint Rotation / Cluster Translation\n\tframeLayout -e -label \"Joint Rotate     \" skinnyJNTRotFrame;\n\tcolumnLayout -e -m 1  skinnyJNTRotcolumn;\n\tcolumnLayout-e -m 0 skinnyClustercolumn;\n\t\n\t// Util Frame\n\t\trowColumnLayout -e -m 0 skinnyClusterUtilColumn;\n\t\tformLayout -e -m 1 skinnyUtilForm;\n\t\n\t\t// Update ScrollList\n\t\tSkinny_UpdateSkin ByName 0;\n\t\t// Update ScriptJob\n\t\tSkinny_ScriptJob;\n\t\t// Update Skinny UI\n\t\tSkinny_QueryUI;\t\t\n}\n}\n// End ScrollListClusterMode\n\t\n\t\n//------------------\t\n// Update Skinny ScrollList Clusters\n// \tUpdate ScrollList with Cluster according to selected Sets\n//\tAnd if no Set active, show all available cluster\n//-------------------\nglobal proc Skinny_UpdateCluster() {\n\n// Active Sets collection:\n\t// Find Active Sets, ask if active.\n\t//\tIf one or more active, use them.\n\tstring $ClusterSets[]=`listAttr -ud \"SkinnyClusterSets\"`;\n\tstring $SetCollector[];\n\tfor ( $SetFound in $ClusterSets) {\n\t\tif (`menuItem -q -cb (\"Skinny_\"+$SetFound) `) {\n\t\t\tstring $tempString=`addAttr -q -enumName  (\"SkinnyClusterSets.\"+$SetFound)`;\n\t\t\tstring $SetMembers[];\n\t\t\ttokenize $tempString \":\" $SetMembers;\t\t\n\t\t\tint $SetSize = size($SetMembers);\n\t\t\tappendStringArray ( $SetCollector, $SetMembers, $SetSize );\n\t\t\tmenuItem -e -cb 0 Skinny_FullSet;\n\t\t}\n\t}\n\t// Remove Duplicate cluster from list.\n\t$SetCollector=stringArrayRemoveDuplicates($SetCollector);\n\n\n// No Set Active:\n\t// if no set is active, get all the cluster ralted to the object.\t\n\t// findRelatedCluster to update jointScrollList\n\tif (size($SetCollector)==0)\n\t{\n\t\tmenuItem -e -cb 1 Skinny_FullSet; // turn on All clusters menuItem\n\t\tstring $selObj[]=`ls -sl`;\n\t\tif (size($selObj)==0) return;\t// if nothing selected return;\n\t\t$SetCollector=`findRelatedClusters $selObj[0]`;\n\t\tif (size($SetCollector)==0) return;\t// if no cluster found return;\n\t} \n\t\n\t// switch to Cluster Ctx\n\tif ( `currentCtx` != \"artAttrContext\" ) {\n\t\tartAttrToolScript 4 \"cluster\";\n\t\tartAttrInitPaintableAttr;;\n\t}\n\n// TextScrollList Update\n\t// Add cluster in to jointScrollList;\n\ttextScrollList -e -removeAll jointScrollList; // Clear before update\n\tfor ( $cluster in $SetCollector)\n\t\ttextScrollList -e -append $cluster jointScrollList;\t\n}\n// End SkinnyGoClusterMode\n\t\n\n\n\n/// ADD MAYA SMOOTH SKIN MENU\nproc AddSmoothSkinMenu() {\n\tmenu -l \"Smooth Skin\" -parent skinToolmenuBar -to true -aob true;\t\t\n\t    menuItem -l \"Add Influence\"\t-annotation \"Add Influence: Select surface(s) first and then the influence transform\" -c \"AddInfluence\";\n\t    menuItem -optionBox true -annotation \"Add Influence Option Box\"\t-l \"Add Influence Option Box\" -c \"AddInfluenceOptions\";\n\t\tmenuItem -l \"Remove Influence\"\t-annotation \"Remove Influence: Select surface(s) first and then the influence transform\" -c \"RemoveInfluence\";\n\t\tmenuItem -l \"Set Max Influences...\"\t-annotation \"Set Max Influences: Display dialog to set max influences\" -c \"SetMaxInfluences\";\n\t\tmenuItem -divider true;\n\t\tmenuItem -l \"Mirror Skin Weights\" -annotation \"Mirror Skin Weights: Select either a single skin or the source and the destination skin.\"  -c \"MirrorSkinWeights\";\n\t    menuItem -optionBox true -annotation \"Mirror Skin Weights Option Box\" -l \"Mirror Skin Weights Option Box\"\t-c \"MirrorSkinWeightsOptions\";\n\t\tmenuItem -l \"Copy Skin Weights\"\t-annotation \"Copy Skin Weights: Select the source surface and the destination surface\" -c \"CopySkinWeights\";\n\t\tmenuItem -l \"Reset Weights to Default\" -annotation \"Reset Weights to Default: Select the surface(s) or component(s)\" -c \"ResetWeightsToDefault\";\n\t\tmenuItem -l \"Prune Small Weights\" -annotation \"Prune Small Weights: Select the surface(s) or component(s)\" -c \"PruneSmallWeights\"; \n\t    menuItem -optionBox true -annotation \"Prune Small Weights Option Box\" -l \"Prune Small Weights Option Box\" -c \"PruneSmallWeightsOptions\";\n\t\tmenuItem -l \"Remove Unused Influences\" -annotation \"Remove Unused Influences: Select the skin and unused joints and influences will be disconnected to improve performance.\" -c \"removeUnusedInfluences\"; \n\t\tmenuItem -divider true;\n\t\tmenuItem -l \"Disable Weight Normalization\"\t-annotation \"Disable Weight Normalization: Select the surface(s)\" -c \"doNormalizeWeightsArgList 1 {\\\"1\\\"}\";\n\t\tmenuItem -l \"Enable Weight Normalization\" -annotation \"Enable Weight Normalization: Select the surface(s)\" -c \"doNormalizeWeightsArgList 1 {\\\"2\\\"}\";\n\t\tmenuItem -l \"Normalize Weights\" -annotation \"Normalize Weights: Select the surface(s) or component(s)\" -c \"doNormalizeWeightsArgList 1 {\\\"3\\\"}\";\n}//END Proc\n\n\n/// REMOVE INFLUENCE FEATURE Version 1.00\n    \n global proc Skinny_createSet()\n    {\n    \tstring $SelObj[]=`ls -sl`;\n    \tfor ($item in $SelObj) {\n        \t$getSelectedSkinCluster= `findRelatedSkinCluster $item`;\n        \tif ($getSelectedSkinCluster!=\"\") {\nprint \"debug2\";\n            \t$jointsInSkinCluster=`skinCluster -q -inf $getSelectedSkinCluster`;    \t\n            \tif(`objExists \"SkinnySets\"`) {\n            \t    sets -cl \"SkinnySets\";\n            \t    sets -add \"SkinnySets\" $jointsInSkinCluster;\n            \t    //print (\"Skinny Message: \"+$item + \" Skinny FullSet Updated \\n\"); \n            \t    } else {\n            \t        sets -n \"SkinnySets\" $jointsInSkinCluster;            \t        \n            \t    }      \t\n    \t}   } \t\n    }//End Proc\n    \n    // Find Joints with no Weight\n    proc string[] FindNoWeight(string $SelObj){          \t\n    \t// get SkinCluster Name & all joints in skinCluster\n    \tstring $getSelectedSkinCluster= `findRelatedSkinCluster $SelObj`;\n\t\tif ($getSelectedSkinCluster==\"\") return {\"\"};\n    \tstring $jointsInSkinCluster[]=`skinCluster -q -inf $getSelectedSkinCluster`;\n    \t// get all the joints with WEIGHTS & Substract the unused joints\n    \tstring $jointsWithWeight[]=`skinCluster -q -wi $getSelectedSkinCluster`;    \t\n\t\t$jointsWithNoWeight=stringArrayRemove($jointsWithWeight,$jointsInSkinCluster);\n\t\treturn $jointsWithNoWeight;\n    }//End Proc\n    \n    \n    // Add muilti influences to object\n     global proc Skinny_addInflunce() {\n        string $listSelected[]=`ls -sl`;\n        string $Joints[];\n        string $SkinObj[];\n        string $SkinCluster;\n        for ($item in $listSelected) {\n            if (`objectType $item`==\"joint\")\n                    Skinny_AppendStringtoArry $Joints $item;\n            else\n               // If item isn't joint type, ask if tansfrom, and if so ask if he has skinCluster.\n               if (`objectType $item`==\"transform\") {\n                    $SkinCluster=`findRelatedSkinCluster $item`;\n                    if ($SkinCluster!=\"\")\n                        Skinny_AppendStringtoArry $SkinObj $item;\n               }\n        }\n        // Add all selected joints, to all selected SkinObj\n        for ($obj in $SkinObj) {\n            string $SkinCluster=`findRelatedSkinCluster $obj`;\nprint \"debug4\";\n\t\t\tstring $existingInfluences[] = `skinCluster -q -inf $SkinCluster`;\n            for ($joint in $Joints) {\n\t\t\t\t// Check if joints isn't already a member\n\t\t\t\tint $alreadyConnected;\n\t\t\t\tfor ($ei in $existingInfluences)\n\t\t\t\t\tif ($ei == $joint) {\n\t\t\t\t\t\t$alreadyConnected=1;\n\t\t\t\t\t\tprint (\"\\nJoint already a member\\n\");\n\t\t\t\t\t}\n\t\t\t\tif  (!$alreadyConnected) {\n\t\t\t\t\tskinCluster -e  -dr 8 -lw true -wt 0 -ai $joint $SkinCluster;\t\t\t\t\n\t\t\t\t    print (\"\\nSkinny Add influence \" + $joint + \" to \" + $obj + \"\\n\");\n\t\t\t\t}\t\t\t\t\t\t\t\t\n\t\t\t}\n\t\t}\t                \n    }//END Proc          \n                \n                \n      \n    // Remove selected joints with in JointScrollList from SkinCluster\n    global proc Skinny_removeInflunce(){\n        // Get Selected joints from ScrollList\n        string $SelItemsName[]=`textScrollList -q -si jointScrollList`;\n        // Find Selected Obj & SkinCluster\n        string $SelObj[]=`ls -sl`;\n        string $buffer;\n        if (!size($SelObj)) {\n            print \"Skinny Message: Nothing Is Selected\\n\";\n            return;\n            }\n        for ($item in $SelObj){\n            string $SkinCluster= `findRelatedSkinCluster $item`;\n            for ($joint in $SelItemsName) {\n                $buffer=`AS_SkinnyTokenize $joint`;       \n    \t        skinCluster -e  -ri $buffer $SkinCluster;\n    \t        print (\"Skinny Message: \"+$buffer+\" removed\\n\");\n            }\n        }\n        // Deselect removed joints\n        textScrollList -e -da \"jointScrollList\";\n        // Update the ScrollList\n\t    Skinny_UpdateSkin \"ByName\" \"1\";\n    }//End Proc\n    \n\n/// SMOOTH MESH FEATURE Version 1.00\t///\n\n//------------------------------\n// Check if object can be smooth. only if it's connected\n//\tTo Skincluster or cluster, And it's shape is mesh kind.\n//------------------------------\nproc int CheckIfSmooth(string $SelObj){\n\tint $IsSmooth=0;\n\tstring $ObjShapes[]=`listRelatives -shapes $SelObj`;\n\t// For every shape found, check if it's Mesh & it's connected to Skincluster.inMesh.\n\tfor ($shape in $ObjShapes){\n\t\tif (`nodeType $shape`==\"mesh\"){\t\t\t\t\n\t\t\tstring $InMeshNode[1]=`listConnections -d off -s on ($shape+\".inMesh\")`;\n\t\t\tif ($InMeshNode[0]!=\"\")\n\t\t\t\tif( `nodeType $InMeshNode[0]`==\"skinCluster\" || `nodeType $InMeshNode[0]`==\"cluster\")\n\t\t\t\t{\n\t\t\t\t$IsSmooth=\"1\";\t\t\t\t\t\n\t\t\t\tbreak;\n\t\t\t\t}\n\t\t}\n\t}\n\treturn $IsSmooth;\n}// End Proc      \n\n// Smooth Selected object and connect the smooth divisions to display layer for control\nproc SmoothSelected(string $SelObj) {\n\t// Check If Obj can be Smooth\n\tif (`CheckIfSmooth $SelObj`){\n\t\t//string $PolyNode[0]=`polySmooth -mth 0 -dv 1 -c 1 -kb 1 -ksb 1 -khe 0 -kt 1 -kmb 1 -suv 0 -sl 1 -dpe 1 -ps 0.1 -ro 1 -ch 1 $SelObj`;\n\t\tstring $PolyNode[0]=`polySmooth -mth 0 -dv 1 $SelObj`;\n\t\t$PolyNode[0]=`rename $PolyNode[0] (\"SkinnySmooth_\"+$SelObj)`;\n\t\t// Add menuitem to toggel on/off into MeshSmooth Menu\n\t\tmenuItem -cb 1 -c (\"Skinny_LayerSmoothToggel\") -label $SelObj -p SkinnyUI|skinToolmenuBar|SkinnyMeshSmooth (\"SkinnySmooth_\"+$SelObj);\n\t\t// Bug Fix: after smooth the mesh color change... so a select again, and it's fix:)\n\t\tselect $SelObj;\n\t\tprint (\"Skinny Message: MeshSmooth Applied on \"+$SelObj+\"\\n\");\t\t\t\n\t}\t\n}//End Proc  \n// Remove SmoothNode & DisplayNode\nproc RemoveSmooth(string $SelObj) {\n\tstring $ObjShapes[]=`listRelatives -shapes $SelObj`;\n\tfor ($shape in $ObjShapes){\n\t\t// Check if shapes are Skinny related\n\t\tif (`nodeType $shape`==\"mesh\" && `CheckIfSmooth $SelObj`==0){\n\t\t\t// Find Connected Node to the Obj\n\t\t\tstring $InMeshNode[1]=`listConnections -d off -s on ($shape+\".inMesh\")`;\n\t\t\tif ($InMeshNode[0]!=\"\"){\n\t\t\t\tif (`nodeType $InMeshNode[0]`==\"polySmoothFace\"){\t\t\t\n\t\t\t\t\t//string $DisplayNode[1]=`listConnections -d off -s on ($InMeshNode[0]+\".divisions\")`;\n\t\t\t\t\t// Check if they Skinny related and del them.\n\t\t\t\t\tif (`gmatch $InMeshNode[0] \"SkinnySmooth*\"`)\n\t\t\t\t\t\tdelete $InMeshNode[0];\n\t\t\t\t\t// delete Smooth MenuItem from Skinny UI\n\t\t\t\t\tdeleteUI -menuItem (\"SkinnyUI|skinToolmenuBar|SkinnyMeshSmooth|\"+\"SkinnySmooth_\"+$SelObj);\n\t\t\t\t\t// Bug Fix: after smooth the mesh color change... so a select again, and it's fix:)\n\t\t\t\t\tselect $SelObj;\n\t\t\t\t\tprint (\"Skinny Message: MeshSmooth Removed From \"+$SelObj+\"\\n\");\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t}\t\t\t\n\t}\n}//End Proc\n\n// Find & Add SmoothObject to MeshSmooth menuBar\nproc FindSmoothMesh() {\n\t// Find Skinny displayLayers\n\tstring $SkinnySets[]=`ls -type \"polySmoothFace\" \"SkinnySmooth_*\"`;\n\t// Add Found displayLayers to SkinnyUI|skinToolmenuBar|SkinnyMeshSmooth\n\tfor ( $SetFound in $SkinnySets) {\n\t\tstring $newMenuName=`substitute \"SkinnySmooth_\" $SetFound \"\"`;\n\t\t// query smooth division to match Ui to divisions\n\t\tint $state=`getAttr ($SetFound+\".divisions\")`;\t\t\t\n\t\tmenuItem -cb $state -c (\"Skinny_LayerSmoothToggel\") -label $newMenuName -p SkinnyUI|skinToolmenuBar|SkinnyMeshSmooth (\"SkinnySmooth_\"+$newMenuName);\n\t}  \n}//End Proc\n\n\n//----------------------------\n// Calling proc to make/remove Skinny smooth\n//----------------------------\nglobal proc Skinny_SmoothMesh(string $function) {\n\tstring $ListSelected[]=`ls -sl`;\n\tif (!size($ListSelected)){\n\t\tprint \"Skinny Message: Nothing Is Selected\\n\";\n\t\treturn;}\n\tif ($function==\"make\"){\t \n\t\tfor ($SelObj in $ListSelected)\n\t\t\tSmoothSelected $SelObj;\t        \n\t} else {\n\t\tfor ($SelObj in $ListSelected)\n\t\t\tRemoveSmooth $SelObj;\t    \n\t}\n}//End Proc\n\n\t\n\t\n//----------------------\n// Toggel layerVis on/off\n//----------------------\nglobal proc Skinny_LayerSmoothToggel()\n{        \n\t// Get Menu item stats\n\tstring $MenuList[]=`menu -q -ia SkinnyUI|skinToolmenuBar|SkinnyMeshSmooth`;\n\tfor ($menuItem in $MenuList)\n\t{\t\t\n\t\tif(`gmatch $menuItem \"SkinnySmooth_*\"`==1)\n\t\t{\n\t\t\tint $Value=`menuItem -q -cb $menuItem`;\n\t\t\tsetAttr ($menuItem+\".divisions\") $Value;\t\t\t\t\n\t\t}   \n\t}\n\t// Bug Fix: when toggel smooth, current painting obj become opacity.\n\t// Fix this bug with simply selecting joint to paint.\n\tSkinny_Function paint;\n}\n//End Skinny_LayerSmoothToggel\n    \n\n\n\n//--------------------------------\n//\tScriptJob manger. Check if ScriptJob should be active.\n//\tthen check if should be in Skin / Cluster mode.\n//--------------------------------\t\t\nglobal proc Skinny_ScriptJob(){\n\tglobal int $SkinnyScriptJob;\n\t\n\t// Check if should be active. if not kill.\n\tif (!`checkBoxGrp -q -v1 ScriptJobBox`) {\n\t\tif (`scriptJob -exists $SkinnyScriptJob` && $SkinnyScriptJob!=0 )\n\t\t\t\tscriptJob -kill $SkinnyScriptJob -force;\t\t\n\t\tglobal string $gSelect; setToolTo $gSelect;\n\t\treturn;\n\t}\n\t\n\t// Check if in Skin mode.\n\tif (`radioButton -q -sl SkinnyModeSkin`) {\n\t\tif (`scriptJob -exists $SkinnyScriptJob` && $SkinnyScriptJob!=0 ) \n\t\t\t\tscriptJob -kill $SkinnyScriptJob -force;\n\t\tSkinny_UpdateSkin ByName 0;\n\t\t$SkinnyScriptJob=`scriptJob -p SkinnyUI -e \"SelectionChanged\" \"Skinny_UpdateSkin ByName 1\"`;\t\t\t\n\t\treturn;\t\t\n\t}\n\t\n\t// Check if in Cluster Mode\n\tif (`radioButton -q -sl SkinnyModeCluster`) {\n\t\tif (`scriptJob -exists $SkinnyScriptJob` && $SkinnyScriptJob!=0 ) \n\t\t\t\tscriptJob -kill $SkinnyScriptJob -force;\n\t\tSkinny_UpdateCluster;\n\t\t$SkinnyScriptJob=`scriptJob -p SkinnyUI -e \"SelectionChanged\" \"Skinny_UpdateCluster\"`;\t\t\t\n\t}\n\t\n}\n// END Skinny_ScriptJob //\n\n\n\n\n\n///////////////////////////////////////\n/// Query From Paint Weight Tool: //////\n///  Value, Display, Brush, Statlus /////\n///   Operation(replace,add,smooth) /////\n///\tAnd Applying to SkinTool UI  /////\n///////////////////////////////////////////\nglobal proc Skinny_QueryUI() {\n\n\t// CurrentCtx\n\tglobal string $Skinny_CurrentCtx;\n\n\t// \tartAttrSkinContext & artAttrContext need to be open first\n\t//\tbefore Skinny can query them. Open and close them to fix that.\n\tif (`artAttrCtx -ex artAttrSkinContext`==0 ) { // Skin Context\t\t\n\t   ArtPaintSkinWeightsTool;\n\t   SelectMaskToolMarkingMenu;\n\t   SelectMaskToolMarkingMenuPopDown;\n\t   //artAttrCtx artAttrSkinContext;\n\t}\n\tif (`artAttrCtx -ex artAttrContext`==0 ) { // Cluster Context\n\t\tartAttrCtx artAttrContext;\n\t   //ArtPaintSkinWeightsTool;\n\t   //SelectMaskToolMarkingMenu;\n\t   //SelectMaskToolMarkingMenuPopDown;\n\t}\n\t\n\t\n// Query-Paint Value\n\tfloatSliderGrp -e -v `artAttrCtx -q -value $Skinny_CurrentCtx` ValSlider;\t\n// Query-Display Value\n\tfloatSliderGrp -e -v `artAttrCtx -q -colorrangeupper $Skinny_CurrentCtx` DisSlider;\n// Query-Staylus On/Off\n\tcheckBoxGrp -e -v1 `artAttrCtx -q -usepressure $Skinny_CurrentCtx` statlusBox;\n// Query-Paint Operation\n\tradioButton -e -sl (\"Operation\"+ `artAttrCtx -q -sao $Skinny_CurrentCtx`);\n\t \n// Query-Brush type\n\tif (`artAttrCtx -q -stampProfile $Skinny_CurrentCtx`==\"gaussian\") {\n\t\ticonTextRadioButton -e -sl ButtonBrush1;\n\t\t} else if (`artAttrCtx -q -stampProfile $Skinny_CurrentCtx`==\"poly\") {\n\t\ticonTextRadioButton -e -sl ButtonBrush2;\n\t\t} else if (`artAttrCtx -q -stampProfile $Skinny_CurrentCtx`==\"solid\") {\n\t\ticonTextRadioButton -e -sl ButtonBrush3;\n\t}\n// Query Color FeedBack & WireFrame\n    checkBoxGrp -e -v1 `artAttrCtx -q -showactive $Skinny_CurrentCtx` SkinnyWireFrame;\n    checkBoxGrp -e -v1 `artAttrCtx -q -colorfeedback $Skinny_CurrentCtx` SkinnyColorFeed;\n} // Query From Paint Weight Tool END//\n\n\n \n\n\n\n\n\n/////////////////////////////////\n//// SkinToolHELP Windows   ////\n/////////////////////////////// \n\nglobal proc AS_SkinnyHelp ( int $function ) {\nif (`window -ex SkinToolHelpUI`)\n\t{\n\tdeleteUI SkinToolHelpUI;\n\t}\nwindow -tlb 1 -title \"Skinny helper\" SkinToolHelpUI;\nformLayout SkinToolHelp;\nstring $tabs = `tabLayout -innerMarginWidth 5 -innerMarginHeight 5 SkinToolHelpTab `;\n\n// FormLayout Adjustment Start\n\tformLayout -edit\n\t-attachForm $tabs \"top\"    0\n\t\t-attachForm $tabs \"left\"   0\n\t\t-attachForm $tabs \"bottom\" 0\n\t\t-attachForm $tabs \"right\"  0\n\t\tSkinToolHelp;\n\n\t\tstring $HelpTab = `columnLayout -columnAlign \"left\"`;\n\t\t\ttext  -w 340 -fn \"tinyBoldLabelFont\" (\"Skinny version 3.9\\n\" + \"  Asi Sudai   asi@asimation.com www.reel.asimation.com\\n\");\n\t\t\t\n\t\t\ttext  -h 15 \"Skinny Features:\\n\";\n\t\t\t\n\t\t\ttext  -h 15 \"   Paint Tools\\n\";\n\t\t\ttext  -h 15 \"      All the basic Paint tools from Maya paint weight tool.\";\n\t\t\ttext  -h 15 \"      Add, Replace, Smooth, Scale...\";\n\t\t\ttext  -h 15 \"      Val Slider is value of the brush\";\n\t\t\ttext  -h 15 \"      Dis Slider is the max color feedback\";\n\t\t\ttext  -h 15 \" \";\n\t\t\t\n\t\t\ttext  -h 15 \"   Joint Rotate\\n\";\n\t\t\ttext  -h 15 \"      Rotate Joints while skinning.\\n\";\n\t\t\ttext  -h 15 \"      select joints from ScrollList and Rotate them.\\n\";\n\t\t\ttext  -h 15 \"      can work on muiltiply joints. if joint rotate is already connect\\n\";\n\t\t\ttext  -h 15 \"      it won't be rotated.\\n\";\n\t\t\ttext  -h 15 \" \";\n\t\t\t\n\t\t\ttext  -h 15 \"   Preset\\n\";\n\t\t\ttext  -h 15 \"      The reason i made Skinny, Maya UI joint List uncomfortable.\\n\";\n\t\t\ttext  -h 15 \"      make set for Parts you want to paint, and hide the rest.\\n\";\n\t\t\ttext  -h 15 \"      See & Paint only the Joints you need, joints that you don't see\\n\";\n\t\t\ttext  -h 15 \"      in ScrollList are automatic hold/lock by skinny\\n\";\n\t\t\ttext  -h 15 \"      So they won't be painted by mistake.\\n\";\n\t\t\ttext  -h 15 \" \";\n\n\t\t\ttext  -h 15 \"   Joint Order\\n\";\n\t\t\ttext  -h 27 \"      `Alphabetical`, `Graph Order` And `By Hold`.\\n\";\n\n\t\t\ttext  -h 15 \"   Utility\\n\";\t\t\t\n\t\t\ttext  -h 15 \"      Mirror Weight, simple mirror X+ to X- and backwards.\\n\";\n\t\t\ttext  -h 15 \"                   Right Click open Maya Mirror Options.\";\t\t\t\n\t\t\ttext  -h 15 \"      Purne Weight, with Purne Value.\";\n\t\t\t\n\t\t\ttext  -h 15 \"   Influence\\n\";\t\t\t\n\t\t\ttext  -h 15 \"      -Show Zero Weights, show in Skinny ScrollList only joints.\\n\";\n\t\t\ttext  -h 20 \"       that have 0 weight on current painted object.\\n\";\n\t\t\ttext  -h 15 \"      -Remove influence. select joints in Skinny and remove them from.\\n\";\n\t\t\ttext  -h 20 \"       from current painted object.\\n\";\n\t\t\ttext  -h 15 \"      -Add influence. select joints to add to selected objects with skin.\\n\";\n\t\t\ttext  -h 15 \"       the order of selection ( joints & skinObj ) isn't important.\\n\";\n\n\t\t\tsetParent ..;\n\n\t\tstring $BugsTab = `columnLayout -columnAlign \"left\"`;\n\t\t\ttext  -h 15 \"Bugs And Other `Features` \\n\";\n\n\t\t\ttext  -h 15 \"   - Skinny won't update selection if select paint joint\\n\";\n\t\t\ttext  -h 15 \"     from outside Skinny UI .\\n\";\t\t\t\n\t\t\ttext  -h 15 \"   - when Removing influence,Skinny show warning messages\\n\";\n\t\t\ttext  -h 15 \"     It's ok,  Ignore it... \\n\";\t\t\t\n\t\t\ttext  -h 15 \" \";\n\t\t\ttext  -h 15 \" If you find a Bug or even worse, lot's of Bugs! Email me \\n\";\n\t\t\ttext  -h 15 -w 300 -fn \"tinyBoldLabelFont\" \"Asi Sudai, asi@asimation.com\";\n\t\t\tsetParent ..;\n\n\t\ttabLayout -edit\n\t\t\t-tabLabel $HelpTab \"help...\" -tabLabel $BugsTab \"known Bugs\"\n\t\t\t$tabs;\n\t// FormLayout Adjustment END\n\t\n//Query Witch tab should show. If 1 \"known Bugs\" <-else-> \"help...\"\nif ( $function==1 ) {\ntabLayout -e -selectTabIndex 2 SkinToolHelpTab;\n}\n\t\nwindow -e -w 350 -h 620 -s 0 SkinToolHelpUI;\nshowWindow;\n}// END\n\n//////////////////////////////////\n//// SkinToolHELP Windows END ///\n////////////////////////////////\n\n\n\n\n/////////////////////////////////\n//// SkinTool Update Proc   ////\n///////////////////////////////\nglobal proc Skinny_UpdateSkin ( string $ByName, int $createFullSet ) {\n\n// If selected Obj have SkinCluster \n// Then open Paint Skin Weights\n// If nothing is selected skip Updating\n\nstring $SelObj[1]= `ls -hd 1 -sl`;\nif (size($SelObj)==1) {\n\t// Note.Error msg accurse if Nothing selected.\n\tstring $SClusterName= `findRelatedSkinCluster $SelObj[0]`;\n\tif ( $SClusterName == \"\"){\n\t\tstring $Shape[] = `listRelatives -ni -p $SelObj[0]`;\n\t\t$SClusterName= `findRelatedSkinCluster $Shape[0]`;\n\t\t}\n\tif ( `currentCtx` != \"artAttrSkinContext\" ) {\n\t\tif ( $SClusterName != \"\") {\n\t\t\tArtPaintSkinWeightsTool;\n\t\t} else {\n\t\t    textScrollList -e -removeAll jointScrollList;\n\t\t\tprint \"Skinny Message: works only on Skinned Objects\\n\";\n\t\t\treturn;\n\t\t\t}\n\t}\n\t// Create Skinny Full Set for selected Objs.\n\tif ($createFullSet)\n        Skinny_createSet;\n\t// Get ScrollList Items from Proc AS_SkinnyScrollListItems.\t\n\tstring $SortedScrollListItems[] = `AS_SkinnyScrollListItems`;\n\n\t// $ByName ask if Update ScrollList items should be kept by-\n\t// Name or line Number\n\tstring $SelItemsName[];\n\tint $SelItemsNumber[];\n\tif ( $ByName==\"ByName\" ) {\n\t\t$SelItemsName=`textScrollList -q -si jointScrollList`;\n\t\t} else {\n\t\t$SelItemsNumber=`textScrollList -q -sii jointScrollList`;\n\t\t}\n\n\t// Clear ScrollList before updateing ScrollList\n\ttextScrollList -e -removeAll jointScrollList;\n\n\n\t// Add Items to jointScrollList.\n\t// If Hold, Add Prifx \"[H]   \" to Hold Joints\n\tfor ( $ScrollListItem in $SortedScrollListItems ) {\n\t\tif ( `getAttr ( $ScrollListItem + \".liw\" )` == 1 ) {\n\t\t\tstring $ScrollListHoldItem = \"[H]   \" + $ScrollListItem;\n\t\t\ttextScrollList -e -append $ScrollListHoldItem jointScrollList;\n\t\t\t} else {\n\t\t\tstring $ScrollListCleanItem= \"       \" + $ScrollListItem;\n\t\t\ttextScrollList -e -append $ScrollListCleanItem jointScrollList;\n\t\t\t} \n\t\t}\n\n\t// Get back Selected Items In ScrollList.\n\tif ( $ByName==\"ByName\" ) {\n\n\t\t//string $itemName;\n\t\tfor ($itemName in $SelItemsName) {\n\t\t\ttextScrollList -e -si $itemName jointScrollList;\n\t\t\t}\n\t\t} else {\n\t\t//int $itemNum;\n\t\tfor ($itemNum in $SelItemsNumber) {\n\t\t\ttextScrollList -e -sii $itemNum jointScrollList;\n\t\t\t}\n\t\t}\n\t\t\n\t// Lock Joints that are in SkinCluster and NOT in ScrollList right now.\n\tAS_SkinnyHoldPresets;\n}// End of If nothing selected\n\t\n}// END\n/////////////////////////////////////\n//// SkinTool Update Proc END   ////\n///////////////////////////////////\n\n\n///////////////////\n// Tokenize Proc //\n///////////////////\nglobal proc string AS_SkinnyTokenize ( string $TokenizeString) { \n\nstring $buffer[]; // Temp String\n\nint $tokens = `tokenize $TokenizeString \"[]   \" $buffer`;\n\nif ($tokens==1){\n\treturn $buffer[0];\n\t} else {\n\treturn $buffer[1];\n\t}\n}//End  Rotate Joint Proc\n\n\n\n\n/////////////////////////////////\n//// SkinTool Functions Proc////\n///////////////////////////////\nglobal proc Skinny_Function ( string $function ) {\n\t\n\t// global function to hold selected by order\n\tglobal string $g_skinnySelOrder[];\n\t\n\tswitch ( $function ) {\n\n\n//--------------------\n// ScrollList selection proc: Skin / Cluster mode.\n// Check whice mode is on.\n//--------------------\t\t\ncase \"paint\":\n\t\n\t// Used for Wieght Tools, transfer weight;\n\tstring $tempArray[] = `textScrollList -q -si jointScrollList`;\n\tprint $tempArray[1];\n\tif(size($tempArray)==1){\n\t\tclear $g_skinnySelOrder;\n\t\t$g_skinnySelOrder[0] = $tempArray[0];\n\t}\n\t\telse\n\t\t\tif ($g_skinnySelOrder[0] == $tempArray[0])\n\t\t\t\t$g_skinnySelOrder[1] = $tempArray[1];\n\t\t\telse\n\t\t\t\t$g_skinnySelOrder[1] = $tempArray[0];\n\n\t\t\n\tif (!`checkBoxGrp -q -v1 ScriptJobBox`) return;\n\t\n\tstring $scrollListItems[]= `textScrollList -q -selectItem jointScrollList`;\n\tif (size($scrollListItems)==0) return;\n\tif (`radioButton -q -sl SkinnyModeSkin`) // If Skin mode\n\t{\t\n\t\t\n    \tstring $PaintSelJoint = `AS_SkinnyTokenize $scrollListItems[0]`;\n    \tsetSmoothSkinInfluence $PaintSelJoint; // paint joint\t\n    \t// Update Joint Rotation Slider to Joint Rotation\n    \tfloat $SelJointRot[] = `getAttr ($PaintSelJoint+\".rotate\")`;\n    \tfloatSliderGrp -e -v $SelJointRot[0] SliderX;\n    \tfloatSliderGrp -e -v $SelJointRot[1] SliderY;\n    \tfloatSliderGrp -e -v $SelJointRot[2] SliderZ;\n\t} \n\t\n\telse  // If Cluster mode\n\t{\t\n\tartSetToolAndSelectAttr( \"artAttrCtx\", (\"cluster.\"+ $scrollListItems[0] +\".weights\") );\n\t// Cluster transform layout\n\tint $ClusterRadioButton=`radioButtonGrp -q -sl skinnyClusterTransRadio`;\n\tstring $transform;\n\tif ($ClusterRadioButton){$transform=\"translate\";}\n\t\telse if ($ClusterRadioButton==2){$transform=\"rotate\";}\n\t\t\telse if ($ClusterRadioButton==3){$transform=\"scale\";}\n\tSkinny_ClusterTranformProc $transform;\n\tprint \"\\n\"; // Fix maya warning for no reason. \n\t}\n\tbreak; // case \"paint\" END\n\n\ncase \"DubbleClickHold\": //ASI NOTE, an all Update isn't needed can be more simple\nstring $SelJoint[]= `textScrollList -q -selectItem jointScrollList`;\n\t\n\t\n\tstring $buffer[];\n\tint $tokens=`tokenize $SelJoint[0] \" \" $buffer`;\n\tif ($tokens==1){\n\tsetAttr ( $buffer[0] + \".liw\" ) 1;\n\t } else {\n\tsetAttr ( $buffer[1] + \".liw\" ) 0;\n\t}\n\t\n// update the ScrollList\n\tSkinny_UpdateSkin ByNumber 0;\n// Update Maya influnce list\n\t//artAttrSkinJointMenu(\"skinClusterInflList\",\"\"+ \"artAttrCtx\"+\"\");\n\tartAttrSkinJointMenu( \"artJoinListPopupMenu\", \"artAttrSkinPaintCtx\" );\n\tbreak; // case DubbleClickHold END\n\n\t}\n}// Skinny_Function END\n/////////////////////////////////////\n//// SkinTool Functions Proc END////\n///////////////////////////////////\n\n\n\n\n\n//////////////////////////\n/// Weighting Proc\t//\n///\tMirror, Purn\t//\n/////////////////////////\t\nglobal proc AS_SkinnyWeightFunction ( string $case, string $function ) {\n\n\t//Find SkinCluster number\n\t\tstring $SelObj[1]= `ls -hd 1 -sl`;\n\t\tstring $SClusterName= `findRelatedSkinCluster $SelObj[0]`;\n\nswitch ($case) { \n\n\ncase \"MirorWeight\":\n\tif ( $function == \"X\" ) {\n\tcopySkinWeights -ss $SClusterName -ds $SClusterName -mirrorMode YZ;\n\t} else {\n\tcopySkinWeights -ss $SClusterName -ds $SClusterName -mirrorInverse -mirrorMode YZ;\n\t}\n\tbreak;\n\t\n\t\ncase \"PurnWeight\":\n\tfloat $PurneValue = `floatField -q -v PurneWeightText`;\n\t//Purn Weight\n\t\tskinPercent -prw $PurneValue $SClusterName;\n\tbreak;\n    }\n// Bug Fix. need to update paint weight tool to show new status\n select `ls -sl`;\n} // END\n////////////////////////////////////\n////   Weighting Proc END    //////\n//////////////////////////////////\n\n\n\n//////////////////////////\n/// Lock & UnLock Proc //\n/////////////////////////\nglobal proc AS_SkinnyLockFunction ( string $AllorSel, int $setLockValue ) {\n\t\n\tswitch ($AllorSel) { \n\t\n\t\tcase \"All\": // Get All items from jointScrollList\n\t\t\tstring $ItemsInJointScroll[] = `textScrollList -q -ai jointScrollList`;\n\t\tbreak;\n\t\n\t\tcase \"Selected\": // Get Selected items from jointScrollList\n\t\t\tstring $ItemsInJointScroll[] = `textScrollList -q -selectItem jointScrollList`;\n\t\tbreak;\n\t\t}\n\t// Lock or Unlock Action\n\tfor ( $jointScroll in $ItemsInJointScroll ) \n\t\tsetAttr `AS_SkinnyTokenize ( $jointScroll + \".liw\")` $setLockValue;\n\n\t// Update jointScrollList\n\t\tSkinny_UpdateSkin ByNumber 0;\n\n\t// Update Maya Influnce list\n\t\t//artAttrSkinJointMenu(\"skinClusterInflList\",\"\"+ \"artAttrCtx\"+\"\");\n\t\tartAttrSkinJointMenu( \"artJoinListPopupMenu\", \"artAttrSkinPaintCtx\" );\n} // END\n////////////////////////////////////\n////  Lock & UnLock Proc END //////\n//////////////////////////////////\n\n\n\n\n//--------------\n// Set Finder\n//  make menuItem for the Sets Attributes in SkinnySets Node\n//--------------\nglobal proc Skinny_findSets()\n{\n\t// Which Mode are we?\n\t// \t\t$SkinnySet[0]= which mode are we\n\t// \t\t$SkinnySet[1]= what action to do\n\tstring $SkinnySet[2];\n\tif (`radioButton -q -sl SkinnyModeSkin`) // If Skin mode\n\t\t$SkinnySet={\"SkinnySets\", \"Skinny_UpdateSkin ByName 0\"};\t\n\telse\n\t\t$SkinnySet={\"SkinnyClusterSets\", \"Skinny_UpdateCluster\"};\n\t\n\t// Find Sets that start with \"Skinny_\"\n\tstring $SkinnySets[]=sort(`listAttr -ud $SkinnySet[0]`);\n\t\n\t// Add Found Sets to SkinnyUI|skinToolmenuBar|SkinToolPreset\n\tfor ( $SetFound in $SkinnySets)\tmenuItem -cb 0 -c ( $SkinnySet[1] ) -label $SetFound -p SkinnyUI|skinToolmenuBar|SkinToolPreset (\"Skinny_\"+$SetFound);\n}// Skinny_findSets END\n\n\n\n//-----------\n// Set Maker\n//  add Set to SkinnySets or SkinnyClusterSets.\n//  get setName and Memebers from SkinnyUI makeSet button\n//-----------\nglobal proc Skinny_SetMaker( string $setName, string $setMembers[])\n{\n\t// Quary which Mode are we Skin or Cluster, an add\n\t// Set to the right Mode. SkinnySets or SkinnyClusterSets.\n\tstring $SkinnySet[2];\n\tif (`radioButton -q -sl SkinnyModeSkin`) // If Skin mode\n\t\t$SkinnySet={\"SkinnySets\", \"Skinny_UpdateSkin ByName 0\"};\t\n\telse\n\t\t$SkinnySet={\"SkinnyClusterSets\", \"Skinny_UpdateCluster\"};\n\t\n\t// selected item from scrollList need to be toknized\n\tfor ( $i=0 ; $i < size($setMembers) ; $i++ )\n\t\t$setMembers[$i]=`AS_SkinnyTokenize $setMembers[$i]`;\n\t\t\n\t// we need to break the SetsMemebrs array to add \":\"\n\t// so later on we could use this string to add \"enum\" attr.\n\tint $SizeMembers=`size($setMembers)`;\n\tint $i=0;\n\tstring $tempString=\"\";\n\tdo{\n\t\t$tempString=($tempString+$setMembers[$i]+\":\");\n\t\t$i++;\n\t} while ($i<=$SizeMembers);\n\t\n\t// now we can add the members in to SkinntSets Node.\n\taddAttr -ln $setName -at \"enum\" -en $tempString  $SkinnySet[0];\n\tsetAttr -k on ($SkinnySet[0]+\".\"+$setName);\n\t\n\t// Add Set menu to Skinny UI\n\tif (!`menuItem -q -ex (\"Skinny_\"+$setName)`)\n\t\tmenuItem -cb 0 -c ( $SkinnySet[1] ) -label $setName -p SkinnyUI|skinToolmenuBar|SkinToolPreset (\"Skinny_\"+$setName);\n} //Skinny_SetsMaker\n\n\n\n\n//--------------------\n//\tSave / Load Skinny sets into files\n//--------------------\nglobal proc Skinny_saveSet(){\n\tfileBrowserDialog \n\t\t-m 1 \n\t\t-fc \"Skinny_saveSetProc\"\n\t\t-fileType \"mel\"\t\t\n\t\t-an \"Save\";\n}// End proc\n\n\n\n//------------\n// Update SetsTool ScrollList\n//------------\nglobal proc Skinny_updateSetsScrollList()\n{\n\t// If set Tools isn't exists return,no error jumps.\n\tif (!`textScrollList -ex skinny_SetsScrollList`) return;\t\n\t\n\t// Switch between Modes\n\tstring $SkinnySet;\n\tif (`radioButton -q -sl SkinnyModeSkin`) // If Skin mode\n\t\t$SkinnySet=\"SkinnySets\";\t\n\telse\n\t\t$SkinnySet=\"SkinnyClusterSets\";\n\t\n\t// Find all sets from SetsNode\n\tstring $SkinnySets[]=sort(`listAttr -ud $SkinnySet`);\n\t\n\t// Clear current items from Sets ScrollList\n\ttextScrollList -e -ra skinny_SetsScrollList;\n\t\n\t// Add current Sets\n\tfor ($item in $SkinnySets)\n\t\ttextScrollList -e -append $item skinny_SetsScrollList;\n\n}//Skinny_updateSetsScrollList\n\n//---------------\n// Add Remove from Set\n//---------------\nglobal proc Skinny_AddRemove2Set(string $whatToDo)\n{\n\t// Check which mode are we Skin or Cluster\n\tstring $SkinnySet;\n\tif (`radioButton -q -sl SkinnyModeSkin`) // If Skin mode\n\t\t$SkinnySet=\"SkinnySets\";\t\n\telse\n\t\t$SkinnySet=\"SkinnyClusterSets\";\n\t\n\t\t\n\t// Get selected Sets\n\tstring $selSets[]=`textScrollList -q -si skinny_SetsScrollList`;\n\tif (`size($selSets)`==0) return;\n\t\n\t// Get selected Items. And clear there names.\n\tstring $selItems[]=`textScrollList -q -si jointScrollList`;\n\tfor ( $i=0 ; $i<size($selItems) ; $i++ )\n\t\t\t$selItems[$i] = `AS_SkinnyTokenize $selItems[$i]`;\n\n\t// Start the Loop for each selected Set\n\tfor ($setName in $selSets)\n\t{ // addAttr -q -enumName  (\"SkinnySets.set1\")\n\t\t// Get selected Set members.\t\t\n\t\tstring $tempString=`addAttr -q -enumName  ($SkinnySet+\".\"+$setName)`;\n\t\tstring $members[]; // the Clean members Array.\n\t\ttokenize $tempString \":\" $members;\t\t\n\t\t// Add\n\t\tif ($whatToDo==\"Add\")\n\t\t{\t\t\n\t\t\tfor ( $i=0 ; $i<size($selItems) ; $i++ )\n\t\t\t{\n\t\t\t\tstring $NewMembers[];\n\t\t\t\tif (`stringArrayCount $selItems[$i] $members`==0)\n\t\t\t\t{\n\t\t\t\t\t$NewMembers=`Skinny_AppendStringtoArry $members $selItems[$i]`;\n\t\t\t\t\tdeleteAttr ($SkinnySet+\".\"+$setName);\n\t\t\t\t\tSkinny_SetMaker ($setName, $NewMembers);\n\t\t\t\t}\n\t\t\t}\t\t\n\t\t} else { \n\t\t// Remove\n\t\t\t\n\t\tfor ( $i=0 ; $i<size($selItems) ; $i++ )\n\t\t\t{\n\t\t\t\tstring $removeMembers[];\n\t\t\t\tif (`stringArrayCount $selItems[$i] $members`!=0)\n\t\t\t\t\t$removeMembers=`Skinny_AppendStringtoArry $removeMembers $selItems[$i]`;\n\t\t\t\tif ( size($removeMembers)!=size($members) )\n\t\t\t\t{\n\t\t\t\t\tstring $NewMembers[]=stringArrayRemove($removeMembers, $members);\n\t\t\t\t\tdeleteAttr ($SkinnySet+\".\"+$setName);\n\t\t\t\t\tif (`size($NewMembers)`!=0)\t\t\t\t\t\n\t\t\t\t\t\tSkinny_SetMaker ($setName, $NewMembers);\n\t\t\t\t\ttextScrollList -e -da jointScrollList;\n\t\t\t\t\ttextScrollList -e -da jointScrollList;\n\t\t\t\t\ttextScrollList -e -da jointScrollList;\n\t\t\t\t} else {\n\t\t\t\t\tdeleteAttr ($SkinnySet+\".\"+$setName);\n\t\t\t\t\tdeleteUI -mi (\"Skinny_\"+$setName);\t\t\t\t\t\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t// Update Skinny UI\n\tSkinny_updateSetsScrollList;\n\tif ($SkinnySet==\"SkinnySets\")\n\t\tSkinny_UpdateSkin ByName 0;\n\t}\n}// \n\n\n//----------\n// Sets Tool\n//----------\nglobal proc Skinny_SetsTool()\n{\nif (`menuItem -q -cb \"Skinny_SetsTool\"`)\n{\n\n\t// Hide Paint Tools UI\n\tframeLayout -e -cll 1 -cl 0 -l \"Set Tools\" \n\t\t\t-cc \"menuItem -e -cb 0 Skinny_SetsTool; Skinny_SetsTool\"\n\t\t\tskinnyPaintFrame;\n\t\n\tformLayout -e -m 0 skinnyPaintForm;\t\n\t\n\t// Sets Tool UI creation:\n\tif (!`columnLayout -ex skinnySetsTool`)\n\t{\n\tcolumnLayout -adj 1 -rs 2 -p \"skinnyPaintColumn\" skinnySetsTool;\n\t\t\n\t\t// Set Maker\n\t\tcolumnLayout -rs 1 -adj 1;\n\t\t\ttextField -w 133 -it \"- Set Name - \" skinny_setName;\n\t\t\tbutton -h 18 -l \"Make Set\"\n\t\t\t\t-c \"string $setName=`textField -q -tx skinny_setName`; string $setMembers[]=`textScrollList -q -si jointScrollList`; if (size($setMembers)>0) { Skinny_SetMaker ($setName, $setMembers); Skinny_updateSetsScrollList; textField -e -tx \\\"- Set Name - \\\" skinny_setName; print \\\"New Set Created\\\";\t} else { warning \\\"Select Items to set first\\\"; }\";\n\t\t\t\n\t\t\tseparator -bgc 0.5 0.6 1 -h 3;\n\t\tsetParent ..;\n\t\t\t\n\t\t// Set Tools\n\t\ttextScrollList -h 180 -allowMultiSelection 1 skinny_SetsScrollList;\t\t\n\t\tseparator -bgc 0.5 0.6 1 -h 3;\n\t\t\n\t\trowColumnLayout -nc 2 -cs 2 3 -cw 1 65 -cw 2 65;\n\t\t\tbutton -h 18 -l \"Add\" -ann \"Add items to Set\" -c (\"Skinny_AddRemove2Set Add\");\n\t\t\t\n\t\t\tbutton  -h 18 -l \"Remove\" -ann \"Remove items to Set\" -c (\"Skinny_AddRemove2Set Remove\");\n\t\t\t\n\t\t\t\n\t\tsetParent ..;\n\t\t\n\t\trowColumnLayout -nc 2 -cs 2 1 -cw 1 65 -cw 2 65;\n\t\t\tbutton -en 0 -h 18 -l \"Save Sets\" -c (\"Skinny_saveSet\");\n\t\t\tbutton -en 0 -h 18 -l \"Load Sets\" -c (\"Skinny_loadSet\");\n\t\tsetParent ..;\n\t\t\n\t\tbutton -h 18 -l \"Delete Set\" \n\t\t\t\t-c \"string $Sets[]=`textScrollList -q -si skinny_SetsScrollList`;\tstring $SkinnySet=\\\"SkinnySets\\\";if (!`radioButton -q -sl SkinnyModeSkin`) $SkinnySet=\\\"SkinnyClusterSets\\\";for ($item in $Sets) {\tdeleteAttr ($SkinnySet+\\\".\\\"+$item);\tdeleteUI -mi (\\\"Skinny_\\\"+$item); }Skinny_updateSetsScrollList; \";\n\t\t\t\t\n\t} // End of if SetsTool UI exists\n\telse columnLayout -e -m 1 skinnySetsTool;\n\t\n\t// Call updateSetsScrollList\n\tSkinny_updateSetsScrollList;\n}\n// If Sets Tool menuItem is 0\nelse {\n\t\n\t// Hide Sets Tools UI\n\tframeLayout -e -cl 0 skinnyPaintFrame;\n\tframeLayout -e -l \"Paint Tools\"\n\t\t-cc \"menuItem -e -cb 1 Skinny_SetsTool; Skinny_SetsTool\"\n\t\tskinnyPaintFrame;\n\tcolumnLayout -e -m 0 skinnySetsTool;\n\t\n\t// Show Paint Tools UI\n\tformLayout -e -m 1 skinnyPaintForm;\n}\n\n}// Skinny_SetsTool\n\n\n\n\n\n\n\n\n\n/////////////////////////////////////////\n/// Hold Joints not in ScrollList    ///\n/// When one or more Preset changes ///\n//////////////////////////////////////\nglobal proc AS_SkinnyHoldPresets() {\n\n// Get joints in ScrollList, DON'T hold them.\n// Hold all the other joints in SkinCluster.\n\tstring $ScrollListItems[] = `textScrollList -q -ai jointScrollList`;\n\tfor ( $i=0 ; $i<size($ScrollListItems) ; $i++ ) {\n\t\t$ScrollListItems[$i] = `AS_SkinnyTokenize $ScrollListItems[$i]`;\n\t}\n\t\n// Get Joints in SkinCluster that should be Hold\n\tstring $SelObj[1]= `ls -hd 1 -sl`;\n\tstring $SClusterName= `findRelatedSkinCluster $SelObj[0]`;\n\t// Fix small Error msg\n\n\tif (`size($SClusterName)`>0){\n\t\tstring $NotInScrollListItems[]=`skinCluster -q -inf $SClusterName`;\n\n\t\t// stringArrayRemove (Joints ScrollList) from (Joints in SkinCluster)\n\t\t$NotInScrollListItems = stringArrayRemove($ScrollListItems, $NotInScrollListItems);\n\n\t\t// Lock All the joints that aren't in ScrollListItems\n\t\tfor ( $jointScroll in $NotInScrollListItems ) {\n\t\t\tsetAttr (`AS_SkinnyTokenize ($jointScroll+ \".liw\")`) 1;\n\t\t\t}\n\t}\n}// AS_SkinnyHoldPresets END\n///////////////////////////////////////////\n/// Hold Joints not in ScrollList END  ///\n/////////////////////////////////////////\n\n\n\n//----------------\n// manger menuItem \"complete set\" in Skinny UI\n//----------------\nglobal proc AS_SkinnyFullSet(){\n\tstring $SkinSetMode=\"SkinnySets\";\n\tif (!`radioButton -q -sl SkinnyModeSkin`)\n\t\t\t$SkinSetMode=\"SkinnyClusterSets\";\n\t\n\tstring $SkinnySets[]=`listAttr -ud $SkinSetMode`;\n\t// If Full Set Is Select. UnSelect all the others\n\tif (`menuItem -q -cb Skinny_FullSet`==1){\n\t\tfor ( $SetFound in $SkinnySets) {\n\t\t\tmenuItem -e -cb 0 (\"Skinny_\"+$SetFound);\n\t\t\t}\n\t\t}\n\t// Run Update ScrollList\n\tif ($SkinSetMode==\"SkinnySets\")\n\t\tSkinny_UpdateSkin ByName 0;\n\telse\n\t\tSkinny_UpdateCluster;\n}\n\n\n///////////////////////////////////////////////\n// Show ScrollList items by Skinny Presets ///\n/////////////////////////////////////////////\nglobal proc string[] AS_SkinnyScrollListItems() {\n\n\tglobal string $Skinny_orderAlph;\n\tglobal string $Skinny_orderGrap;\n\tglobal string $Skinny_orderHold;\n\n\t// Find Sets that start with \"Skinny_\"\n\tstring $SkinnySets[]=`listAttr -ud \"SkinnySets\"`;\n\t\n\t// Query state of Skinny Sets  \n\tstring $SetCollector[];\t\t// Sets Collector Items\n\tstring $ScrollListItems[];\t// The Final Items Arry.\n\tstring $tempString;\n\n\t// PRESET Collector.\n\t// Ask Sets Status (On/Off)\n\tfor ( $SetFound in $SkinnySets) {\n\t\t\n\t\t// If any of SkinnySet menuItems are ON,Collect there Sets Members\t\n\t\tif (`menuItem -q -cb (\"Skinny_\"+$SetFound) `) {\n\t\t\t$tempString=`addAttr -q -enumName  (\"SkinnySets.\"+$SetFound)`;\n\t\t\tstring $SetMembers[];\n\t\t\ttokenize $tempString \":\" $SetMembers;\t\t\n\t\t\tint $SetSize = size($SetMembers);\n\t\t\tappendStringArray ( $SetCollector, $SetMembers, $SetSize );\n\t\t//UnSelect \"Full Set\" PresetMenu\n\t\tmenuItem -e -cb 0 Skinny_FullSet;\n\t\t\t}\n\t    }\n\n\t// Remove From collected Set, members that aren't bind joint, cause they can't be Locked, and they couse error messages.\n\tstring $JointsToRemove[];\n\tfor ($item in $SetCollector) {\n\t    // ask if joint have lockInfluenceWeights attr, if not remove him from string arry.\n\t    if (!size(`listAttr -r -st \"lockInfluenceWeights\" $item`))\n\t\t$JointsToRemove=`Skinny_AppendStringtoArry $JointsToRemove $item`;\n\t}\n\t    // Remove found Joints from SetCollector\n\t    $SetCollector=stringArrayRemove($JointsToRemove, $SetCollector);\n    \n    // If ALL SkinnySet menuItems are OFF, Get Members from Full Set SkinnyFullSet_+ObjName.\n\tstring $SelObj[5]= `ls -sl`;\n\t    if (!size($SetCollector)){\n\t\tfor ($item in $SelObj) { \n\t\t    if (!`objExists \"SkinnySets\"`) return $ScrollListItems;\n\t\t    string $FullSetMembers[]=`sets -q \"SkinnySets\"`;\n\t\t    int $SetSize=size($FullSetMembers);\n\t\t    appendStringArray($SetCollector, $FullSetMembers, $SetSize);\n\t\t}\n\t\t    \n\t\t    // Select \"Full Set\" PresetMenu\n\t\t    menuItem -e -cb 1 Skinny_FullSet;\n\t    }\n\t    \n\t    // Remove Sets Duplicate Members.\n\t    string $ScrollListItems[] = stringArrayRemoveDuplicates($SetCollector);\n    \n\t    \n\t    // Zero Weight take only the joints with no influence from it list.\n\t    if (`checkBoxGrp -q -v1 ShowZeroWeight`) {\n\t    string $ListOfNoWeight[]=`FindNoWeight $SelObj[0]`;    \t\n\t    // Substract list of Zero Weight with Sorted list, and then substract again for clear list\n\t    string $ListOfWeight[]=stringArrayRemove($ListOfNoWeight, $ScrollListItems);\n\t    $ScrollListItems=stringArrayRemove($ListOfWeight, $ScrollListItems);    \t\n\t    }\n\n// After All Members were collected.\n// Ask if need to Sort by: Alphabetical/Graph Order/By Hold/.\n// Sorted or Not?\n\tstring $SortedScrollListItems[];\n\t//Alphabetical//\n\tif ( `menuItem -q -rb $Skinny_orderAlph`==1 ) {\n\t\t$SortedScrollListItems = `sort $ScrollListItems`;\n\t//By Hold//\n\t} else if ( `menuItem -q -rb $Skinny_orderHold`==1 ) {\n\t\tstring $buffer[];\t\n\t\tfor ( $ScrollListItem in $ScrollListItems ) {\n\t\t\tif ( `getAttr ( $ScrollListItem + \".liw\" )` == 0 ) {\n\t\t\t\t$buffer[0] = $ScrollListItem;\n\t\t\t\tappendStringArray($SortedScrollListItems, $buffer, 1);\n\t\t\t\t} \n\t\t\t}\n\t\tfor ( $ScrollListItem in $ScrollListItems ) {\n\t\t\tif ( `getAttr ( $ScrollListItem + \".liw\" )` == 1 ) {\n\t\t\t\t$buffer[0] = $ScrollListItem;\n\t\t\t\tappendStringArray($SortedScrollListItems, $buffer, 1);\n\t\t\t\t} \n\t\t\t}\n\t//Graph Order//\n\t} else {\n\t\t$SortedScrollListItems = $ScrollListItems;\n\t}\n\nreturn $SortedScrollListItems;\n}// AS_SkinnyScrollListItems END\n\n\n\n\n\n// Joint Rotation FrameLayout Command\n//  Set Key on Selected joints\n\n\n// Rotate Joints \nglobal proc SkinnyRotJNT(string $Selected ,int $reset) {\n// Query Selected Items in ScrollList.\n    string $JNTsRotate[];\n    if ($Selected==\"Selected\"){\n\t$JNTsRotate=`textScrollList -q -si jointScrollList`;\n\t} else {\n\t$JNTsRotate=`textScrollList -q -ai jointScrollList`;\n\t}\n\tif ($reset) {\n\t\t// Reset Value\n\t\tfloatSliderGrp -e -v 0.0 SliderX;\n\t\tfloatSliderGrp -e -v 0.0 SliderY;\n\t\tfloatSliderGrp -e -v 0.0 SliderZ;\n\t\t}\n\n\t// Rotate Selected Joints\n\tfor ( $i=0 ; $i < size($JNTsRotate) ; $i++ ) {\n\t\t// Clean Joint name\n\t\tstring $JNTRotate= `AS_SkinnyTokenize $JNTsRotate[$i]`;\n\t    // Connect Slider Value To Joint\n\t\tint $RotXvalue = `floatSliderGrp -q -v SliderX`;\n\t\tint $RotYvalue = `floatSliderGrp -q -v SliderY`;\n\t\tint $RotZvalue = `floatSliderGrp -q -v SliderZ`;\n\t\n\n\t\trotate $RotXvalue $RotYvalue $RotZvalue $JNTRotate;\n\t}\n}//End  Rotate Joint Proc\n\n\n\nglobal proc JointRotKey ( string $function, string $Selection ){\n// Query Selected Joints\nstring $JNTtoKey[];\nif ($Selection==\"Selected\")\n    $JNTtoKey=`textScrollList -q -si jointScrollList`;\nif ($Selection==\"All\")\n    $JNTtoKey=`textScrollList -q -ai jointScrollList`;\n\n\nif (size($JNTtoKey)==0){\n    print \"Skinny Message: Nothing Is Selected\\n\";\n} else {\nif ($function==\"SetKey\")\n{\n    // Turn off autoKey, can cause problem with Keying joints\n    if (`autoKeyframe -q -state`){\n    autoKeyframe -state false;\n    print \"Skinny Message: autoKeyframe was turn off. can make unwanted keys\\n\";\n    }\n    // Set Key\n    for ( $joint in $JNTtoKey) {\n        $joint= `AS_SkinnyTokenize $joint`;\n        setKeyframe ($joint + \".rotate\");\n    }\n    // Print confirmation message\n    print \"Skinny Message: Set Keyframes For Selected Joints\\n\";\n} else {\n    // Delete Keys\n    for ( $joint in $JNTtoKey){\n        $joint= `AS_SkinnyTokenize $joint`;\n        // Cut all Keys\n        cutKey -attribute rotate $joint;\n        // Reset Slider\n        SkinnyRotJNT Selected 1;\n    }\n    // Print confirmation message\n    print \"Skinny Message:  Delete Keyframes Form Selected Joints\\n\";\n        }\n    }\n}//End JointRotKey\n\n\n//---------------\n// Skinny Check for missing XPM before loading Skinny\n//---------------\nproc string XpmFileCheck()\n{\n\tglobal string $gXBMLANGPATH[];\n\tstring $FoundedXpm[];\n\tstring $XmpFiles[]={\t\t\t\t\t\t\n\t\t\t\t\t\t\"AS_SkinnyAdd.XPM\",\n\t\t\t\t\t\t\"AS_SkinnyFLOOD.XPM\",\n\t\t\t\t\t\t\"AS_SkinnyMirorMins.XPM\",\n\t\t\t\t\t\t\"AS_SkinnyMirorPlus.XPM\",\n\t\t\t\t\t\t\"AS_SkinnyPurne.XPM\",\n\t\t\t\t\t\t\"AS_SkinnyRemove.XPM\"\n\t\t\t\t\t\t};\n\t\t\t\t\t\t\t\n\tfor ($t=0; $t<=size($XmpFiles); $t++) {\n\t\tfor ($i=0; $i<=size($gXBMLANGPATH); $i++) {\n\t\t\tstring $srchSkinny[]=`getFileList -folder \"E:/My Pictures/maya/6.0/prefs/icons/\" -filespec $XmpFiles[$t]`;\n\t\t\tif (`size($srchSkinny)`){\t\t\t\t\n\t\t\t\t$FoundedXpm[$t]=$XmpFiles[$t];\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t}\n\t\n\tstring $missingXpm[]=stringArrayRemove($FoundedXpm, $XmpFiles);\n\tif (`size($missingXpm)`==0) return \"Ok\";\n\t\t\n\tstring $PrintMisingXpm;\t\n\tfor ($i=0; $i<=size($missingXpm); $i++)\n\t\t$PrintMisingXpm=($PrintMisingXpm+$missingXpm[$i]+\"\\n\");\n\t\n\tstring $XpmCheck=`confirmDialog -title \"Missing XPM files\"\n\t\t-message (\"Skinny is missing Xpm images: \\n\"+$PrintMisingXpm+\"Copy missing Xpm files to your ICONS path and RESTART Maya\")\n \t\t-button \"Confirm\" -cancelButton \"Confirm\" -dismissString \"Confirm\"`;\n\treturn $XpmCheck;\n\n}//END XPMCheck\n\n\n\n\n//----------------------\n//\tSkinny Main Proc. build UI\n//----------------------\nglobal proc AS_Skinny() {\n\t\n\t// CurrentCtx\n\tglobal string $Skinny_CurrentCtx;\n\t\n\t// Global names of ui components\n\tglobal string $Skinny_orderAlph;\n\tglobal string $Skinny_orderGrap;\n\tglobal string $Skinny_orderHold;\n\tglobal string $Skinny_vertexFrameCol;\n\nif (`window -ex SkinnyUI`) { deleteUI SkinnyUI; }\n\t\n// Window Creation //\n\t$skinToolWindow = `window -rtf 1 -h 420 -w 295 -s 1 -title \"Skinny V 3.9\" SkinnyUI`;\n\n/// Menu Bars : \"Preset\", \"Order\", \"Edit Smooth Skin\".\n\tmenuBarLayout -p SkinnyUI skinToolmenuBar ;\n\t\tmenu -label \"Skin Sets\" -to 1 SkinToolPreset;\n\t\t\tmenuItem -cb 0 -label \"Sets Tool\" -c ( \"Skinny_SetsTool\" ) Skinny_SetsTool;\n\t\t\tmenuItem -d 1;\n\t\t\tmenuItem -cb 1 -label \"All Bind Set\" -c ( \"AS_SkinnyFullSet\" ) Skinny_FullSet;\n\t\t\t\n\t\tmenu -label \"Order\" SkinToolOrder;\n\t\t\tradioMenuItemCollection;\n\t\t\t\t$Skinny_orderAlph = `menuItem -label \"Alphabetical\" -c ( \"Skinny_UpdateSkin ByName 0\" ) -radioButton off OrderAlph`;\n\t\t\t\t$Skinny_orderGrap = `menuItem -label \"Graph Order\"  -c ( \"Skinny_UpdateSkin ByName 0\" ) -radioButton on OrderGrap`;\n\t\t\t\t$Skinny_orderHold = `menuItem -label \"By Hold\"  -c ( \"Skinny_UpdateSkin ByName 0\" ) -radioButton off OrderHold`;\n\t\t    \n\t\tmenu -label \"MeshSmooth\" -to 1 SkinnyMeshSmooth;\n\t\t    menuItem  -c (\"Skinny_SmoothMesh make\") -label \"Smooth Selected\";\n\t\t    menuItem -c (\"Skinny_SmoothMesh remove\") -label \"Smooth Remove\";\n\t\t    menuItem -d 1;\n\t    \n\t    // Add MAYA SMOOTH SKIN MENU\n\t   // AddSmoothSkinMenu;\t\t\n\t\tmenu -label \"Help\";\t\n\t\t\tmenuItem -l \"Help...\" -c ( \"AS_SkinnyHelp 0\" );\n\t\t\tmenuItem -l \"Bugs & Features\" -c ( \"AS_SkinnyHelp 1\" );\n\t\t\t\n\n\t// Menu Bars END //\n\n\n\n\n// FormLayout Creation Main FormLayout\n\t\n\tformLayout SkinnyMainLayout;\n\t\n\t//ScrollList jointScrollList.\n\ttextScrollList -w 150 -h 270 -numberOfRows 20 -allowMultiSelection 1\n\t\t-sc ( \"Skinny_Function paint\" ) -dcc ( \"Skinny_Function DubbleClickHold\" ) \"jointScrollList\";\n\t\t//ScrollList Lock/Unlock PopUp Menus\n\t\tpopupMenu -parent jointScrollList jointScrollListPopup;\n\t\t\tmenuItem -l \"Lock Selected\" -c ( \"AS_SkinnyLockFunction Selected 1\" );\n\t\t\tmenuItem -l \"UnLock Selected\" -c ( \"AS_SkinnyLockFunction Selected 0\" );\n\t\t  \tmenuItem -d 1;\n\t\t  \tmenuItem -l \"Lock All\" -c ( \"AS_SkinnyLockFunction All 1\" );\n\t\t  \tmenuItem -l \"UnLock All\" -c ( \"AS_SkinnyLockFunction All 0\" );\n\t\t  \tmenuItem -d 1;\n\t\t  \t//menuItem -l \"Set Selected\" -c ( \"AS_SkinnySetsMakerUI\" );\n     \t\n\t\t  \t\n\t\t// Buttons-Lock/UnLock \t\n        columnLayout -adj 1 LockUnlockColumn;\n        rowColumnLayout -numberOfRows 1 -rowHeight 1 18 Skinny_LockweightColumn;        \n            button -bgc 0.955 0.905 0.718 -w 120 -c ( \"AS_SkinnyLockFunction Selected 1\" ) -ann \"Lock weight on selected joints\" -label \"Lock Weight\";\n            button -bgc 0.955 0.905 0.718 -w 30 -c ( \"AS_SkinnyLockFunction All 1\" ) -ann \"Lock weight on All joints in Skinny ScrollList\" -label \"All\";\n        setParent ..;\n            rowColumnLayout -numberOfRows 1 -rowHeight 1 18 Skinny_unLockweightColumn;\n            button -bgc 0.832 0.865 0.955 -w 120 -c ( \"AS_SkinnyLockFunction Selected 0\" ) -ann \"UnLock weight on selected joints\" -label \"UnLock Weight\";\n            button -bgc 0.832 0.865 0.955 -w 30 -c ( \"AS_SkinnyLockFunction All 0\" ) -ann \"UnLock weight on All joints in Skinny ScrollList\" -label \"All\";\n      \n        setParent ..; \n        setParent ..; \n\n\n/////////////////////////////////\n// Paint Selected FrameLayout //\n///////////////////////////////\nfloat $color[] = {0.7, 0.8, 0.5};\nframeLayout -bgc $color[0] $color[1] $color[2] -lv 0 -mw 2 -mh 2 -label \"Selection\"  -cll 0 -li 5 -borderStyle \"etchedOut\" -font \"smallFixedWidthFont\" skinnySelectionFrame;\n\tcolumnLayout -bgc $color[0] $color[1] $color[2];          \n          checkBoxGrp -bgc $color[0] $color[1] $color[2] -cc (\"Skinny_ScriptJob\") -v1 1 -l \" Skinny Active\" -ann \"Active scriptJob, Auto Paint on selection\"\n\t\t\t  \t\t\t-cw 1 80 -cw 2 100 -cal 1 \"left\" -adj 1  ScriptJobBox;\n          \n\t\t  // Skinny Skin / Cluster modes\n\t\t  rowColumnLayout -bgc $color[0] $color[1] $color[2] -numberOfRows 1 SkinModeLayout;\n\t\t  \tradioCollection; \n\t\t  \t\tradioButton -bgc $color[0] $color[1] $color[2] -sl -onc (\"Skinny_UISwitcher skin\") -label \"Skin\" SkinnyModeSkin;\n\t\t\t\tradioButton -bgc $color[0] $color[1] $color[2] -w 70 -onc (\"Skinny_UISwitcher cluster\") -label \"Cluster\" SkinnyModeCluster;\t\t\t\n\t\t  \n\t\t setParent ..;\n\t\t \n    setParent ..; \nsetParent ..;\n        \n///////////////////////   \t\n// Paint Frame Layout//\n///////////////////////\nframeLayout -label \"Paint Tools\"   -mh 2 -mw 3 -cll 1 -cl 0\n\t-cc \"menuItem -e -cb 1 Skinny_SetsTool; Skinny_SetsTool\"\n\t-borderStyle \"etchedOut\" -font \"smallFixedWidthFont\" skinnyPaintFrame;\n\tcolumnLayout skinnyPaintColumn;\n\t\tformLayout skinnyPaintForm;\t\n\t\n\t\n\t// Buttons-Brushs size\n\ticonTextRadioCollection;\n\t\ticonTextRadioButton -w 40 -h 38 -onc ( \"artAttrCtx -e -stP \\\"gaussian\\\" $Skinny_CurrentCtx;\" ) -image1 \"circleGaus.xpm\" ButtonBrush1;\n\t\ticonTextRadioButton -w 40 -h 38 -onc ( \"artAttrCtx -e -stP \\\"poly\\\" $Skinny_CurrentCtx;\" ) -image1 \"circlePoly.xpm\" ButtonBrush2;\n\t\ticonTextRadioButton -w 40 -h 38 -onc ( \"artAttrCtx -e -stP \\\"solid\\\" $Skinny_CurrentCtx;\" ) -image1 \"circleSolid.xpm\" ButtonBrush3;\n\t\n\n\n\t// Button-Paint operations ( Replace, Add ,Scale, Smooth )\n\tradioCollection;\n\t\tradioButton -onc ( \"artAttrCtx -e -sao \\\"absolute\\\" $Skinny_CurrentCtx\" ) -label \"replace\" Operationabsolute;\n\t\tradioButton -onc ( \"artAttrCtx -e -sao \\\"additive\\\" $Skinny_CurrentCtx\" ) -label \"add\" Operationadditive;\n\t\tradioButton -onc ( \"artAttrCtx -e -sao \\\"scale\\\" $Skinny_CurrentCtx\" ) -label \"scale\" Operationscale;\n\t\tradioButton -onc ( \"artAttrCtx -e -sao \\\"smooth\\\" $Skinny_CurrentCtx\") -label \"smooth\" Operationsmooth;\n\t\n\t// Button-Flood\n\t  //symbolButton -c ( \"artAttrCtx -e -clear $Skinny_CurrentCtx\" ) -image \"AS_SkinnyFLOOD.XPM\" -ann \"Flood paint weight\" Operationflood;\n\t\tbutton -h 20 -l \"Flood\" -c ( \"artAttrCtx -e -clear $Skinny_CurrentCtx\" ) -ann \"Flood paint weight\" Operationflood;\n\t\n\t// ChackBox-Staylus pressure\n\tcheckBoxGrp -onc ( \"artAttrCtx -e -usepressure 1 $Skinny_CurrentCtx;\" ) \n\t\t\t\t-ofc ( \"artAttrCtx -e -usepressure 0 $Skinny_CurrentCtx;\" )\n\t\t\t-v1 1 -l \"Stylus pressure\" -ann \"Stylus pressure on/off\" \n\t\t\t-cw 1 80 -cw 2 15 -adj 2 statlusBox; \n\t\t\n\t// Sliders-Value&Display\n\tfloatSliderGrp -label \"Val\" -field true // Value Slider.\n\t\t\t\t\t-minValue -0 -maxValue 1\n\t\t\t\t\t-fieldMinValue -0 -fieldMaxValue 1\n\t\t\t\t\t-dc ( \"artAttrCtx -e -value `floatSliderGrp -q -v ValSlider` $Skinny_CurrentCtx;\" )\n\t\t\t\t\t-cc ( \"artAttrCtx -e -value `floatSliderGrp -q -v ValSlider` $Skinny_CurrentCtx;\" )\n\t\t\t\t\t-pre 2 -s 0.05\n\t\t\t\t\t-ann \"Paint Brush Value\"\n\t\t\t\t\t-adj 3 -cw 1 25 -cw 2 30 -cw 3 70\n\t\t\t\t\t-value 1 ValSlider;\n\t\t\t\t\t\n\t\tpopupMenu -parent ValSlider;\t\t\t\n\t\t\tmenuItem -l \"0.10\" -c ( \"floatSliderGrp -e -v 0.10 ValSlider; artAttrCtx -e -value 0.10 $Skinny_CurrentCtx;\" );\n\t\t\tmenuItem -l \"0.25\" -c ( \"floatSliderGrp -e -v 0.25 ValSlider; artAttrCtx -e -value 0.25 $Skinny_CurrentCtx;\" );\n\t\t\tmenuItem -l \"0.50\" -c ( \"floatSliderGrp -e -v 0.50 ValSlider; artAttrCtx -e -value 0.50 $Skinny_CurrentCtx;\" );\n\t\t\t\t\t\n\tfloatSliderGrp -label \"Dis\" -field true // Display Slider.\n\t\t\t\t\t-minValue 0.01 -maxValue 1\n\t\t\t\t\t-fieldMinValue 0.01 -fieldMaxValue 1\n\t\t\t\t\t-dc ( \"artAttrCtx -e -colorrangeupper `floatSliderGrp -q -v DisSlider` $Skinny_CurrentCtx;\" )\n\t\t\t\t\t-cc ( \"artAttrCtx -e -colorrangeupper `floatSliderGrp -q -v DisSlider` $Skinny_CurrentCtx;\" )\n\t\t\t\t\t-pre 2 -s 0.05\n\t\t\t\t\t-ann \"Max Value Of Color Feedback Display\"\n\t\t\t\t\t-adj 3 -cw 1 25 -cw 2 30 -cw 3 70\n\t\t\t\t\t-value 1 DisSlider;\n\t\t\t\t\t\n\t\tpopupMenu -parent DisSlider;\n\t\t\tmenuItem -l \"0.10\" -c ( \"floatSliderGrp -e -v 0.10 DisSlider; artAttrCtx -e -colorrangeupper 0.10 $Skinny_CurrentCtx;\" );\n\t\t\tmenuItem -l \"0.25\" -c ( \"floatSliderGrp -e -v 0.25 DisSlider; artAttrCtx -e -colorrangeupper 0.25 $Skinny_CurrentCtx;\" );\n\t\t\tmenuItem -l \"0.50\" -c ( \"floatSliderGrp -e -v 0.50 DisSlider; artAttrCtx -e -colorrangeupper 0.50 $Skinny_CurrentCtx;\" );\n\n\t\t\n\t// ChackBox-Show Wireframe & Color Feedback\n\tcheckBoxGrp -onc (\"artAttrCtx -e -showactive true $Skinny_CurrentCtx;\") -ofc (\"artAttrCtx -e -showactive false $Skinny_CurrentCtx;\")\n\t\t\t-v1 1 -l \"Wire\" -ann \"Show WireFrame while painting\" SkinnyWireFrame; \n\tcheckBoxGrp -e -adj 1 -cw 1 32  SkinnyWireFrame;\n\tcheckBoxGrp -e -adj 2 -cw 2 25  SkinnyWireFrame;\t\n\t\n\tcheckBoxGrp -onc (\"artAttrCtx -e -colorfeedback true $Skinny_CurrentCtx;\") -ofc (\"artAttrCtx -e -colorfeedback false $Skinny_CurrentCtx;\")\n\t\t\t-v1 1 -l \"Color\" -ann \"Show color feedback\" SkinnyColorFeed; \n\tcheckBoxGrp -e -adj 1 -cw 1 45  SkinnyColorFeed;\n\tcheckBoxGrp -e -adj 2 -cw 2 15  SkinnyColorFeed;\n\t\n\t\tsetParent ..;\n\tsetParent ..; // Go back up to skinnyPaintFrame.\nsetParent ..; // Go back up to SkinnyMainLayout.\n\n\n///////////////////////\n// Util Frame Layout //\n///////////////////////\nframeLayout -mh 3 -mw 4 -label \"Util\"  -cll 1 -cl 1 -borderStyle \"etchedOut\" -font \"smallFixedWidthFont\" skinnyUtilFrame;\n\tcolumnLayout skinnyUtilCoulmn;\n\tformLayout skinnyUtilForm;\n\t\n\t//symbolButton -image \"AS_SkinnyMirorPlus.XPM\" -c (\"AS_SkinnyWeightFunction MirorWeight X\") -ann \" Mirror Weight from Right to Left, +X\" UtilMirorPlus;\n\tbutton -h 20 -w 90 -l \"Mirror X+\" -c (\"AS_SkinnyWeightFunction MirorWeight X\") -ann \" Mirror Weight from Right to Left, +X\" UtilMirorPlus;\n\t\tpopupMenu;\n\t\t\tmenuItem -l \"Mirror Options\" -c (\"MirrorSkinWeightsOptions\");\n\t\t//symbolButton -image \"AS_SkinnyMirorMins.XPM\" -c (\"AS_SkinnyWeightFunction MirorWeight Xinvert\") -ann \" Mirror Weight from Left to Right, -X\" UtilMirorMinus;\n\t\tbutton -h 20 -w 40 -l \"X-\" -c (\"AS_SkinnyWeightFunction MirorWeight Xinvert\") -ann \" Mirror Weight from Left to Right, -X\" UtilMirorMinus;\n\t\t//symbolButton -image \"AS_SkinnyPurne.XPM\" -c (\"AS_SkinnyWeightFunction PurnWeight Purne\") -ann \"Purne weight below purne value\" PurneWeight;\n\t\tbutton -h 20 -w 90 -l \"Prune Weight\" -c (\"AS_SkinnyWeightFunction PurnWeight Purne\") -ann \"Purne weight below purne value\" PurneWeight;\t\t\n\t\tfloatField -w 39 -v 0.01 -minValue 0 -maxValue 1 -precision 2 -step .001 PurneWeightText;\t\t\n\tsetParent ..;\nsetParent ..;\nsetParent ..;\n// FormLayout End //\n\n\n///////////////////////////\n// Influence Frame Layout//\n///////////////////////////\nframeLayout  -mh 2 -mw 4 -label \"Influences\"  -cll 1 -cl 1 -borderStyle \"etchedOut\" -font \"smallFixedWidthFont\" skinnyInfluenceFrame;\n   //formLayout skinnyInfluenceForm;\n   columnLayout -adj 1 -rowSpacing 3;\n    checkBoxGrp -cc (\"Skinny_UpdateSkin ByName 0\") -v1 0 -l \"Show Zero Weight\" -ann \"Show joint with zero weight only\" ShowZeroWeight;\n          checkBoxGrp -e -adj 1 -cw 1 100  ShowZeroWeight;\n\t      checkBoxGrp -e -adj 2 -cw 2 28  ShowZeroWeight;\t\n    //symbolButton -image \"AS_SkinnyRemove.XPM\" -c (\"Skinny_removeInflunce\") -ann \"Disconnect joints from current SkinCluster\";\n\tbutton -h 20 -l \"Remove Influnce\" -c (\"Skinny_removeInflunce\") -ann \"Disconnect joints from current SkinCluster\";\n    //symbolButton -image \"AS_SkinnyAdd.XPM\" -c (\"Skinny_addInflunce\") -ann \"Add multiple influnences to multiple skin Objects, Select Joints and Object\";\n\tbutton -h 20 -l \"Add Influnce\" -c (\"Skinny_addInflunce\") -ann \"Add multiple influnences to multiple skin Objects, Select Joints and Object\";        \n    \tsetParent ..;\nsetParent ..;\n\n///////////////////////////\n// Vertexs Frame Layout //\n/////////////////////////\nframeLayout  -mh 2 -mw 4 -label \"Vertex Tools\"  -cll 1 -cl 1 -borderStyle \"etchedOut\" -font \"smallFixedWidthFont\" skinnyVertexFrame;\n\t$Skinny_vertexFrameCol = `columnLayout -rs 2 skinnyVertexFrameCol`;\n\t\n\t\t// Copy Vertex Value:\n\t        textFieldButtonGrp\n\t\t        \t\t-cw2 85 40        \t\t\n\t\t        \t\t-tx \"Source Vertex\"\n\t\t    \t\t    -bl \"Select\"\n\t\t    \t\t    -bc \"SkinnyVertex.getSource()\"\n\t\t\t\t\t\t-ann \"select one vertex or CV to copy weight from\"\n\t\t    \t\t    SourceV;\t   \n\t\t        button -w 130 -l \"Copy Skin Value\" -h 18 -align \"center\"\n\t\t\t\t\t-ann \"Select couple of Vertexs or CV's to copy weigth to\"\n\t\t        \t -bgc 0.75 0.8 0.9 -c \"SkinnyVertex.copyValue()\";\n\t\t\t\tseparator -height 10 -w 125 -style \"in\";\n\n\t\t// assign value\n\t\t\t\ttext -rs on -l \"select joint from list \\n and vertex's to assign:\";\n\t\t\t\ttextFieldButtonGrp\n\t\t\t\t\t\t-cw2 40 150        \t\t\n\t\t        \t\t-tx \"1.0\"\n\t\t\t\t\t\t-bgc 0.75 0.8 0.9 \n\t\t    \t\t    -bl \"Assign Selection\"\n\t\t    \t\t    -bc \"SkinnyVertex.assignValue()\"\n\t\t\t\t\t\t-ann \"select joint from Skinny, and vertex's to assign to\" assignValue;\n\t\t\t\t\t\n\t\t\t\tseparator -height 10 -w 125 -style \"in\";\n\n\t\t\t\t\n\t\t// Copy from Joint:\n\t\t\ttext -rs on -l \"select source and target:\";\n\t\t\t button  -w 130  -l \"Transfer Skin\" -h 18 -align \"center\"\n\t\t\t\t\t-ann \"Select source and target joints from the list, then select couple of Vertexs or CV's to copy weigth to\"\n\t\t        \t -bgc 0.75 0.8 0.7 -c \"SkinnyVertex.transferValue()\";\n\tsetParent..;\nsetParent..; \n\n\n/////////////////////////\n// Rotate Frame Layout //\n/////////////////////////\nframeLayout -label \"Joint Rotate     \"  -cll 1 -cl 1\n\t-borderStyle \"etchedOut\" -font \"smallFixedWidthFont\" skinnyJNTRotFrame;\n\tcolumnLayout  skinnyJNTRotMaincolumn;\n\tcolumnLayout -adj 1 skinnyJNTRotcolumn;\n\n\t// Rotate Sliders\n\t\tfloatSliderGrp -label \"X\" -field true\n\t\t\t-minValue -180 -maxValue 180\n\t\t\t-fieldMinValue -360 -fieldMaxValue 360\n\t\t\t-dc ( \"SkinnyRotJNT Selected 0\" )\n\t\t\t-cc ( \"SkinnyRotJNT Selected 0\" )\n\t\t\t-ann \"Rotate X selected joints\"\n\t\t\t-adj 3 -cw 1 25 -cw 2 35 -cw 3 222\n\t\t\t-value 0 SliderX;\n\n\t\tfloatSliderGrp -label \"Y\" -field true\n\t\t\t-minValue -180 -maxValue 180\n\t\t\t-fieldMinValue -360 -fieldMaxValue 360\n\t\t\t-dc ( \"SkinnyRotJNT Selected 0\" )\n\t\t\t-cc ( \"SkinnyRotJNT Selected 0\" )\n\t\t\t-ann \"Rotate Y selected joints\"\n\t\t\t-adj 3 -cw 1 25 -cw 2 35 -cw 3 222\n\t\t\t-value 0 SliderY;\n\n\t\tfloatSliderGrp -label \"Z\" -field true\n\t\t\t-minValue -180 -maxValue 180\n\t\t\t-fieldMinValue -360 -fieldMaxValue 360\n\t\t\t-dc ( \"SkinnyRotJNT Selected 0\" )\n\t\t\t-cc ( \"SkinnyRotJNT Selected 0\" )\n\t\t\t-ann \"Rotate Z selected joints\"\n\t\t\t-adj 3 -cw 1 25 -cw 2 35 -cw 3 222\n\t\t\t-value 0 SliderZ;\t\t\n\n\t    // PopUp Menu for Sliders\n    \t popupMenu -parent SliderX ;\n    \t    menuItem -label \"Reset Rotations\" -c ( \"SkinnyRotJNT Selected 1\" );\n      \t popupMenu -parent SliderY ;\n    \t    menuItem -label \"Reset Rotations\" -c ( \"SkinnyRotJNT Selected 1\" );\n    \t popupMenu -parent SliderZ ;\n    \t    menuItem -label \"Reset Rotations\" -c ( \"SkinnyRotJNT Selected 1\" );  \t    \n\n    // Rotation Buttons ( Reset , Key , DelKey )\n    columnLayout -adj 1 ;\n        // Reset Rotation Button\n    \trowColumnLayout -numberOfRows 1 -rowHeight 1 22;\n    \t  button -w 240 -l \"Reset Selected Rotation\" -c (\"SkinnyRotJNT Selected 1\") -ann \"Reset Selected Joints Rotation\" JointRotReset;\n    \t  button -w 50 -l \"All\" -c (\"SkinnyRotJNT all 1\") -ann \"Reset Rotations for All the Joints in ScrollList\";\n    \tsetParent ..;\n    \t\n      \t// Set Key Button\n      \trowColumnLayout -numberOfRows 1 -rowHeight 1 20;\n    \t  button -w 120 -bgc 0.578 0.8 0.567 -l \"Key Selected\" -c (\"JointRotKey SetKey Selected\") -ann \"Set Rotation Keyframes On Selected Joints\" JointRotKey;\n    \t  button -w 120 -bgc 1 0.6 0.6 -l \"Del Selected\" -c (\"JointRotKey DelKey Selected\") -ann \"Delete Rotation Keyframes From Selected Joints\" JointRotDelKey;\n    \t  button -w 50  -l \"All\" -c (\"JointRotKey DelKey All\") -ann \"Delete Rotation Keyframes From All the Joints in ScrollList\" JointRotDelAllKey;    \t    \n        setParent ..;\n    setParent ..;\n    \n\n// FormLayout Adjustment Start\nformLayout -edit\n\t\t\t\t\n\t\t-attachForm \t\tskinnyJNTRotFrame \t\"bottom\"\t5\n\t\t-attachForm \t\tskinnyJNTRotFrame\t\"left\"\t\t5\n\t\t\n\t\t-attachForm         LockUnlockColumn\t\"left\"\t\t5\n\t\t-attachControl \t\tLockUnlockColumn\t\"bottom\"\t10\tskinnyJNTRotFrame\n\t\t\n       \t-attachForm         jointScrollList\t\t\"top\"\t\t5\n\t\t-attachForm         jointScrollList\t\t\"left\"\t\t5\n\t\t-attachControl \t\tjointScrollList\t\t\"bottom\"\t2\tLockUnlockColumn\n\t\t\n\t\t-attachControl \t\tskinnySelectionFrame \t\"left\"\t\t3\tjointScrollList\n\t\t-attachForm \t\tskinnySelectionFrame\t\"top\"\t\t3\n       \t\n\n\t\t-attachControl \t\tskinnyPaintFrame \t\"left\"\t\t3\tjointScrollList\n\t\t-attachControl \t\tskinnyPaintFrame\t\"top\"\t\t3   skinnySelectionFrame\n       \t\n       \t-attachControl \t\tskinnyVertexFrame \t\"left\"\t\t3\tjointScrollList\n\t\t-attachControl \t\tskinnyVertexFrame \t\"top\"\t\t3\tskinnyPaintFrame\t\t\n\t\t\n\t\t\n\t\t-attachControl \t\tskinnyUtilFrame \t\"left\"\t\t3\tjointScrollList\n\t\t-attachControl \t\tskinnyUtilFrame \t\"top\"\t\t3\tskinnyVertexFrame\n\t\t\n       \t\t\n\t    -attachControl \t\tskinnyInfluenceFrame \t\"left\"\t\t3\tjointScrollList\n\t\t-attachControl \t\tskinnyInfluenceFrame \t\"top\"\t\t3\tskinnyUtilFrame\n\t\t\t\t\n\tSkinnyMainLayout; //END edit of main Layout.\n\n\n\nformLayout -edit // FormLayout, skinnyPaintForm, Edit\n\t\t\n\t\t-attachForm \t\t    ButtonBrush1 \t\t\"left\"\t\t3\t\n\t\t-attachForm \t\t    ButtonBrush1\t\t\"top\"\t\t3\n\t\t\n\t\t-attachControl \t\t    ButtonBrush2 \t\t\"left\"\t\t3\tButtonBrush1\n\t\t-attachForm \t\t    ButtonBrush2\t\t\"top\"\t\t3\n\t\t\n\t\t-attachControl \t\t    ButtonBrush3 \t\t\"left\"\t\t3\tButtonBrush2\n\t\t-attachForm \t\t    ButtonBrush3\t\t\"top\"\t\t3\n\t\t\n\t\t-attachForm \t\t    Operationabsolute\t\"left\"\t\t3\t\n\t\t-attachControl \t\t    Operationabsolute\t\"top\"\t\t10\tButtonBrush1\n\t\t\n\t\t-attachOppositeControl \tOperationadditive \t\"left\"\t\t60\tOperationabsolute\n\t\t-attachOppositeControl \tOperationadditive\t\"bottom\"\t0\tOperationabsolute\n\t\n\t\t-attachForm \t\t    Operationscale \t\t\"left\"\t\t3\t\n\t\t-attachControl \t\t    Operationscale\t\t\"top\"\t\t25\tButtonBrush1\n\t\n\t\t-attachOppositeControl \tOperationsmooth \t\"left\"\t\t60\tOperationscale\n\t\t-attachOppositeControl \tOperationsmooth\t\t\"bottom\"\t0\tOperationscale\n\t\t\t\n\t\t-attachForm \t\t    statlusBox \t    \t\"left\"\t\t3\t\n\t\t-attachControl       \tstatlusBox\t\t    \"top\"\t\t5\tOperationsmooth\n\t\n\t\t-attachForm \t\t    ValSlider \t\t    \"left\"\t\t3\t\n\t\t-attachControl       \tValSlider\t\t    \"top\"\t\t5\tstatlusBox\n\t\t\t\n\t\t-attachForm \t\t    DisSlider \t\t    \"left\"\t\t3\t\n\t\t-attachControl       \tDisSlider\t\t    \"top\"\t\t0\tValSlider\n\n\t\t-attachForm \t\t    Operationflood \t    \"left\"\t\t2\t\n\t\t-attachForm \t\t    Operationflood \t    \"right\"\t\t2\n\t\t-attachControl \t        Operationflood\t\t\"top\"\t\t5\tDisSlider\n\t\t\n\t\t-attachForm \t\t    SkinnyWireFrame     \"left\"\t\t3\t\n\t\t-attachControl \t        SkinnyWireFrame\t\t\"top\"\t\t3\tOperationflood\n\n\t\t-attachControl \t\t    SkinnyColorFeed     \"left\"\t\t3\tSkinnyWireFrame\n\t\t-attachControl      \tSkinnyColorFeed\t    \"top\"\t\t3\tOperationflood\n\t\t\n\tskinnyPaintForm;//END edit of Slave FormLayout\n\n\nformLayout -edit // FormLayout, skinnyUtilForm, Edit\n\n\t\t-attachForm \t\tUtilMirorPlus\t\t\"top\"\t\t1\n\t\t-attachForm \t\tUtilMirorPlus\t\t\"left\"\t\t0\n\n\t\t-attachForm \t\tUtilMirorMinus\t\t\"top\"\t\t1\n\t\t-attachControl \t\tUtilMirorMinus\t\t\"left\"\t\t0\tUtilMirorPlus\t\n\t\t\n\t\t-attachControl \t\tPurneWeight\t\t    \"top\"\t\t3\tUtilMirorPlus\n\t\t-attachForm \t\tPurneWeight\t\t    \"left\"\t\t0\t\n\t\n\t\t-attachControl \t\tPurneWeightText\t\t\"top\"\t\t3\tUtilMirorPlus\n\t\t-attachControl \t\tPurneWeightText\t\t\"left\"\t\t0\tPurneWeight\t\n\t\t\n\tskinnyUtilForm;\n// FormLayout Ajustment End //\n\n\nshowWindow SkinnyUI;\n// Create SkinnySets Node\nstring $ls[] = `ls -sl`;\nif (!`objExists \"SkinnySets\"`)\n\tcreateNode objectSet -n \"SkinnySets\";\nselect $ls;\n// Find SkinTool Sets, add them to UI \"Preset\" \n\tSkinny_findSets;\n/// Skinny CurrentCtx, default is Skin\n\t$Skinny_CurrentCtx = \"artAttrSkinContext\";\n// Query Status of Paint Weight Tools\n\tSkinny_QueryUI;\n// Update the ScrollList\n\tSkinny_UpdateSkin ByName 0;\n// Find SkinnySmooth Meshes\n    FindSmoothMesh;\n/// ScriptJob : Update when Select change\t\n\tSkinny_ScriptJob;\t\n/// Print Skinny Version\n    print \"\\nSkinny Version 3.90 \\n\";\n}// Skinny UI End //\n\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "Python Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import jammOrientJoint as oj\noj.orientJointsWindow()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined MEL command" 
+        -enableBackground 0
+        -align "center" 
+        -label "MEL Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/mirrow_blendshap233.bmp" 
+        -image1 "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/mirrow_blendshap233.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "mp_mirrorBlendshapesUI" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "Python Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "#coding=utf-8\nimport maya.cmds as mc\n\ndef AutoParentSpace(self):\n    mc.parent( '*_world_space', '*_root_Ctr_SW' )\n    mc.parent( '*_charactor_space', '*_root_gimbal_1_Ctr_SW' )\n    mc.parent( '*_chest_space', '*_spine_M_lr4_SW')\n    mc.parent( '*_L_hip_space', '*_hip_L_singleJ_SW')\n    mc.parent( '*_R_hip_space', '*_hip_R_singleJ_SW')\n    mc.parent( '*_L_shoulder_space', '*shoulder_L_singleJ_SW' )\n    mc.parent( '*_R_shoulder_space', '*shoulder_R_singleJ_SW' )\n    mc.parent( '*_head_space', '*_head_jnt_SW')\n    mc.parent( '*_knee_space', '*__world' )\n    mc.select( clear=True )\n                \n##########################################################\n\ndef adjust_color( obj, clr ):\n    mc.setAttr( obj+'Shape.overrideEnabled', 1 )\n    mc.setAttr( obj+'Shape.overrideColor', clr )\n    \ndef CreateFootControl(self):\n    pr = mc.textField('pre_textfield', query=True, text=True)\n    pre = pr+'_leg_'\n    ctrls = []\n    attrls = ['.translateX', '.translateY', '.translateZ', '.rotateX', '.scaleX', '.scaleY', '.scaleZ', '.visibility']\n    for mid in ('L_','R_'):\n        if mid == 'L_': mdv = 1.0\n        elif mid == 'R_': mdv = -1.0 \n        jn = pre+mid\n        md = mc.createNode('multiplyDivide', n=jn+'MD')\n        mc.setAttr(md+'.input2X', mdv)\n        mc.setAttr(md+'.input2Y', mdv)\n        clp = mc.createNode('clamp', n=jn+'clamp')\n        mc.setAttr( clp+'.maxR', 45)\n        mc.setAttr( clp+'.minG', -80)\n        for suf in ( 'palm_SJ','toe_SJ'):\n            jnt = pre+mid+suf\n            tx, ty, tz = mc.xform( jnt, query=True, translation=True, worldSpace=True )\n            ctr = mc.circle( n=jnt+'_Ctr', normal=(1,0,0), radius=6, ch=0 )[0]\n            ctr1 = mc.circle( n=jnt+'_Ctr1', normal=(0,1,0), radius=6, ch=0 )[0]\n            ctr2 = mc.circle( n=jnt+'_Ctr2', normal=(0,0,1), radius=6, ch=0 )[0]\n            if mid == 'R_':\n                orc = 14\n            elif mid == 'L_':\n                orc = 6\n            adjust_color( ctr, orc )\n            adjust_color( ctr1, orc )\n            adjust_color( ctr2, orc )\n            mc.parent( ctr1+'Shape', ctr2+'Shape', ctr, shape=True, addObject=True)\n            mc.delete( ctr1, ctr2 )\n            ctrls.append(ctr)\n            grp = mc.group( ctr, n=jnt+'_Grp')\n            mc.move( tx, ty, tz, grp )\n            con = mc.orientConstraint( jn+'ankle_palm_toe_toHeel_T', grp, maintainOffset=False )\n            mc.delete( con )\n            mc.parent( grp, jn+'ankle_palm_toe_toHeel_T' )\n            if suf == 'palm_SJ':\n                mc.connectAttr( ctr+'.rotateY', md+'.input1X', force=True)\n                mc.connectAttr( md+'.outputX', jn+'ankle_palm_toe_toPalm_T.rotateY', force=True)\n                mc.connectAttr( ctr+'.rotateZ', jn+'ankle_toPalm_T.rotateZ', force=True)\n                mc.addAttr( ctr, shortName='toe_roll', longName='Toe_Roll', keyable=True, min=-45, max=45 )\n                mc.connectAttr( ctr+'.toe_roll', jn+'driven_Ctr.toe_roll' )\n                mc.addAttr( ctr, shortName='toe_LR_rot', longName='Toe_LR_Rot', keyable=True, min=-30, max=30 )\n                mc.connectAttr( ctr+'.toe_LR_rot', jn+'driven_Ctr.toe_LR_rot' )\n            elif suf == 'toe_SJ':\n                mc.connectAttr(ctr+'.rotateY', md+'.input1Y', force=True)\n                mc.connectAttr(md+'.outputY', jn+'ankle_palm_toe_toToe_T.rotateY', force=True)\n                mc.connectAttr(ctr+'.rotateZ', clp+'.inputR')\n                mc.connectAttr(ctr+'.rotateZ', clp+'.inputG')\n                mc.connectAttr(clp+'.outputR', jn+'ankle_palm_toe_toHeel_T.rotateZ', force=True)\n                mc.connectAttr(clp+'.outputG', jn+'ankle_palm_toe_toToe_T.rotateZ', force=True)\n                mc.transformLimits( ctr, rotationZ=(-80, 45), enableRotationZ=(1,1) )            \n    for ctr in ctrls:\n        for attr in attrls:\n            mc.setAttr( ctr+attr, lock=True, keyable=False, channelBox=False )    \n    for attr in ['.auto_toe', '.palm_roll', '.toe_roll', '.palm_pivot', '.toe_pivot', '.toe_LR_rot']:\n        mc.setAttr( pre+'R_driven_Ctr'+attr, lock=True )\n        mc.setAttr( pre+'L_driven_Ctr'+attr, lock=True )\n    mc.container( '__'+pr+'__allRigNodes_container', addNode=[pre+'L_clamp',pre+'R_clamp',pre+'L_MD',pre+'R_MD'], \n                  edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select( clear=True )\n        \n#########################################################\n\ndef AdjustShoulderHip(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)\n    nds = []\n    for par in [('_shoulder_', '_hand_'), ('_hip_', '_leg_')]:\n        pre1 = pre+par[0]\n        pre2 = pre+par[1]\n        for mid in ('L_','R_'):\n            rtn = pre1 + mid + 'singleJ_'\n            edn = pre2 + mid\n            mc.parent( rtn+'ikHandle', rtn+'Ctr_GP' )\n            mc.parent( rtn+'Ctr', world=True )\n            tx, ty, tz = mc.xform( rtn+'Ctr', query=True, translation=True, worldSpace=True )\n            rtg = mc.group( name=rtn+'Ctr_Grp', empty=True )\n            mc.parent( rtn+'Ctr', rtg )\n            if mid == 'R_':\n                mc.rotate('180deg', 0, 0, rtn+'Ctr.cv[0:4]', relative=True, pivot=(tx, ty, tz), objectSpace=True) \n            for attr in ['.translateX', '.translateY', '.translateZ', '.rotateX']:\n                mc.setAttr( rtn+'Ctr'+attr, 0)\n            mc.move( tx, ty, tz, rtg )\n            mc.parent( rtg, rtn+'Ctr_GP' )\n            edg1 = mc.group( name=edn+'FK_gimbal_Ctr_Grp', empty=True )\n            pct = mc.pointConstraint( edn+'FK_gimbal_Ctr', edg1, maintainOffset=False )\n            oct = mc.orientConstraint( edn+'FK_gimbal_Ctr', edg1, maintainOffset=False )\n            mc.delete( pct, oct )\n            mc.parent( edg1, edn+'limbRig_SP' )\n            if par[0] == '_shoulder_':\n                edg2 = mc.group( name=rtn+'Ctr_Grp1' ,empty=True)\n                rct = mc.createNode( 'transform', n=rtn+'SJ_Ctr' )\n                mc.parent( edg2, edn+'FK_gimbal_Ctr_Grp' )\n                mc.parent( rct, pre1+mid+'singleJointRig_SP' )\n                rx, ry, rz = mc.xform( rct, query=True, rotation=True, objectSpace=True)\n                for attr in ['.translateX', '.translateY', '.translateZ', '.rotateX', '.rotateY', '.rotateZ']:\n                    mc.setAttr( edg2+attr, 0)\n                    mc.setAttr( rct+attr, 0)\n                mc.parent( rtn+'Ctr_GP', rct)\n                tx, ty, tz = mc.xform( rct, query=True, translation=True, worldSpace=True )\n                crv = mc.curve( degree=1, point=[(0,0,8),(1,0,10),(-1,0,10),(0,0,8),(0,0,-8),(-1,0,-10),(1,0,-10,),(0,0,-8)] )\n                if mid == 'R_':\n                    orc = 14\n                elif mid == 'L_':\n                    orc = 6\n                crvsh = mc.listRelatives( crv, shapes=True)[0]\n                mc.parent( crvsh, rct, shape=True, addObject=True )\n                mc.delete( crv )\n                mc.rotate( rx, ry, rz, crvsh+'.cv[0:7]', relative=True, pivot=(tx, ty, tz), objectSpace=True)\n                mc.setAttr( crvsh+'.overrideEnabled', 1 )\n                mc.setAttr( crvsh+'.overrideColor', orc )\n                crvsh = mc.rename( crvsh, rct+'_Shape')\n                mc.parent( edg2, pre1+mid+'singleJointRig_SP' )\n                mc.parent( rtn+'ikHandle', rtn+'Ctr' )\n            elif par[0] == '_hip_':\n                edg2 = mc.duplicate( edg1, returnRootsOnly=True )\n                mc.parent( edg2, rtn+'Ctr' )\n                mc.parent( rtn+'ikHandle', edg2 )\n            mc.orientConstraint( edg2, edg1 )\n            mc.setKeyframe( edg1+'.rotate' )\n            mc.addAttr( rtn+'Ctr',shortName='fk_follow', longName='FK_Follow', keyable=True, max=1, min=0, dv=0 )\n            rvs = mc.createNode( 'reverse', name=rtn+'reverse' )\n            nds.append(rvs)\n            mc.connectAttr( rtn+'Ctr'+'.fk_follow', rvs+'.inputX' )\n            mc.connectAttr( rvs+'.outputX', edg1+'.blendOrient1' )\n            mc.parent( edn+'FK_gimbal_Ctr', edn+'FK_gimbal_Ctr_Grp' )\n            for attr in ['.translateX', '.translateY', '.translateZ', '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n                mc.setAttr( rct+attr, lock=True, keyable=False, channelBox=False )\n            mc.setAttr( rtn+'Ctr.type', 1 )\n    for pb in['pairBlend1','pairBlend2','pairBlend3','pairBlend4']:\n        mc.rename( pb, pre+'_'+pb)\n        nds.append( pre+'_'+pb )\n        for pbir in ['_inRotateX1', '_inRotateY1', '_inRotateZ1']:\n            mc.rename( pb+pbir, pre+'_'+pb+pbir)\n            nds.append( pre+'_'+pb+pbir )\n    mc.container('__'+pre+'__allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select( clear=True )\n    \n#########################################################\n\ndef HideJointAttr(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    for jnt in ['shoulder_L_singleJ_end_SJ', 'shoulder_R_singleJ_end_SJ', 'hip_L_singleJ_end_SJ', 'hip_R_singleJ_end_SJ',\n                'hip_L_singleJ_SJ', 'hip_R_singleJ_SJ', 'hand_L_palm_SJ', 'hand_R_palm_SJ', 'hand_L_toe_SJ', 'hand_R_toe_SJ']:\n        mc.setAttr( pre+jnt+'.visibility', 0)\n    for finger in ['thumb_', 'index_', 'middle_', 'ring_', 'pinky_']:\n        for lr in ['L_', 'R_']:\n            mc.setAttr( pre+finger+lr+'fingerRig_3_SJ.visibility', 0)\n            mc.setAttr( pre+finger+lr+'fingerRig_3_Ctr.visibility', lock=False)\n            mc.setAttr( pre+finger+lr+'fingerRig_3_Ctr.visibility', 0)\n            for attr in ['.bend_3', '.roll_3', '.twist_3', '.stretch_3']:\n                mc.setAttr( pre+finger+lr+'fingerRig_driven_Ctr'+attr, lock=True, keyable=False, channelBox=False)\n            for attr in ['.bend_3', '.roll_3', '.twist_3']:\n                mc.setAttr( pre+finger+lr+'fingerRig_driven_doctor'+attr, lock=True, keyable=False, channelBox=False)\n            for attr in ['.bend_0', '.bend_1', '.bend_2']:\n                mc.setAttr( pre+finger+lr+'fingerRig_driven_doctor'+attr, 9.0)\n    for lr in ['L','R']:\n        mc.setAttr( pre+'hand_%s_driven_Ctr.IK_FK'%lr,1 )\n        mc.setAttr( pre+'hand_%s_upLimb_FK_Ctr.rotateOrder'%lr,0 )\n        mc.transformLimits( pre+'hand_%s_dwLimb_FK_Ctr'%lr, rx=(-30,30), ry=(-10,10), erx=(1,1), ery=(1,1) )\n        for limb in ['hand_','leg_']:\n            mc.setAttr( pre+limb+lr+'_driven_Ctr.IK_FK', keyable=False, channelBox=False )\n    for ctr in [ 'spine_M_Ctr', 'spine_M_lr1_Ctr', 'spine_M_lr2_Ctr',\n                 'hand_L_limb_IK_Ctr', 'hand_R_limb_IK_Ctr', 'leg_L_limb_IK_Ctr', 'leg_R_limb_IK_Ctr' ]:\n        for attr in [ '.scaleX', '.scaleY', '.scaleZ']:\n            mc.setAttr( pre+ctr+attr, lock=True, keyable=False, channelBox=False)\n    mc.select( clear=True )\n    \n#########################################################\n    \ndef CreateNeckLoc(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    loc=[]\n    loc.append( mc.spaceLocator( name=pre+'neck_jnt_loc' )[0] )\n    mc.move( 0,110,0, loc[0] )\n    loc.append( mc.spaceLocator( name=pre+'neck_jnted_loc' )[0] )\n    mc.move( 0,120,0, loc[1] )\n    loc.append( mc.spaceLocator( name=pre+'head_jnted_loc' )[0] )\n    mc.move( 0,130,0, loc[2] )\n    crv = mc.curve( name=pre+'neck_curve', degree=1, point=[(0,110,0),(0,120,0),(0,130,0)])\n    crvs = mc.listRelatives( crv, shapes=True )[0]\n    for i in range(3):\n        mc.connectAttr( loc[i]+'.translate', crvs+'.controlPoints[%d]'%i )\n    mc.parentConstraint( loc[0], loc[1], name=pre+'neck_jnted_PC', maintainOffset=True, weight=1 )\n    mc.parentConstraint( loc[1], loc[2], name=pre+'head_jnted_PC', maintainOffset=True, weight=1 )\n    for attr in ['.translateX', '.translateZ']:\n        mc.setAttr( loc[2]+attr, lock=True, keyable=False, channelBox=False)\n    mc.setAttr( crv+'.overrideEnabled', 1 )\n    mc.setAttr( crv+'.overrideDisplayType', 1 )\n    for attr in ['.translateX', '.translateY', '.translateZ', '.rotateX', '.rotateY', '.rotateZ', '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n        mc.setAttr( crv+attr, lock=True, keyable=False, channelBox=False )\n    mc.select( clear=True )\n\n###########################################################\n\ndef CreateNeckControl(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    try: mc.delete('*_head_Rig_SP', '*_neck_jnt_Grp', '*_neck_str_Grp', '*_neck_CT_Grp', '*_neck_ikH_Grp', '*_neck_BC*' )\n    except: pass\n    try: mc.delete( '*neck_M__SJ_GP' )\n    except: pass\n    loc0 = pre+'neck_jnt_loc'\n    loc1 = pre+'neck_jnted_loc'\n    loc2 = pre+'head_jnted_loc'\n    try: mc.delete( pre+'head_jnted_PC' ); mc.delete( pre+'neck_jnted_PC' )\n    except: pass\n    mc.tangentConstraint( pre+'neck_curve', loc0, weight=1, aimVector=(1,0,0), upVector=(0,1,0), worldUpType='vector', worldUpVector=(0,0,-1) )\n    mc.tangentConstraint( pre+'neck_curve', loc1, weight=1, aimVector=(1,0,0), upVector=(0,1,0), worldUpType='vector', worldUpVector=(0,0,-1) )\n    mc.select( clear=True )\n    nj0 = mc.joint( n=pre+'neck_jnt_SW', p=mc.xform( loc0, q=1, t=1, ws=1) )\n    mc.select( clear=True ) \n    nj2 = mc.joint( n=pre+'neck_jnted_SW', p=mc.xform( loc1, q=1, t=1, ws=1) )\n    mc.joint( nj0, e=1, o=mc.xform( loc0, q=1 ,ro=1, ws=1) )\n    mc.joint( nj2, e=1, o=mc.xform( loc0, q=1 ,ro=1, ws=1) )\n    mc.parent( nj2, nj0 )\n    mc.select( clear=True )\n    hj0 = mc.joint( n=pre+'head_jnt_SW', p=mc.xform( loc1, q=1, t=1, ws=1) )\n    mc.select( clear=True )   \n    hj1 = mc.joint( n=pre+'head_jnted_SW', p=mc.xform( loc2, q=1, t=1, ws=1) )\n    mc.joint( hj0, e=1, o=mc.xform( loc1, q=1 ,ro=1, ws=1) )\n    mc.parent( hj1, hj0 )\n    mc.select( clear=True )\n    \n    hcir = mc.circle ( name=pre+'head_Ctr', radius=8, normal=(1,0,0), sections=16, ch=0)[0]\n    mc.setAttr( hcir+'Shape.overrideEnabled', 1 )\n    mc.setAttr( hcir+'Shape.overrideColor', 17 )\n    hgrp = mc.group( name=pre+'head_Ctr_Grp', empty=True )  \n    mc.delete( mc.parentConstraint( loc1, hcir ) )\n    mc.delete( mc.parentConstraint( loc1, hgrp ) )\n    mc.parent( hcir, hgrp )\n    mc.setAttr( hgrp+'.rotateY', 0) \n    ngrp2 = mc.group( name=pre+'neck_str_ed', empty=True )\n    ngrp1 = mc.group( ngrp2, name=pre+'neck_str_st' )\n    ngrp = mc.group( ngrp1, name=pre+'neck_str_Grp' )\n    mc.delete( mc.parentConstraint( loc0, ngrp ) )\n    mc.pointConstraint( nj0, ngrp1, offset=(0,0,0), weight=1, maintainOffset=False )\n    nik = mc.ikHandle( name=pre+'neck_ikH', startJoint=nj0, endEffector=nj2, solver='ikSCsolver' )[0]\n    nikgrp = mc.group( name=pre+'neck_ikH_Grp', empty=True )\n    mc.delete( mc.parentConstraint( loc1, nikgrp ) )\n    mc.parent( nik, nikgrp )\n    mc.pointConstraint( hcir, nikgrp, offset=(0,0,0), weight=1, maintainOffset=False )\n    mc.pointConstraint( nik, ngrp2, offset=(0,0,0), weight=1, maintainOffset=False )\n    mc.aimConstraint( nik, ngrp1, offset=(0,0,0), weight=1, aimVector=(1,0,0), upVector=(0,-1,0), worldUpType='vector', worldUpVector=(0,1,0) )\n    nbc = mc.shadingNode( 'blendColors', name=pre+'neck_BC', asUtility=True )\n    mc.setAttr( nbc+'.color2R', mc.getAttr(nj2+'.translateX') )\n    mc.addAttr( hcir, longName='auto_str', keyable=True, min=0, max=1 )\n    mc.addAttr( hcir, longName='follow', keyable=True, min=0, max=1 )\n    mc.connectAttr( hcir+'.auto_str', nbc+'.blender')\n    mc.connectAttr( ngrp2+'.translateX', nbc+'.color1R')\n    mc.connectAttr( nbc+'.outputR', nj2+'.translateX')\n    njgrp = mc.group( name=pre+'neck_jnt_Grp', empty=True )\n    mc.delete( mc.parentConstraint( loc0, njgrp ) )\n    mc.parent( nj0, njgrp )\n    mc.parent( nikgrp, pre+'spine_M_lr4_SW' )\n    mc.parentConstraint( pre+'spine_M_lr4_SW', nj0, maintainOffset=True, weight=1 )\n    nmcir = mc.circle ( name=pre+'neck_mid_Ctr', radius=6, normal=(1,0,0), sections=16, ch=0)[0]\n    mc.setAttr( nmcir+'Shape.overrideEnabled', 1 )\n    mc.setAttr( nmcir+'Shape.overrideColor', 17 )\n    nmgrp = mc.group( name=pre+'neck_mid_Ctr_Grp', empty=True )\n    mc.parent( nmcir, nmgrp)\n    mc.pointConstraint( nj0, nmgrp, offset=(0,0,0), weight=1, maintainOffset=False )\n    mc.pointConstraint( nj2, nmgrp, offset=(0,0,0), weight=1, maintainOffset=False )\n    nmugrp = mc.group( name=pre+'neck_mid_upgrp', empty=True, parent=nj0 )\n    mc.setAttr( nmugrp+'.translateY', 10)\n    mc.aimConstraint( nj0, nmgrp, offset=(0,0,0), weight=1, aimVector=(-1,0,0), upVector=(0,1,0), worldUpType='object', worldUpObject=pre+'neck_mid_upgrp' )\n    mc.select( clear=True )\n    nj1 = mc.joint( name=pre+'neck_mid_jnt_SW' )\n    mc.joint( nj1, e=1, o=mc.xform( loc0, q=1 ,ro=1, ws=1) )\n    mc.parentConstraint( nmcir, nj1, maintainOffset=False, weight=1 )\n    mc.parent( nj1, njgrp )\n    \n    mc.delete( mc.parentConstraint( loc1, hgrp ) )\n    nctgrp = mc.group( name=pre+'neck_CT_Grp', empty=True )\n    mc.delete( mc.parentConstraint( loc0, nctgrp ) )\n    mc.parent( nmgrp, nctgrp)\n    mc.pointConstraint( nj2, hj0, offset=(0,0,0), weight=1, maintainOffset=False )\n    mc.orientConstraint( hcir, hj0, offset=(0,0,0), weight=1)\n    hjgrp=mc.group( n=pre+'head_jnt_Grp', empty=True)\n    mc.delete( mc.parentConstraint( loc1, hjgrp ) )\n    mc.parent( hj0, hjgrp )\n    hrsp=mc.group( n=pre+'head_Rig_SP', empty=True )\n    mc.delete( mc.parentConstraint( loc1, hrsp ) )\n    mc.parent( hrsp ,pre+'root_gimbal_1_Ctr')\n    mc.parent( hjgrp, hrsp )\n    mc.parent( hgrp, hrsp )\n    hgrppc = mc.parentConstraint( pre+'spine_M_lr4_SW', hgrp, maintainOffset=True, weight=1 )\n    mc.xform( hgrppc, ws=1, t=(mc.xform( hj0, q=1,t=1,ws=1 )))\n    mc.setKeyframe( hgrp+'.translate' )\n    mc.setKeyframe( hgrp+'.rotate' )\n    mc.connectAttr( hcir+'.follow', hgrp+'.blendParent1' )\n    mc.delete( mc.parentConstraint( loc0, pre+'neck_M_fingerRig_SP') )\n    mc.delete( mc.parentConstraint( loc0, pre+'neck_M_fingerRig_SP') )\n    mc.parent( ngrp, njgrp, nctgrp, pre+'neck_M_fingerRig_SP')\n    \n    nmsjgp = mc.group( n='neck_M__SJ_GP', parent=pre+'_skinJointGP', empty=True)\n    for i in range(3):\n        mc.select( clear=True )\n        nmfsj = mc.joint( n=pre+'neck_M_fingerRig_%d_SJ'%i)\n        nmfsjt = mc.group( nmfsj, n=nmfsj+'T')\n        nmfsjp = mc.group( nmfsjt, n=nmfsj+'P' )\n    mc.select( clear=True )\n    mc.parentConstraint( nj0, pre+'neck_M_fingerRig_0_SJP', maintainOffset=False, weight=1 )\n    mc.scaleConstraint( nj0, pre+'neck_M_fingerRig_0_SJP')\n    mc.parentConstraint( nj1, pre+'neck_M_fingerRig_1_SJP', maintainOffset=False, weight=1 )\n    mc.scaleConstraint( nj1, pre+'neck_M_fingerRig_1_SJP')\n    mc.parentConstraint( hj0, pre+'neck_M_fingerRig_2_SJP', maintainOffset=False, weight=1 )\n    mc.scaleConstraint( hj0, pre+'neck_M_fingerRig_2_SJP')\n    mc.parent( pre+'neck_M_fingerRig_0_SJP', pre+'neck_M_fingerRig_1_SJP', pre+'neck_M_fingerRig_2_SJP', 'neck_M__SJ_GP')\n    mc.connectAttr( pre+'_jointHide_displayLayer.drawInfo', nj0+'.drawOverride')\n    mc.connectAttr( pre+'_jointHide_displayLayer.drawInfo', hj0+'.drawOverride')\n    mc.connectAttr( pre+'_jointHide_displayLayer.drawInfo', nj1+'.drawOverride')\n    for attr in [ '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n        mc.setAttr( hcir+attr, lock=True, keyable=False, channelBox=False)\n        mc.setAttr( nmcir+attr, lock=True, keyable=False, channelBox=False)\n    nds=[pre+'neck_BC']\n    mc.rename( 'pairBlend1', pre+'head_pairBlend1')\n    nds.append( pre+'head_pairBlend1' )\n    for pbir in ['_inRotateX1', '_inRotateY1', '_inRotateZ1', '_inTranslateX1', '_inTranslateY1', '_inTranslateZ1']:\n        mc.rename( 'pairBlend1'+pbir, pre+'head_pairBlend1'+pbir)\n        nds.append( pre+'head_pairBlend1'+pbir )\n    mc.container('__'+pre+'_allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select( clear=True )\n    mc.setAttr( nik+'.visibility', 0) \n    mc.setAttr( nikgrp+'.visibility', 0)\n    \n    mc.addAttr( '*_head_Ctr', longName='local_to_world', attributeType='enum', enumName='__________', keyable=True )\n    mc.setAttr( '*_head_Ctr.local_to_world', lock=True )\n    mc.addAttr( '*_head_Ctr', longName='ro_follow', keyable=True, min=0, max=1 )\n    mc.createNode( 'pairBlend', n=pre+'_head_rofollow_pairblend' )\n    for ax in['X', 'Y', 'Z']:\n        mc.connectAttr( '*_head_pairBlend1.inRotate%s1'%ax, '*_head_rofollow_pairblend.inRotate%s1'%ax, force=True)\n        mc.connectAttr( '*_head_pairBlend1.outRotate%s'%ax, '*_head_rofollow_pairblend.inRotate%s2'%ax, force=True)\n        mc.connectAttr( '*_head_rofollow_pairblend.outRotate%s'%ax, '*_head_Ctr_Grp.rotate%s'%ax, force=True )\n    mc.connectAttr( '*_head_Ctr.ro_follow', '*_head_rofollow_pairblend.weight' )\n    mc.container('*__allRigNodes_container', addNode='*_head_rofollow_pairblend', edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.setAttr( hcir+'.follow', 1)\n    mc.delete( loc0, loc1, loc2, pre+'neck_curve' )\n    mc.select( clear=True )\n    \n#########################################################\n\ndef AdjustPoleVector(*args):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    for i in [('hand_','shoulder_'), ('leg_','hip_')]:\n        for j in ['L_', 'R_']:\n            pole_gp = pre+i[0]+j+'Cons_pole_IK_Ctr_GP'\n            pole_sp = pre+i[0]+j+'Cons_pole_IK_Ctr_locSP'\n            ik_ctr = pre+i[0]+j+'limb_IK_Ctr'\n            sj_ctr = pre+i[1]+j+'singleJ_Ctr'\n            for k in ['.rotateX', '.rotateY', '.rotateZ']:\n                mc.setAttr( pole_gp+k, lock=False )\n            mc.delete( mc.orientConstraint( ik_ctr, pole_gp ) )\n            for k in ['.rotateX', '.rotateY', '.rotateZ']:\n                mc.setAttr( pole_gp+k, lock=True  )\n            mc.parentConstraint( pre+'root_gimbal_1_Ctr', pole_sp, mo=1, weight=1 )\n            mc.setKeyframe( pole_sp+'.translate' )\n            mc.setKeyframe( pole_sp+'.rotate' )\n            mc.addAttr( sj_ctr, longName='pole_follow', keyable=True, min=0, max=1 )\n            mc.connectAttr( sj_ctr+'.pole_follow', pole_sp+'.blendParent1')\n    nds = []\n    for pb in['pairBlend1','pairBlend2','pairBlend3','pairBlend4']:\n        mc.rename( pb, pre+'_'+pb)\n        nds.append( pre+'_'+pb )\n        for pbir in ['_inRotateX1', '_inRotateY1', '_inRotateZ1', '_inTranslateX1', '_inTranslateY1', '_inTranslateZ1']:\n            mc.rename( pb+pbir, pre+'_'+pb+pbir)\n            nds.append( pre+'_'+pb+pbir )\n    mc.container('__'+pre+'_allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select( clear=True )\n                \n#########################################################\n\ndef CreateNulls(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    for hl in ['hand_', 'leg_']:\n        for lr in ['L_', 'R_']:\n            for ctr in ['upLimb_FK_', 'dwLimb_FK_', 'ankle_FK_', 'limb_IK_', 'Cons_pole_IK_']:\n                grp = mc.group( name=pre+hl+lr+ctr+'Null' , empty=True)\n                if ctr == 'limb_IK_':\n                    mc.parent( grp, pre+hl+lr+ctr+'Ctr_locSP' )\n                elif ctr == 'Cons_pole_IK_':\n                    mc.parent( grp, pre+hl+lr+ctr+'Ctr_GP' ) \n                else:\n                    mc.parent( grp, pre+hl+lr+ctr+'Ctr' )\n                for attr in ['.translateX', '.translateY', '.translateZ', '.rotateX', '.rotateY', '.rotateZ']:\n                    mc.setAttr( grp+attr, 0 )\n    mc.select(clear=True )\n    \n#########################################################\n\ndef CreateFaceLocator(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    fc_loc=[]\n    fc_loc.append( mc.spaceLocator( name=pre+'head_mid_jnt_loc' )[0] )\n    mc.move( 0,125,0, fc_loc[0] )\n    fc_loc.append( mc.spaceLocator( name=pre+'jaw_jnt_loc' )[0] )\n    mc.move( 0,120,5, fc_loc[1] )\n    fc_loc.append( mc.spaceLocator( name=pre+'jaw_jnted_loc' )[0] )\n    mc.move( 0,120,10, fc_loc[2] )\n    fc_loc.append( mc.spaceLocator( name=pre+'eye_L_jnt_loc' )[0] )\n    mc.move( 5,130,5, fc_loc[3] )\n    fc_loc.append( mc.spaceLocator( name=pre+'eye_L_jnted_loc' )[0] )\n    mc.move( 5,130,10, fc_loc[4] )\n    fc_loc.append( mc.spaceLocator( name=pre+'tongue_jnt_st_loc' )[0] )\n    mc.move( 0,125,1, fc_loc[5] )\n    fc_loc.append( mc.spaceLocator( name=pre+'tongue_jnt_mid1_loc' )[0] )\n    mc.move( 0,125,4, fc_loc[6] )\n    fc_loc.append( mc.spaceLocator( name=pre+'tongue_jnt_mid2_loc' )[0] )\n    mc.move( 0,125,7, fc_loc[7] )\n    fc_loc.append( mc.spaceLocator( name=pre+'tongue_jnt_ed_loc' )[0] )\n    mc.move( 0,125,10, fc_loc[8] )\n    mc.parent( fc_loc[1:], fc_loc[0] )\n    mc.parent( fc_loc[2], fc_loc[1] )\n    mc.parent( fc_loc[4], fc_loc[3] )\n    mc.parent( fc_loc[6:], fc_loc[5] )\n    jaw_crv = mc.curve( n='jaw_jnt_curve', degree=1, point=((0,120,5), (0,120,10)) )\n    eye_crv = mc.curve( n='eye_jnt_curve', degree=1, point=((5,130,5), (5,130,10)) )\n    ton_crv = mc.curve( n='tongue_jnt_curve', degree=3, point=((0,125,1), (0,125,4), (0,125,7), (0,125,10)) )\n    mc.connectAttr( fc_loc[1]+'Shape.worldPosition', jaw_crv+'.cv[0]' )\n    mc.connectAttr( fc_loc[2]+'Shape.worldPosition', jaw_crv+'.cv[1]' )\n    mc.connectAttr( fc_loc[3]+'Shape.worldPosition', eye_crv+'.cv[0]' )\n    mc.connectAttr( fc_loc[4]+'Shape.worldPosition', eye_crv+'.cv[1]' )\n    mc.connectAttr( fc_loc[5]+'Shape.worldPosition', ton_crv+'.cv[0]' )\n    mc.connectAttr( fc_loc[6]+'Shape.worldPosition', ton_crv+'.cv[1]' )\n    mc.connectAttr( fc_loc[7]+'Shape.worldPosition', ton_crv+'.cv[2]' )\n    mc.connectAttr( fc_loc[8]+'Shape.worldPosition', ton_crv+'.cv[3]' )\n    mc.setAttr( jaw_crv+'.overrideEnabled', 1 )\n    mc.setAttr( jaw_crv+'.overrideDisplayType', 1 )\n    mc.setAttr( eye_crv+'.overrideEnabled', 1 )\n    mc.setAttr( eye_crv+'.overrideDisplayType', 1 )\n    mc.setAttr( ton_crv+'.overrideEnabled', 1 )\n    mc.setAttr( ton_crv+'.overrideDisplayType', 1 )\n    mc.select( clear=True )\n\ndef CreateFaceSkeleton(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    mc.select( clear=True ) \n    hm_sw = mc.joint( n=pre+'head_mid_jnt_SW', p=mc.xform( '*head_mid_jnt_loc', q=1, t=1, ws=1) )\n    mc.select( clear=True ) \n    jaw_sw = mc.joint( n=pre+'jaw_jnt_SW', p=mc.xform( '*jaw_jnt_loc', q=1, t=1, ws=1) )\n    jawed_sw = mc.joint( n=pre+'jaw_jnted_SW', p=mc.xform( '*jaw_jnted_loc', q=1, t=1, ws=1) )\n    mc.select( clear=True )\n    eye_l_asw = mc.joint( n=pre+'eye_L_aim_jnt_SW', p=mc.xform( '*eye_L_jnt_loc', q=1, t=1, ws=1) )\n    mc.select( clear=True )\n    eye_l_sw = mc.joint( n=pre+'eye_L_jnt_SW', p=mc.xform( '*eye_L_jnt_loc', q=1, t=1, ws=1) )\n    eye_l_fsw = mc.joint( n=pre+'eye_L_fk_jnt_SW', p=mc.xform( '*eye_L_jnt_loc', q=1, t=1, ws=1) )\n    eyeed_lsw = mc.joint( n=pre+'eye_L_jnted_SW', p=mc.xform( '*eye_L_jnted_loc', q=1, t=1, ws=1) )\n    mc.select( clear=True )\n    mc.delete( '*tongue_jnt_*_loc' )\n    mc.rebuildCurve( '*tongue_jnt_curve', ch=0, d=3, s=11 )\n    mc.delete( '*tongue_jnt_curve.cv[1]' )\n    mc.delete( '*tongue_jnt_curve.cv[11]' )\n    ton_sw = []\n    for i in range(12):\n        ton_sw.append( mc.joint(n=pre+'tongue_jnt_%d_SW'%i, p=mc.xform( '*tongue_jnt_curve.cv[%d]'%i, q=1, t=1, ws=1) ) )\n        if i > 0:\n            mc.joint( ton_sw[i-1], e=1, zso=1, oj='xyz', sao='yup' )\n        if i == 11:\n            mc.joint( ton_sw[i], e=1, zso=1, oj='none', sao='yup' )\n    mc.parent( jaw_sw, eye_l_asw, eye_l_sw, ton_sw[0], hm_sw )\n    mc.mirrorJoint( eye_l_asw, mirrorYZ=1, mirrorBehavior=0, searchReplace=['_L_', '_R_'] )\n    mc.mirrorJoint( eye_l_sw, mirrorYZ=1, mirrorBehavior=0, searchReplace=['_L_', '_R_'] )\n    mc.parent( hm_sw, '*head_jnt_SW')\n    mc.group( n=pre+'eye_L_aim_up', parent=pre+'eye_L_aim_jnt_SW', empty=True)\n    mc.group( n=pre+'eye_R_aim_up', parent=pre+'eye_R_aim_jnt_SW', empty=True)\n    mc.move( 0,10,0, pre+'eye_L_aim_up', r=1 )\n    mc.move( 0,10,0, pre+'eye_R_aim_up', r=1 )\n    hd_sjgp = mc.group( n='head_M__SJ_GP', parent=pre+'_skinJointGP', empty=True)\n    mc.select( clear=True )\n    for jnt in [ 'head_jnted_', 'jaw_jnt_', 'eye_L_jnt_', 'eye_R_jnt_']:\n        fc_sj = mc.joint( n=pre+jnt+'SJ' )\n        fc_sjt = mc.group( fc_sj, n=fc_sj+'T')\n        fc_sjp = mc.group( fc_sjt, n=fc_sj+'P' )\n        if 'eye' in jnt: jnt=jnt[0:6]+'fk_'+jnt[6:]\n        mc.parentConstraint( pre+jnt+'SW', fc_sjp, maintainOffset=False, weight=1 )\n        mc.scaleConstraint( pre+jnt+'SW', fc_sjp)\n        mc.parent( fc_sjp, hd_sjgp)\n        mc.select( clear=True )\n    for i in range(12):\n        ton_sj = mc.joint( n=pre+'tongue_jnt_%d_SJ'%i )\n        ton_sjt = mc.group( ton_sj, n=ton_sj+'T')\n        ton_sjp = mc.group( ton_sjt, n=ton_sj+'P' )\n        mc.parentConstraint( pre+'tongue_jnt_%d_SW'%i, ton_sjp, maintainOffset=False, weight=1 )\n        mc.scaleConstraint( pre+'tongue_jnt_%d_SW'%i, ton_sjp)\n        mc.parent( ton_sjp, hd_sjgp)\n        mc.select( clear=True )\n    mc.delete( '*_jnt*loc', '*_jnt_curve' )\n\n#########################################################\n\ndef CreateEyeControl(*args):    \n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    for lr in ['_L_','_R_']:\n        eye = pre+'eye'+lr\n        if lr == '_R_':\n            cl = 14\n        elif lr == '_L_':\n            cl = 6\n        eye_ac = mc.circle( n=eye+'aim_Ctr', r=2, ch=0, normal=(0,0,1) )[0]\n        eye_as = mc.listRelatives( eye_ac, shapes=True)[0]\n        mc.setAttr( eye_as+'.overrideEnabled', 1 )\n        mc.setAttr( eye_as+'.overrideColor', cl )\n        eye_ag = mc.group( eye_ac, n=eye_ac+'_Grp' )\n        mc.delete( mc.parentConstraint( eye+'jnt_SW', eye_ag ) )\n        mc.move( 0,0,20, eye_ag, r=1 )\n        mc.aimConstraint( eye_ac, eye+'jnt_SW', aimVector=(0,0,1), upVector=(0,1,0), worldUpType='object', worldUpObject=eye+'aim_up' )\n        eye_fc = mc.curve( n=eye+'fk_Ctr', d=1, p=((-1,1,0),(-1,1,5),(-1,-1,5),(-1,-1,0),(-1,1,0),(1,1,0),(1,1,5),(-1,1,5),(1,-1,5),(1,1,5),(-1,-1,5),(1,-1,5),(1,-1,0),(-1,-1,0),(1,1,0),(1,-1,0),(-1,1,0)) )\n        eye_fs = mc.listRelatives( eye_fc, shapes=True)[0]\n        mc.setAttr( eye_fs+'.overrideEnabled', 1 )\n        mc.setAttr( eye_fs+'.overrideColor', cl )\n        eye_fg = mc.group( n=eye_fc+'_Grp', empty=True )\n        mc.parent( eye_fc, eye_fg )\n        mc.parentConstraint( eye+'jnt_SW', eye_fg )\n        mc.orientConstraint( eye_fc, eye+'fk_jnt_SW' )\n        for attr in ['.rotateX', '.rotateY', '.rotateZ', '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n            mc.setAttr( eye_ac+attr, lock=True, keyable=False, channelBox=False )\n        for attr in ['.translateX', '.translateY', '.translateZ', '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n            mc.setAttr( eye_fc+attr, lock=True, keyable=False, channelBox=False )\n        mc.setAttr( eye_fc+'.rotateZ', lock=True )\n    aim_ctr = mc.curve( n=pre+'eye_aim_Ctr', d=1, p=((-8,4,0),(8,4,0),(8,-4,0),(-8,-4,0),(-8,4,0)) )\n    aim_sh = mc.listRelatives( aim_ctr, shapes=True)[0]\n    mc.setAttr( aim_sh+'.overrideEnabled', 1 )\n    mc.setAttr( aim_sh+'.overrideColor', 17 )\n    aim_grp = mc.group( aim_ctr, n=pre+'eye_aim_Ctr_Grp' )\n    tx, ty, tz = mc.xform( pre+'eye_L_aim_Ctr_Grp', q=1, t=1, ws=1)\n    mc.move( 0, ty, tz, aim_grp )\n    mc.parent( pre+'eye_R_aim_Ctr_Grp', pre+'eye_L_aim_Ctr_Grp', aim_ctr )\n    for attr in ['.rotateX', '.rotateY', '.scaleY', '.scaleZ']:\n        mc.setAttr( aim_ctr+attr, lock=True, keyable=False, channelBox=False )\n    eye_rg = mc.group( n=pre+'eye_Rig_Ctr_Grp', empty=True )\n    mc.delete( mc.pointConstraint( pre+'head_Ctr', eye_rg ) )\n    mc.parent( '*_eye_*_fk_Ctr_Grp', aim_grp, eye_rg )\n    mc.parent( eye_rg, pre+'head_Rig_SP' )\n    mc.parentConstraint( pre+'head_Ctr', aim_grp, maintainOffset=True )\n    mc.setKeyframe( aim_grp+'.translate' )\n    mc.setKeyframe( aim_grp+'.rotate' )\n    mc.addAttr( aim_ctr, ln='head_follow',  keyable=True, min=0, max=1 )\n    mc.connectAttr( aim_ctr+'.head_follow', aim_grp+'.blendParent1' )\n    nds = []\n    nds.append( mc.rename( 'pairBlend1', pre+'eye_pairBlend1') )\n    for i in ['_inRotateX1', '_inRotateY1', '_inRotateZ1', '_inTranslateX1', '_inTranslateY1', '_inTranslateZ1']:\n        nds.append( mc.rename( 'pairBlend1'+i, pre+'tongue_pairBlend1'+i) )\n    mc.container('__'+pre+'_allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.setAttr( aim_ctr+'.head_follow',1 )\n    mc.select( clear=True )\n\n#########################################################\n\ndef CreateTongueControl(*args):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    jnt_len = 0.0\n    for i in range(1,12):\n        jnt_len += mc.getAttr( '*tongue_jnt_%d_SW.translateX'%i )\n    sj_len = jnt_len/11.0\n    for i in range(1,12):\n        mc.setAttr( '*tongue_jnt_%d_SW.translateX'%i, sj_len)\n    ton_ikhandle = mc.ikHandle( n=pre+'tongue_ikHandle', sj=pre+'tongue_jnt_0_SW', ee=pre+'tongue_jnt_11_SW', sol='ikSplineSolver', scv=False, pcv=False )\n    ton_ik = ton_ikhandle[0]\n    ton_crv = ton_ikhandle[2]\n    ton_crv = mc.rename( ton_crv, pre+'tongue_ik_curve' )\n    ton_dcrv = mc.duplicate( ton_crv, name=pre+'tongue_sm_curve' )\n    crv_sh = mc.listRelatives( ton_crv, shapes=True)[0]\n    dcrv_sh = mc.listRelatives( ton_dcrv, shapes=True)[0]\n    crv_info = mc.createNode( 'curveInfo', n=pre+'tongue_ik_curveinfo' )\n    mc.connectAttr( crv_sh+'.worldSpace[0]', crv_info+'.inputCurve' )\n    dcrv_info = mc.createNode( 'curveInfo', n=pre+'tongue_scale_curveinfo' )\n    mc.connectAttr( dcrv_sh+'.worldSpace[0]', dcrv_info+'.inputCurve' )\n    crv_len = mc.getAttr( crv_info+'.arcLength' )\n    ton_ig = mc.group( n=pre+'tongue_ikHandle_Grp', empty=True )\n    ton_ikgp = mc.group( n=pre+'tongue_IK_SP', empty=True )\n    mc.parent( ton_ik, ton_crv, ton_ig )\n    mc.parent( ton_dcrv, ton_ig, ton_ikgp )\n    mc.setAttr( ton_ig+'.inheritsTransform', 0 )\n    ton_cj = []\n    for i in [0,3,6,9,13]:\n        mc.select(clear=True)\n        ton_cj.append( mc.joint( n=pre+'tongue_%d_Ctr_jnt'%i, p=mc.xform( ton_crv+'.cv[%d]'%i, q=1, t=1, ws=1) ) )\n    ton_ct = []\n    ton_cs = []\n    ton_cg = []\n    for i in range(5):\n        ton_ct.append( mc.circle( n=pre+'tongue_%d_Ctr'%i, r=2 ,ch=0, normal=(1,0,0) )[0] )\n        ton_cs.append( mc.listRelatives( ton_ct[i], shapes=True)[0] )\n        mc.setAttr( ton_cs[i]+'.overrideEnabled', 1 )\n        mc.setAttr( ton_cs[i]+'.overrideColor', 17 )\n        ton_cg.append( mc.group( ton_ct[i], n=ton_ct[i]+'_Grp' ) )\n        mc.xform( ton_cg[i], ws=1, t=mc.xform( ton_cj[i], q=1, t=1, ws=1 ) )\n        mc.delete( mc.tangentConstraint( ton_crv, ton_cg[i] ) )\n        mc.parent( ton_cj[i], ton_ct[i] )\n        mc.setAttr( ton_cj[i]+'.visibility', 0)\n        for attr in ['.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n            mc.setAttr( ton_ct[i]+attr, l=1, k=0, cb=0 )\n    for i in range(1,5):\n        mc.parent( ton_cg[i], ton_ct[i-1] )\n    ton_cg.append( mc.group( n=pre+'tongue_Ctr_Grp', em=1 ) )\n    mc.delete( mc.pointConstraint( ton_cg[0], ton_cg[5] ) )\n    mc.parent( ton_cg[0], ton_cg[5] )\n    ton_md1 = mc.createNode( 'multiplyDivide', n=pre+'tongue_MD1' )\n    ton_md2 = mc.createNode( 'multiplyDivide', n=pre+'tongue_MD2' )\n    mc.setAttr( ton_md1+'.operation', 2)\n    mc.connectAttr( crv_info+'.arcLength', ton_md1+'.input1X' )\n    mc.connectAttr( dcrv_info+'.arcLength', ton_md1+'.input2X' )\n    mc.connectAttr( ton_md1+'.outputX', ton_md2+'.input1X' )\n    mc.setAttr( ton_md2+'.input2X', sj_len )\n    for i in range(1,12):\n        mc.connectAttr( ton_md2+'.outputX', pre+'tongue_jnt_%d_SW'%i+'.translateX' )\n    mc.setAttr( ton_ikgp+'.visibility', 0 )\n    nds = [ '*_tongue_ik_curveinfo', '*_tongue_scale_curveinfo', '*_tongue_MD1', '*_tongue_MD2' ]\n    mc.container('__*__allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    ton_sp = mc.group( n=pre+'tongue_Rig_SP', em=1 )\n    mc.delete( mc.parentConstraint( ton_cg[5], ton_sp ) )\n    mc.parent( ton_sp, pre+'head_Rig_SP' )\n    mc.parentConstraint( pre+'jaw_jnt_SW', ton_sp, maintainOffset=True )\n    mc.parent( ton_cg[5], ton_ikgp, ton_sp )\n    mc.select( ton_cj, ton_crv )\n\n###########################################\n\ndef AnkleShoulderFix(*args):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    nds=[]\n    nds.append(mc.createNode('multDoubleLinear',n=pre+'leg_L_DW_SIK_mDL'))\n    mc.setAttr(pre+'leg_L_DW_SIK_mDL.input2',-1)\n    mc.connectAttr(pre+'leg_L_ankle_SW.rotateY',pre+'leg_L_DW_SIK_mDL.input1')\n    mc.connectAttr(pre+'leg_L_DW_SIK_mDL.output',pre+'leg_L_DW_endUp_LOC.rotateX',force=True)\n    mc.connectAttr(pre+'leg_R_ankle_SW.rotateY',pre+'leg_R_DW_endUp_LOC.rotateX',force=True)\n    for i in ('L','R'):\n        ctr=pre+'shoulder_%s_singleJ_Ctr'%i\n        mc.addAttr(ctr,ln='fix',at='enum',en='======:',k=0)\n        mc.setAttr(ctr+'.fix',e=1,channelBox=1 )\n        mc.addAttr(ctr,ln='arm_fix',at='float',k=1)\n        for j in range(5):\n            sj=pre+'hand_%s_UP_bend_%d_SJ'%(i,j)\n            mdl=mc.createNode('multDoubleLinear',n=sj.replace('SJ','mDL'))\n            nds.append(mdl)\n            mc.setAttr(mdl+'.input2',10-2*j)\n            mc.connectAttr(ctr+'.arm_fix',mdl+'.input1')\n            mc.connectAttr(mdl+'.output',sj+'.rotateX')\n    mc.container('__*__allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select(clear=True)\n    \n#########################################################\n\ndef SmallToolWindow():\n    if mc.window( 'smalltool', query=True, exists=True ):\n        mc.deleteUI( 'smalltool', window=True )\n    smalltool = mc.window( 'smalltool', title='Small Tool', width=400, height=360 )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 50, 100) )\n    mc.separator( style='none' )\n    mc.text(label='½ÇɫÃû')\n    nodelist = mc.ls(dependencyNodes=True)\n    charn = ''\n    try: mc.select('*__world'); charn = (mc.ls(sl=1)[0]).split('_')[0]; mc.select( clear=True)\n    except: pass\n    mc.textField( 'pre_textfield', text=charn )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='¾±²¿¶¨λ', width=100, command = CreateNeckLoc )\n    mc.button( label='´´½¨¾±²¿¿ØÖÆÆ÷', width=100, command = CreateNeckControl )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='Ã沿¶¨λ', width=100, command = CreateFaceLocator )\n    mc.button( label='´´½¨Ã沿¹Ç÷À', width=100, command = CreateFaceSkeleton)\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='×Զ¯´¦Àíspace½ڵã', width=200, command = AutoParentSpace )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='´´½¨×㲿¿ØÖÆÆ÷', width=200, command = CreateFootControl )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='µ÷Õû¼粿¼°¿貿¿ØÖÆÆ÷', width=200, command = AdjustShoulderHip )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='Òþ²ضàÓàǹµ㼰ÊôÐÔ', width=200, command = HideJointAttr )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='µ÷Õû¼«ÏòÁ¿', width=200, command = AdjustPoleVector )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='´´½¨¿Õ×é', width=200, command = CreateNulls )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='´´½¨Ñ۾µ¿ØÖÆ', width=200, command = CreateEyeControl )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='´´½¨Éàͷ¿ØÖÆ', width=200, command = CreateTongueControl )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='Ö÷´ÎÐÞÕý', width=200, command = AnkleShoulderFix )\n    mc.showWindow( smalltool )\n    \nSmallToolWindow()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "Python Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/hidehandle.bmp" 
+        -image1 "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/hidehandle.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import ZvParentMaster\nZvParentMaster.ZvParentMaster()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "Python Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/cutface.bmp" 
+        -image1 "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/cutface.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as mc\nimport maya.mel as mel\nsel = mc.ls(sl=1)[0]\ntrans = sel.split('.')[0]\n\nmel.eval(\"SplitVertex;\")\nshape = mc.listRelatives(trans,s=1)\nmc.polySeparate('%s|%s' % (trans,shape[0]), ch=0)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 33
+        -height 33
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "Python Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/quanzhongaa.bmp" 
+        -image1 "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/quanzhongaa.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\nPath = \"Z:/Mudan/Script/RiginggTools/TSWTools\"\nif not Path in sys.path:\n    sys.path.append(Path)\nimport TweakSkinWeight\nreload(TweakSkinWeight)\nTweakSkinWeight.showUI()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "Python Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\nPath = \"Z:/Mudan/Script/RiginggTools/BSRigTools\"\nif not Path in sys.path:\n    sys.path.append(Path)\nimport FaceRIG\nreload(FaceRIG)\nFaceRIG.showUI()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined MEL command" 
+        -enableBackground 0
+        -align "center" 
+        -label "MEL Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "{\nstring $obj;\nstring $selection[] = `ls -sl`;\nstring $selectionShape[] = `listRelatives -s -path $selection`;\nfor($obj in $selectionShape)\n{\nfloat $cy = `getAttr ($obj + \".template\")`;\nif($cy == 0)\nsetAttr ($obj + \".template\")1;\nelse\nsetAttr ($obj + \".template\")0;\n}\n}" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Set the wireframe color of all selected objects" 
+        -enableBackground 0
+        -align "center" 
+        -label "Wireframe Color..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "WC" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconDisplay.png" 
+        -image1 "menuIconDisplay.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "objectColorPalette ()" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "Python Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import zhcg_renamePro; zhcg_renamePro.ui()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined MEL command" 
+        -enableBackground 0
+        -align "center" 
+        -label "MEL Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "{\n{\nstring $thisWindow = \"PointCurveWindow\";\nif(`window -ex $thisWindow`)deleteUI -wnd $thisWindow;\nif(`windowPref -ex $thisWindow`) windowPref -r $thisWindow;\nwindow -t \"Create PointOnCurveInfo Window\" -w 270 -h 170 $thisWindow;\nstring $Layout = `formLayout`;\nstring $selCurve = `textField -w 180 -h 30 -tx \"Select One Curve And Load...\" -bgc 1.0 0.726 0.826 selCurve`;\nstring $nameLabel = `text -l \"Node Name\" -w 60 -h 30 nameLabel`;\nstring $Nodename = `textField   -w 190 -h 30 -tx \"\" -en 0 -bgc 1.0 0.726 0.826 Nodename`;\nstring $loadCurveButton = `button -l \"< < <\" -w 70 -h 30 -c (\"loadCur\") loadCurveButton`;\nstring $pointInt = `intSliderGrp  -field 1 -min 1 -max 100 -v 0 -w 260 -h 25 -en 0 -ss 1 pointInt`;\nstring $createButton = `button -l \">  >   create    <  <\" -w 257 -h 40 -en 0 -c (\"createIT\") createButton`;\nformLayout -edit \n-attachForm  $selCurve \"top\" 8 \n-attachForm  $selCurve \"left\" 6\n\n-attachForm   $loadCurveButton \"top\" 8\n-attachControl  $loadCurveButton \"left\" 8 $selCurve\n\n-attachControl  $nameLabel \"top\" 8 $selCurve\n-attachForm   $nameLabel \"left\" 6\n\n-attachControl  $Nodename \"top\" 8  $selCurve\n-attachControl  $Nodename \"left\" 8 $nameLabel\n\n-attachControl  $pointInt \"top\" 10 $nameLabel\n-attachForm   $pointInt \"left\" 6\n\n-attachControl  $createButton \"top\" 8 $pointInt\n-attachForm   $createButton \"left\" 6\n\n$Layout;\nshowWindow $thisWindow;\n}\nproc loadCur()\n{\nstring $selCurves[] = `ls -sl`;\nfloat $selCueveInt = `size($selCurves)`;\nif($selCueveInt == 1)\n{textField -e -tx $selCurves[0]  selCurve;\ntextField -e -en 1  Nodename;\nintSliderGrp  -e -en 1  pointInt;\nbutton -e -en 1 createButton;}\nelse\n{textField -e -tx \"Select One Curve And Load...\"  selCurve;\ntextField -e -en 0  Nodename;\nintSliderGrp  -e -en 0  pointInt;\nbutton -e -en 0 createButton;}\n}\nproc createIT()\n{\nstring $loadedCurv = `textField -q -tx  selCurve`;\nstring $loadedCurShape[] = `listRelatives -s -path $loadedCurv`;\nint $i;\nint $imax = `intSliderGrp  -q -v pointInt`;\nfloat $beis;\nif($imax == 1)\n{$beis = 1;}\nelse\n{float $Maxvalue = `getAttr ($loadedCurShape[0]+ \".maxValue\")`;\n$beis = $Maxvalue / ($imax - 1);\n}\nstring $nameSpace = `textField   -q -tx Nodename`;\nfor ($i = 0;$i < $imax;$i ++ )\n{\nstring $Node = `createNode -n ($nameSpace + \"Node\")pointOnCurveInfo`;\nstring $Jnt = `joint -p 0 0 0 -n ($nameSpace + \"Jnt\")`;\nconnectAttr ($loadedCurShape[0] + \".worldSpace\") ($Node + \".inputCurve\");\nconnectAttr ($Node + \".result.position\") ($Jnt + \".translate\");\nfloat $NodePosi = $beis * $i;\nsetAttr ($Node + \".parameter\") $NodePosi;\n}\n}\n}\n\n\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

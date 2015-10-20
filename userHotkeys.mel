@@ -1,0 +1,25 @@
+//Maya Preference 2014 (Release 1)
+//
+//
+
+hotkey -keyShortcut "q" -alt -name ("CenterPivotNameCommand");
+hotkey -keyShortcut "p" -ctl -name ("shapeparentNameCommand");
+hotkey -keyShortcut "e" -alt -name ("FreezeTransformationsNameCommand");
+hotkey -keyShortcut "a" -alt -name ("AddAttributeNameCommand");
+hotkey -keyShortcut "k" -releaseName ("NODEcreater_ReleaseNameCommand");
+hotkey -keyShortcut "s" -ctl -alt -name ("SaveSceneAsNameCommand");
+hotkey -keyShortcut "z" -alt -name ("createCurveNameCommand");
+hotkey -keyShortcut "r" -alt -name ("FreezeTransformationsOptionsNameCommand");
+hotkey -keyShortcut "`" -releaseName ("NODEcreater_ReleaseNameCommand");
+hotkey -keyShortcut "`" -name ("NODEcreater_PressNameCommand");
+hotkey -keyShortcut "f" -alt -name ("ChannelControlEditorNameCommand");
+hotkey -keyShortcut "l" -name ("CreateLocatorNameCommand");
+hotkey -keyShortcut "w" -alt -name ("DeleteHistoryNameCommand");
+hotkey -keyShortcut "s" -alt -name ("ExpressionEditorNameCommand");
+hotkey -keyShortcut "1" -ctl -name ("HypershadeWindowNameCommand");
+hotkey -keyShortcut "c" -alt -name ("ctrlColorNameCommand");
+hotkey -keyShortcut "0" -releaseName ("HfAttrSelect_Menu_revert");
+hotkey -keyShortcut "0" -name ("HfAttrSelect_Menu");
+hotkey -keyShortcut "x" -alt -name ("JiedianNameCommand");
+hotkey -keyShortcut "2" -ctl -name ("HypergraphWindowNameCommand");
+hotkey -keyShortcut "d" -alt -name ("ConnectionEditorNameCommand");

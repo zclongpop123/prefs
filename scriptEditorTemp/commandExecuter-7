@@ -1,0 +1,10 @@
+import sys
+
+Path = '/Users/zangchanglong/Work/RiggingTeamTools'
+if Path not in sys.path:
+    sys.path.append(Path)
+
+
+import RootUI
+reload(RootUI)
+RootUI.PlugTool()

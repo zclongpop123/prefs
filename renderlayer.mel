@@ -1,0 +1,48 @@
+global proc fcxr()
+{
+window -t "分层渲染设置窗口" -w 50 -h 200 fencengchuangkou;
+columnLayout;
+ 
+text -label "            渲染设置              " -bgc .88 .34 1.0;
+button -label "  渲染设置  " -bgc .392 .863 1.0 -c ("unifiedRenderGlobalsWindow");
+button -label "设置序列名" -bgc .392 .863 1.0 -c ("FNP");
+button -label "  设置帧数  " -bgc .392 .863 1.0 -c ("setFrame");
+
+
+text -label "          人物层设置           " -bgc .88 .34 1.0;
+button -label "人物Color" -bgc 1 .75 .75  -c("renwu_color");
+button -label " 人物Occ " -bgc 1 .75 .75  -c("renwu_occ");
+button -label " 人物C5   " -bgc 1 .75 .75  -c("renwu_c5");
+
+
+text -label "          场景层设置           " -bgc .88 .34 1.0;
+button -label "场景Color" -bgc .5 1 .5   -c("changjing_color");
+button -label " 场景Occ " -bgc .5 1 .5 -c("changjing_occ");
+button -label "  场景C5  " -bgc .5 1 .5 -c("changjing_c5");
+
+
+text -label "          海浪层设置           " -bgc .88 .34 1.0;
+button -label "海浪water" -bgc .392 .863 1.0 -c("hailang");
+button -label "海浪Dif_1" -bgc .392 .863 1.0 -c("hailang_dif1");
+button -label "海浪Dif_2" -bgc .392 .863 1.0 -c("hailang_dif2");
+button -label "海浪Dif_3" -bgc .392 .863 1.0 -c("hailang_dif3");
+
+
+text -label "          通道层设置           " -bgc .88 .34 1.0;
+button -label "     RGB层     " -bgc 1 .75 .75 -c("tongdao");
+button -label "Surface材质" -bgc 1 .75 .75 -c("surfacecaizhi");
+
+
+text -label "          阴影层设置           " -bgc .88 .34 1.0;
+button -label " shadow1 " -bgc .5 1 .5 -c("yinying1");
+button -label " shadow2 " -bgc .5 1 .5 -c("yinying2");
+button -label " shadow3 " -bgc .5 1 .5 -c("yinying3");
+button -label "属性设置" -bgc .5 1 .5 -c("SpreadSheetEditor;");
+
+text -label "          属性设置窗口       " -bgc .88 .34 1.0;
+button -label "            毛发         " -bgc .33 .60 1.0 -c("maofa");
+button -label "        渲染窗口     " -bgc .33 .60 1.0 -c ("xuanranchuankou");
+button -label "   mentalray窗口  " -bgc .33 .60 1.0 -c("eval MentalRayApproxEditor");
+
+showWindow fencengchuangkou;
+}

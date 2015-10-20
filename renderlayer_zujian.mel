@@ -1,0 +1,123 @@
+global proc FNP()
+{
+insertKeywordMenuCallback "%/s%/l%l";
+setAttr "defaultRenderGlobals.extensionPadding" 3;
+}
+global proc setFrame()
+{
+setAttr "defaultRenderGlobals.startFrame" `floatField -q -v MayaWindow|mayaMainWindowForm|formLayout4|formLayout18|formLayout19|formLayout47|floatField2`;
+setAttr "defaultRenderGlobals.endFrame" `floatField -q -v MayaWindow|mayaMainWindowForm|formLayout4|formLayout18|formLayout19|formLayout47|floatField5`;
+}
+global proc renwu_color()
+{
+createRenderLayer -name "layer111" -number 1 -noRecurse `ls -selection`;
+renderLayerEditorItemOnRename "layer111" "renwu_color";
+renderLayerEditorRenderable RenderLayerTab "defaultRenderLayer" 0;
+}
+
+global proc renwu_c5()
+{
+select -r mib_amb_occlusion1 ;
+setAttr "mib_amb_occlusion1.samples" 50;
+setAttr "mib_amb_occlusion1.max_distance" 5;
+}
+global proc changjing_color()
+{
+createRenderLayer -name "layer333" -number 1 -noRecurse `ls -selection`;
+renderLayerEditorItemOnRename "layer333" "changjing_color";
+}
+
+global proc changjing_c5()
+{
+select -r mib_amb_occlusion2 ;
+setAttr "mib_amb_occlusion2.samples" 50;
+setAttr "mib_amb_occlusion2.max_distance" 5;
+}
+global proc hailang()
+{
+createRenderLayer -name "layer5555" -number 1 -noRecurse `ls -selection`;
+renderLayerEditorItemOnRename "layer5555" "water_wave";
+renderLayerEditorRenderable RenderLayerTab "defaultRenderLayer" 0;
+}
+global proc hailang_dif1()
+{
+sets -renderable true -noSurfaceShader true -empty -name lambert1000SG;
+renderCreateBarCB -asShader "surfaceShader" lambert;
+rename lambert1001 "water_wave_lb" ;
+setAttr "water_wave_lb.color" -type double3 1 1 1 ;
+}
+global proc hailang_dif2()
+{
+renderLayerEditorBuildPopupMenu "RenderLayerTab" "MayaWindow|mayaMainWindowForm|formLayout3|formLayout11|formLayout32|formLayout33|ChannelsLayersPaneLayout|formLayout37|DisplayLayerUITabLayout|RenderLayerTab|RenderLayerTabRenderLayerFormLayout|RenderLayerTabRenderLayerEditor|popupMenu3"  "water_wave";
+renderLayerEditorSelectObjects RenderLayerTab water_wave;
+}
+global proc hailang_dif3()
+{
+renderLayerEditorBuildPopupMenu "RenderLayerTab" "MayaWindow|mayaMainWindowForm|formLayout3|formLayout11|formLayout32|formLayout33|ChannelsLayersPaneLayout|formLayout37|DisplayLayerUITabLayout|RenderLayerTab|RenderLayerTabRenderLayerFormLayout|RenderLayerTabRenderLayerEditor|popupMenu3"  "water_wave";
+renderLayerEditorSelectObjects RenderLayerTab water_wave;
+hyperShade -assign water_wave_lb;
+sets -e -forceElement lambert1001SG;
+setAttr "water_wave_lb.diffuse" 1;
+}
+global proc tongdao()
+{
+createRenderLayer -name "layer666" -number 1 -noRecurse `ls -selection`;
+renderLayerEditorItemOnRename "layer666" "RGB";
+}
+global proc surfacecaizhi()
+{
+createAndAssignShader surfaceShader "";
+}
+global proc yinying1()
+{
+createRenderLayer -name "layer55" -number 1 -noRecurse `ls -selection`;
+renderLayerEditorItemOnRename "layer55" "shadow";
+renderLayerEditorBuildPopupMenu "RenderLayerTab" "MayaWindow|mayaMainWindowForm|formLayout3|formLayout11|formLayout32|formLayout33|ChannelsLayersPaneLayout|formLayout37|DisplayLayerUITabLayout|RenderLayerTab|RenderLayerTabRenderLayerFormLayout|RenderLayerTabRenderLayerEditor|popupMenu3"  "shadow";
+showEditor shadow;
+listConnections -source true -destination false "shadow.renderInfo";
+listConnections -source true -destination false "shadow.identification";
+setUITemplate -pst attributeEditorTemplate;
+setParent AEWindow|AEmenuBarLayout|AErootLayout|AErootLayoutPane|AEbaseFormLayout|AEcontrolFormLayout|AttrEdrenderLayerFormLayout|scrollLayout1|columnLayout22|columnLayout23;
+AErenderLayerPreset( "shadow.message" );
+AEreplaceBoolean "AEWindow|AEmenuBarLayout|AErootLayout|AErootLayoutPane|AEbaseFormLayout|AEcontrolFormLayout|AttrEdrenderLayerFormLayout|scrollLayout1|columnLayout22|frameLayout9|columnLayout24|formLayout105" "shadow.renderable" "" 1;
+AEreplaceBoolean "AEWindow|AEmenuBarLayout|AErootLayout|AErootLayoutPane|AEbaseFormLayout|AEcontrolFormLayout|AttrEdrenderLayerFormLayout|scrollLayout1|columnLayout22|frameLayout9|columnLayout24|formLayout105" "shadow.global" "" 2;
+setParent AEWindow|AEmenuBarLayout|AErootLayout|AErootLayoutPane|AEbaseFormLayout|AEcontrolFormLayout|AttrEdrenderLayerFormLayout|scrollLayout1|columnLayout22|frameLayout9|columnLayout24|columnLayout25;
+AErenderLayerNumberReplace( "shadow.identification" );
+setParent AEWindow|AEmenuBarLayout|AErootLayout|AErootLayoutPane|AEbaseFormLayout|AEcontrolFormLayout|AttrEdrenderLayerFormLayout|scrollLayout1|columnLayout22|frameLayout10|columnLayout26|columnLayout27;
+AErenderLayerOverrideReplace( "shadow.shadingGroupOverride", "shadow.attributeOverrideScript" );
+setUITemplate -ppt;
+}
+global proc yinying2()
+{
+createRenderNodeCB -asShader "surfaceShader" useBackground "connectAttr %nodeSG.message shadow.shadingGroupOverride";
+setAttr " .specularColor" -type double3 0 0 0 ;
+setAttr " .reflectivity" 0;
+setAttr " .reflectionLimit" 0;
+shadingNode -asShader useBackground;
+sets -renderable true -noSurfaceShader true -empty -name useBackground1SG;
+connectAttr -f useBackground1.outColor useBackground1SG.surfaceShader;
+connectAttr useBackground1SG.message shadow.shadingGroupOverride;
+defaultNavigation -dtv -d shadow.shadingGroupOverride;
+defaultNavigation -dtv -d shadow.shadingGroupOverride;
+refreshAE;
+updateAnimLayerEditor("AnimLayerTab");
+statusLineUpdateInputField;
+autoUpdateAttrEd; 
+}
+global proc yinying3()
+{
+setAttr " .specularColor" -type double3 0 0 0 ;
+setAttr " .reflectivity" 0;
+setAttr " .reflectionLimit" 0;
+}
+global proc xuanranchuankou()
+{
+tearOffPanel "Render View" "renderWindowPanel" true;
+}
+global proc maofa()
+{
+select -r defaultFurGlobals;
+setAttr "defaultFurGlobals.renderFur" 0;
+HypergraphDGWindow;
+}
+

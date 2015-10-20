@@ -1,0 +1,62 @@
+/*  
+  author: Jeff Bernstein			 				www.jeffreybernstein.com
+  name: stClusterVerts
+  date: 10/01/05
+
+  description:
+  clusters selected points on a mesh and rematrixes the clusters to spherical curve controllers
+  
+  arguments: 
+  string $char = character prefix
+  string $radius = radius of the sphere control
+  example:
+  stClusterVerts scat .25 scat01_c_pxy01_px01_ggg;
+  
+*/
+//-----------------------------------------------------------------------------------------------
+
+global proc stClusterVerts(string $char, float $radius, string $proxy){
+
+		
+			string $verts[] = `ls -sl -fl`;
+			for ($i = 0; $i <`size($verts)`; $i++){
+			
+				//get the transform of the vert
+				float $vertPos[] = `xform -q -ws -t $verts[$i]`; 
+				
+				//create a control curve
+				stCreateCurveSphere;
+				string $sControls[] = `ls -sl`;
+				string $sControl = $sControls[0];
+				xform -t $vertPos[0] $vertPos[1] $vertPos[2] $sControl;
+				setAttr ($sControl + ".scaleX") $radius;
+				setAttr ($sControl + ".scaleY") $radius;
+				setAttr ($sControl + ".scaleZ") $radius;
+				select -r $sControl;
+				makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;
+		
+				//create a cluster on the vert
+				select -r $verts[$i];
+				string $vertCluster[] = `cluster -rel -wn $sControl $sControl`;
+						
+				if ($i<10){
+					//rename cluster
+					rename $vertCluster[0] ($char + "01_c_pxy01_cl0" +$i+ "_ddd");
+					//rename cluster handle
+					rename $vertCluster[1] ($char + "01_c_pxy01_cn0" +$i+ "_ccc");
+				}
+				else{
+					//rename clusterhandle
+					rename $vertCluster[0] ($char + "01_c_pxy01_cl" +$i+ "_ddd");
+					//rename cluster shape
+					rename $vertCluster[1] ($char + "01_c_pxy01_cn" +$i+ "_ccc");				
+				}
+						
+			}
+						
+
+	select -r $proxy;
+	hide;
+}			
+
+		

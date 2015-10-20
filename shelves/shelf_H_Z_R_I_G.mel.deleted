@@ -1,0 +1,136 @@
+global proc shelf_H_Z_R_I_G () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -align "center" 
+        -label "HZrig_setup" 
+        -labelOffset 0
+        -font "tinyBoldLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "HZrig_shelfIcon.bmp" 
+        -image1 "HZrig_shelfIcon.bmp" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"E:\\\\HZrig\\\\HZrig20110401\\\\HZrig_setup.mel\";" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "jammOrientJoint" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "JOJ" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import jammOrientJoint\njammOrientJoint.orientJointsWindow()\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "Cut" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Cut" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as mc\nsel = mc.ls( selection=True )\npshape = mc.listRelatives( sel, parent=True)[0]\nptrans = mc.listRelatives( pshape, parent=True)\nvert_list = mc.filterExpand( expand=False, selectionMask=31 )\nedge_list = mc.filterExpand( expand=False, selectionMask=32 )\nface_list = mc.filterExpand( expand=False, selectionMask=34 )\npoly_list = mc.filterExpand( expand=False, selectionMask=12 )\nif vert_list != None: \n    mc.polySplitVertex(vert_list)\n    rs=0\nelif edge_list != None:\n    mc.polySplitEdge(edge_list)\n    rs=0\nelif face_list != None:\n    mc.polyChipOff( face_list, keepFacesTogether=True, duplicate=False, offset=0.0, constructionHistory=True )\n    rs=1\nslices = mc.polySeparate( pshape, rs=rs, constructionHistory=True )" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined MEL command" 
+        -enableBackground 0
+        -align "center" 
+        -label "LRA" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "LRA" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "menuIconDisplay.png" 
+        -image1 "menuIconDisplay.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ToggleLocalRotationAxes" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User-defined Python command" 
+        -enableBackground 0
+        -align "center" 
+        -label "Python Command" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "ec" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as mc\nimport maya.mel as mm\nsel = mc.ls(sl=1)\ned = sel[0].split('[')[0]+'[%d]'\ndc = []\nel = []\nfor i in sel:\n    ei = i.split('[')[1][:-1]\n    if ':' in ei:\n        ei = ei.split(':')\n        for j in range(int(ei[0]),int(ei[1])+1):\n            el.append(ed%j)\n    else:\n        el.append(i)\n\nfor e in el:\n    dc.append( mc.duplicateCurve(e,ch=0,rn=0,local=0)[0] )\nac = mc.attachCurve( dc,ch=0,rpo=0,kmk=1,m=1,bb=0.5,bki=0,p=0.1 )[0]\nmc.select(ac)\nmm.eval('CenterPivot')\nmm.eval('ToggleLocalRotationAxes')\nmc.delete(dc)\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+
+} 

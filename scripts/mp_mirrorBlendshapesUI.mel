@@ -1,0 +1,198 @@
+/*
+-----------------------beginHelpText------------------------
+mp_mirrorBlendshapesUI v.1
+Marin Petrov
+scroll_lock@wwfx.net
+06.2007
+
+
+
+------------------------//Usage//---------------------------
+Mirror blendShapes in the desired axis.
+For example if you have blendshape on the left eyebrow on
+a character and you don`t want to remodel the same shape
+for the right side, simply run the tool, select the base mesh
+/it can be already skinned character with no deformations applied/
+select the desired blendshape , choose the axis and Mirror!
+
+
+
+----------------------//Requires//--------------------------
+nothing;
+
+
+------------------------//Author//---------------------------
+Marin Petrov;
+
+
+-----------------------endHelpText--------------------------
+*/
+
+proc int driverOk(string $driverTrans)
+//
+// Description:
+// Checks if there are any mesh/nurbs curves/nurbs surface objects
+// under the given transform
+{
+// Find all the shapes under the given transform
+//
+string $shapes[] = `ls -dag -shapes $driverTrans`;
+
+// Find if at least one of them is an allowable influence
+// type
+//
+string $shape;
+for($shape in $shapes)
+{
+int $io = `getAttr ($shape+".io")`;
+if ($io == 1)
+continue;
+
+string $type = `nodeType($shape)`;
+if ($type == "mesh" || $type == "nurbsCurve" || $type == "nurbsSurface")
+{
+return 1;
+}
+
+}
+
+return 0;
+}
+
+global proc mp_mirrorBlendshapesUI()
+{
+if (`window -exists mirrorBlendshapesUI`)
+deleteUI mirrorBlendshapesUI;
+
+$win = `window -h 180 -t "Mirror Blendshapes UI v1.0" -w 520 -mxb 0 mirrorBlendshapesUI`;
+
+//--------------------DECLARE FOL-------------------------------//
+$foL = `formLayout -nd 100 mBlfol`;
+
+//----------------------------DECLARE TFBG1--------------------------//
+setParent $foL;
+$tfbg1 = `textFieldButtonGrp -adj 1 -cw 1 240 -label "Please select the original Mesh: " -text "" -buttonLabel "<--" -bc mp_mirrorBlendGetOrigMesh mBltfbg1`;
+
+//----------------------------DECLARE TFBG2--------------------------//
+setParent $foL;
+$tfbg2 = `textFieldButtonGrp -adj 1 -cw 1 240 -label "Please select the BlendShape you want to mirror: " -text "" -buttonLabel "<--" -bc mp_mirrorBlendGetBlendshapeMesh mBltfbg2`;
+
+//----------------------------DECLARE RBG1--------------------------//
+setParent $foL;
+$rbg1 = `radioButtonGrp -numberOfRadioButtons 3 -cw 1 239 -label "Please select the Axis you want to mirror across:" -labelArray3 "X" "Y" "Z" -sl 1 mBlrbg1`;
+
+//----------------------------DECLARE Bttn1--------------------------//
+setParent $foL;
+$bttn1 = `button -w 220 -h 35 -l "Mirror" -c mp_mirrorBlend`;
+//----------------------------DECLARE Bttn2--------------------------//
+setParent $foL;
+$bttn2 = `button -w 220 -h 35 -l "Cancel" -c ("deleteUI " + $win) mp_mirrorClose`;
+
+//---------------------EDIT FOL---------------------------------//
+formLayout -e
+-af $tfbg1 top 5
+-an $tfbg1 right 
+-an $tfbg1 bottom
+-af $tfbg1 left 5
+
+-ac $tfbg2 top 5 $tfbg1
+-an $tfbg2 right 
+-an $tfbg2 bottom
+-af $tfbg2 left 5
+
+-ac $rbg1 top 15 $tfbg2
+-an $rbg1 right
+-an $rbg1 bottom
+-af $rbg1 left 5
+
+-ac $bttn1 top 25 $rbg1
+-an $bttn1 right
+-an $bttn1 bottom 
+-af $bttn1 left 5
+
+-ac $bttn2 top 25 $rbg1
+-an $bttn2 right
+-an $bttn2 bottom 
+-ac $bttn2 left 60 $bttn1
+$foL;
+
+showWindow mirrorBlendshapesUI; 
+
+}
+
+global proc mp_mirrorBlendGetOrigMesh()
+{
+string $origMesh[] = `ls -sl`;
+if (size($origMesh) > 1)
+{
+error "Please select only one mesh!";
+}
+int $ok = `driverOk $origMesh[0]`;
+
+if ($ok == 0)
+error("The selected objects must be polygon meshes, NURBS curves or NURBS surfaces.");
+
+textFieldButtonGrp -e -tx $origMesh[0] mBltfbg1; 
+}
+
+global proc mp_mirrorBlendGetBlendshapeMesh()
+{
+string $blendMesh[] = `ls -sl`;
+if (size($blendMesh) > 1)
+{
+error "Please select only one mesh!";
+}
+int $ok = `driverOk $blendMesh[0]`;
+
+if ($ok == 0)
+error("The selected objects must be polygon meshes, NURBS curves or NURBS surfaces.");
+
+textFieldButtonGrp -e -tx $blendMesh[0] mBltfbg2; 
+}
+
+global proc mp_mirrorBlend()
+{
+string $base = `textFieldButtonGrp -q -tx mBltfbg1`;
+string $blend = `textFieldButtonGrp -q -tx mBltfbg2`;
+string $axisBttn = `radioButtonGrp -q -sl mBlrbg1`;
+string $axis;
+
+if ($axisBttn == 1)
+$axis = "X"; 
+if ($axisBttn == 2)
+$axis = "Y"; 
+if ($axisBttn == 3)
+$axis = "Z";
+
+string $dup1[] = `duplicate $base`;
+string $dup2[] = `duplicate $base`;
+string $unlockAttributes[] = {".tx",".ty",".tz",".rx",".ry",".rz",".sx",".sy",".sz"};
+
+for ($i = 0; $i < 9; $i++) 
+{
+setAttr -lock 0 ($dup1[0] + $unlockAttributes[$i]);
+}
+
+for ($i = 0; $i < 9; $i++) 
+{
+setAttr -lock 0 ($dup2[0] + $unlockAttributes[$i]);
+}
+
+setAttr ($dup2[0] + ".scale" + $axis) -1;
+
+select -r $dup2[0];
+select -tgl $dup1[0];
+string $wrap = `performCreateWrap 0`;
+
+select -cl ;
+select -r $blend ;
+select -add $dup1[0] ;
+blendShape -n "wrapBlend";
+setAttr ("wrapBlend." + $blend) 1;
+string $mirroredShape[] = `duplicate $dup2[0]`;
+delete $dup1[0];
+delete $dup2[0];
+setAttr ($mirroredShape[0] + ".scale" + $axis) 1;
+rename $mirroredShape[0] ($blend + "_mirrored");
+
+}

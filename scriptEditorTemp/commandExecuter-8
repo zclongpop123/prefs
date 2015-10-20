@@ -1,0 +1,10 @@
+import sys
+
+path = '/Users/zangchanglong/Work/rigBuilder/0.1.1/source'
+
+if path not in sys.path:
+    sys.path.append(path)
+
+from rigBuilder.face.modules import eye
+
+eye.EyeModule()
