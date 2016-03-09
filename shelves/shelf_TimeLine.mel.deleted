@@ -1,4 +1,4 @@
-global proc shelf_H_Z_R_I_G () {
+global proc shelf_TimeLine () {
     global string $gBuffStr;
     global string $gBuffStr0;
     global string $gBuffStr1;
@@ -12,20 +12,20 @@ global proc shelf_H_Z_R_I_G () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "HZrig_setup" 
+        -annotation "TimeLine facialSystem" 
         -enableBackground 0
         -align "center" 
-        -label "HZrig_setup" 
+        -label "TLFS" 
         -labelOffset 0
-        -font "tinyBoldLabelFont" 
+        -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.25 
-        -image "HZrig_shelfIcon.bmp" 
-        -image1 "HZrig_shelfIcon.bmp" 
+        -image "commandButton.xpm" 
+        -image1 "commandButton.xpm" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "source \"C:\\\\Documents and Settings\\\\Administrator\\\\My Documents\\\\maya\\\\2011\\\\prefs\\\\scripts\\\\HZrig20110401\\\\HZrig_setup.mel\";" 
+        -command "python \"import os, sys\";\npython \"sys.path.append('C:/')\";\npython \"sys.path.append('C:/TL_facialSystem/facialRig.pyo')\";\npython \"import facialRig.kz_UI_0FacialSystem as kz_UI_0FacialSystem\";\npython \"reload(kz_UI_0FacialSystem)\";\npython \"kz_UI_0FacialSystem.FacialSystemUI()\";" 
         -sourceType "mel" 
         -commandRepeatable 1
         -flat 1

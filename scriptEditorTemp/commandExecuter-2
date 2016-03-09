@@ -1,7 +1,8 @@
-{
-int $i;
-for($i = 0;$i < 100;$i ++)
-{
-joint -p $i 0 0 ;
-}
-}
+import sys
+
+sys.path.append('d:/Work/fix_advs')
+
+
+import add_drv
+reload(add_drv)
+add_drv.fix_drv_constraint()

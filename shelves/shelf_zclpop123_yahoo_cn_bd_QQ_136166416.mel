@@ -536,32 +536,6 @@ global proc shelf_zclpop123_yahoo_cn_bd_QQ_136166416 () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Set the wireframe color of all selected objects" 
-        -enableBackground 0
-        -align "center" 
-        -label "Wireframe Color..." 
-        -labelOffset 0
-        -font "tinyBoldLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.2 
-        -image "d:/My Documents/maya/2009/prefs/icons/wireframecoor.bmp" 
-        -image1 "d:/My Documents/maya/2009/prefs/icons/wireframecoor.bmp" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "{\nglobal proc blue()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  6;   \n}\n}\nglobal proc red()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  13;   \n}\n}\nglobal proc yello()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  17;   \n}\n}\nglobal proc suiji()\n{\nfloat $yanse = trunc(rand(0,31));\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  $yanse;   \n}\n}\nglobal proc moren()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideColor\")  0;   \n}\n}\nglobal proc lock()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 1;\nsetAttr ($lock + \".overrideDisplayType\") 2;  \n}\n}\nglobal proc unlock()\n{\nstring $selectObj[] = `ls -sl`;\nstring $lock;\nfor ($lock in $selectObj)\n{\nsetAttr ($lock + \".overrideEnabled\") 0;\nsetAttr ($lock + \".overrideDisplayType\") 0;\n}\n}\n{\nstring $biaoti = \"colorWindow\";\nif (`window -ex $biaoti`) deleteUI -wnd $biaoti;\nif (`windowPref -ex $biaoti`) windowPref -r $biaoti;\nwindow -t \"color\" -w 110 -h 250 $biaoti;\ncolumnLayout;\nbutton -label \"Red£¨º죩\" -w 100 -h 30 -bgc 1 0 0 -c (\"red\");\nbutton -label \"Blue£¨À¶£©\" -w 100 -h 30  -bgc 0 0 1 -c (\"blue\");\nbutton -label \"Yello£¨»ƣ©\" -w 100 -h 30 -bgc 1 1 0 -c (\"yello\");\nbutton -label \"Rand£¨Ëæú»£©\" -w 100 -h 30 -bgc .11 .520 7.0 -c (\"suiji\");\nbutton -label \"Default£¨ĬÈϣ©\" -w 100 -h 30 -bgc .409 .600 100.0  -c (\"moren\");\nbutton -label \"Lock£¨Ëø¶¨£©\" -w 100 -h 30 -bgc 8 .50 .10 -c (\"lock\");\nbutton -label \"Unlock£¨½âËø£©\" -w 100 -h 30 -bgc .212 .913 90.0 -c (\"unlock\");\nshowWindow $biaoti;\n}\n}\n" 
-        -sourceType "mel" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 33
-        -height 33
-        -manage 1
-        -visible 1
-        -preventOverride 0
         -annotation "curve -d 1 -p -0.0285975 0.0096853 0 -p 0.355828 0.150253 0 -p 2..." 
         -enableBackground 0
         -align "center" 
@@ -661,32 +635,6 @@ global proc shelf_zclpop123_yahoo_cn_bd_QQ_136166416 () {
     shelfButton
         -enableCommandRepeat 1
         -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "User-defined Python command" 
-        -enableBackground 0
-        -align "center" 
-        -label "Python Command" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "pythonFamily.png" 
-        -image1 "pythonFamily.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "import jammOrientJoint as oj\noj.orientJointsWindow()" 
-        -sourceType "python" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
         -width 33
         -height 33
         -manage 1
@@ -707,32 +655,6 @@ global proc shelf_zclpop123_yahoo_cn_bd_QQ_136166416 () {
         -marginHeight 1
         -command "mp_mirrorBlendshapesUI" 
         -sourceType "mel" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "User-defined Python command" 
-        -enableBackground 0
-        -align "center" 
-        -label "Python Command" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "pythonFamily.png" 
-        -image1 "pythonFamily.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "#coding=utf-8\nimport maya.cmds as mc\n\ndef AutoParentSpace(self):\n    mc.parent( '*_world_space', '*_root_Ctr_SW' )\n    mc.parent( '*_charactor_space', '*_root_gimbal_1_Ctr_SW' )\n    mc.parent( '*_chest_space', '*_spine_M_lr4_SW')\n    mc.parent( '*_L_hip_space', '*_hip_L_singleJ_SW')\n    mc.parent( '*_R_hip_space', '*_hip_R_singleJ_SW')\n    mc.parent( '*_L_shoulder_space', '*shoulder_L_singleJ_SW' )\n    mc.parent( '*_R_shoulder_space', '*shoulder_R_singleJ_SW' )\n    mc.parent( '*_head_space', '*_head_jnt_SW')\n    mc.parent( '*_knee_space', '*__world' )\n    mc.select( clear=True )\n                \n##########################################################\n\ndef adjust_color( obj, clr ):\n    mc.setAttr( obj+'Shape.overrideEnabled', 1 )\n    mc.setAttr( obj+'Shape.overrideColor', clr )\n    \ndef CreateFootControl(self):\n    pr = mc.textField('pre_textfield', query=True, text=True)\n    pre = pr+'_leg_'\n    ctrls = []\n    attrls = ['.translateX', '.translateY', '.translateZ', '.rotateX', '.scaleX', '.scaleY', '.scaleZ', '.visibility']\n    for mid in ('L_','R_'):\n        if mid == 'L_': mdv = 1.0\n        elif mid == 'R_': mdv = -1.0 \n        jn = pre+mid\n        md = mc.createNode('multiplyDivide', n=jn+'MD')\n        mc.setAttr(md+'.input2X', mdv)\n        mc.setAttr(md+'.input2Y', mdv)\n        clp = mc.createNode('clamp', n=jn+'clamp')\n        mc.setAttr( clp+'.maxR', 45)\n        mc.setAttr( clp+'.minG', -80)\n        for suf in ( 'palm_SJ','toe_SJ'):\n            jnt = pre+mid+suf\n            tx, ty, tz = mc.xform( jnt, query=True, translation=True, worldSpace=True )\n            ctr = mc.circle( n=jnt+'_Ctr', normal=(1,0,0), radius=6, ch=0 )[0]\n            ctr1 = mc.circle( n=jnt+'_Ctr1', normal=(0,1,0), radius=6, ch=0 )[0]\n            ctr2 = mc.circle( n=jnt+'_Ctr2', normal=(0,0,1), radius=6, ch=0 )[0]\n            if mid == 'R_':\n                orc = 14\n            elif mid == 'L_':\n                orc = 6\n            adjust_color( ctr, orc )\n            adjust_color( ctr1, orc )\n            adjust_color( ctr2, orc )\n            mc.parent( ctr1+'Shape', ctr2+'Shape', ctr, shape=True, addObject=True)\n            mc.delete( ctr1, ctr2 )\n            ctrls.append(ctr)\n            grp = mc.group( ctr, n=jnt+'_Grp')\n            mc.move( tx, ty, tz, grp )\n            con = mc.orientConstraint( jn+'ankle_palm_toe_toHeel_T', grp, maintainOffset=False )\n            mc.delete( con )\n            mc.parent( grp, jn+'ankle_palm_toe_toHeel_T' )\n            if suf == 'palm_SJ':\n                mc.connectAttr( ctr+'.rotateY', md+'.input1X', force=True)\n                mc.connectAttr( md+'.outputX', jn+'ankle_palm_toe_toPalm_T.rotateY', force=True)\n                mc.connectAttr( ctr+'.rotateZ', jn+'ankle_toPalm_T.rotateZ', force=True)\n                mc.addAttr( ctr, shortName='toe_roll', longName='Toe_Roll', keyable=True, min=-45, max=45 )\n                mc.connectAttr( ctr+'.toe_roll', jn+'driven_Ctr.toe_roll' )\n                mc.addAttr( ctr, shortName='toe_LR_rot', longName='Toe_LR_Rot', keyable=True, min=-30, max=30 )\n                mc.connectAttr( ctr+'.toe_LR_rot', jn+'driven_Ctr.toe_LR_rot' )\n            elif suf == 'toe_SJ':\n                mc.connectAttr(ctr+'.rotateY', md+'.input1Y', force=True)\n                mc.connectAttr(md+'.outputY', jn+'ankle_palm_toe_toToe_T.rotateY', force=True)\n                mc.connectAttr(ctr+'.rotateZ', clp+'.inputR')\n                mc.connectAttr(ctr+'.rotateZ', clp+'.inputG')\n                mc.connectAttr(clp+'.outputR', jn+'ankle_palm_toe_toHeel_T.rotateZ', force=True)\n                mc.connectAttr(clp+'.outputG', jn+'ankle_palm_toe_toToe_T.rotateZ', force=True)\n                mc.transformLimits( ctr, rotationZ=(-80, 45), enableRotationZ=(1,1) )            \n    for ctr in ctrls:\n        for attr in attrls:\n            mc.setAttr( ctr+attr, lock=True, keyable=False, channelBox=False )    \n    for attr in ['.auto_toe', '.palm_roll', '.toe_roll', '.palm_pivot', '.toe_pivot', '.toe_LR_rot']:\n        mc.setAttr( pre+'R_driven_Ctr'+attr, lock=True )\n        mc.setAttr( pre+'L_driven_Ctr'+attr, lock=True )\n    mc.container( '__'+pr+'__allRigNodes_container', addNode=[pre+'L_clamp',pre+'R_clamp',pre+'L_MD',pre+'R_MD'], \n                  edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select( clear=True )\n        \n#########################################################\n\ndef AdjustShoulderHip(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)\n    nds = []\n    for par in [('_shoulder_', '_hand_'), ('_hip_', '_leg_')]:\n        pre1 = pre+par[0]\n        pre2 = pre+par[1]\n        for mid in ('L_','R_'):\n            rtn = pre1 + mid + 'singleJ_'\n            edn = pre2 + mid\n            mc.parent( rtn+'ikHandle', rtn+'Ctr_GP' )\n            mc.parent( rtn+'Ctr', world=True )\n            tx, ty, tz = mc.xform( rtn+'Ctr', query=True, translation=True, worldSpace=True )\n            rtg = mc.group( name=rtn+'Ctr_Grp', empty=True )\n            mc.parent( rtn+'Ctr', rtg )\n            if mid == 'R_':\n                mc.rotate('180deg', 0, 0, rtn+'Ctr.cv[0:4]', relative=True, pivot=(tx, ty, tz), objectSpace=True) \n            for attr in ['.translateX', '.translateY', '.translateZ', '.rotateX']:\n                mc.setAttr( rtn+'Ctr'+attr, 0)\n            mc.move( tx, ty, tz, rtg )\n            mc.parent( rtg, rtn+'Ctr_GP' )\n            edg1 = mc.group( name=edn+'FK_gimbal_Ctr_Grp', empty=True )\n            pct = mc.pointConstraint( edn+'FK_gimbal_Ctr', edg1, maintainOffset=False )\n            oct = mc.orientConstraint( edn+'FK_gimbal_Ctr', edg1, maintainOffset=False )\n            mc.delete( pct, oct )\n            mc.parent( edg1, edn+'limbRig_SP' )\n            if par[0] == '_shoulder_':\n                edg2 = mc.group( name=rtn+'Ctr_Grp1' ,empty=True)\n                rct = mc.createNode( 'transform', n=rtn+'SJ_Ctr' )\n                mc.parent( edg2, edn+'FK_gimbal_Ctr_Grp' )\n                mc.parent( rct, pre1+mid+'singleJointRig_SP' )\n                rx, ry, rz = mc.xform( rct, query=True, rotation=True, objectSpace=True)\n                for attr in ['.translateX', '.translateY', '.translateZ', '.rotateX', '.rotateY', '.rotateZ']:\n                    mc.setAttr( edg2+attr, 0)\n                    mc.setAttr( rct+attr, 0)\n                mc.parent( rtn+'Ctr_GP', rct)\n                tx, ty, tz = mc.xform( rct, query=True, translation=True, worldSpace=True )\n                crv = mc.curve( degree=1, point=[(0,0,8),(1,0,10),(-1,0,10),(0,0,8),(0,0,-8),(-1,0,-10),(1,0,-10,),(0,0,-8)] )\n                if mid == 'R_':\n                    orc = 14\n                elif mid == 'L_':\n                    orc = 6\n                crvsh = mc.listRelatives( crv, shapes=True)[0]\n                mc.parent( crvsh, rct, shape=True, addObject=True )\n                mc.delete( crv )\n                mc.rotate( rx, ry, rz, crvsh+'.cv[0:7]', relative=True, pivot=(tx, ty, tz), objectSpace=True)\n                mc.setAttr( crvsh+'.overrideEnabled', 1 )\n                mc.setAttr( crvsh+'.overrideColor', orc )\n                crvsh = mc.rename( crvsh, rct+'_Shape')\n                mc.parent( edg2, pre1+mid+'singleJointRig_SP' )\n                mc.parent( rtn+'ikHandle', rtn+'Ctr' )\n            elif par[0] == '_hip_':\n                edg2 = mc.duplicate( edg1, returnRootsOnly=True )\n                mc.parent( edg2, rtn+'Ctr' )\n                mc.parent( rtn+'ikHandle', edg2 )\n            mc.orientConstraint( edg2, edg1 )\n            mc.setKeyframe( edg1+'.rotate' )\n            mc.addAttr( rtn+'Ctr',shortName='fk_follow', longName='FK_Follow', keyable=True, max=1, min=0, dv=0 )\n            rvs = mc.createNode( 'reverse', name=rtn+'reverse' )\n            nds.append(rvs)\n            mc.connectAttr( rtn+'Ctr'+'.fk_follow', rvs+'.inputX' )\n            mc.connectAttr( rvs+'.outputX', edg1+'.blendOrient1' )\n            mc.parent( edn+'FK_gimbal_Ctr', edn+'FK_gimbal_Ctr_Grp' )\n            for attr in ['.translateX', '.translateY', '.translateZ', '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n                mc.setAttr( rct+attr, lock=True, keyable=False, channelBox=False )\n            mc.setAttr( rtn+'Ctr.type', 1 )\n    for pb in['pairBlend1','pairBlend2','pairBlend3','pairBlend4']:\n        mc.rename( pb, pre+'_'+pb)\n        nds.append( pre+'_'+pb )\n        for pbir in ['_inRotateX1', '_inRotateY1', '_inRotateZ1']:\n            mc.rename( pb+pbir, pre+'_'+pb+pbir)\n            nds.append( pre+'_'+pb+pbir )\n    mc.container('__'+pre+'__allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select( clear=True )\n    \n#########################################################\n\ndef HideJointAttr(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    for jnt in ['shoulder_L_singleJ_end_SJ', 'shoulder_R_singleJ_end_SJ', 'hip_L_singleJ_end_SJ', 'hip_R_singleJ_end_SJ',\n                'hip_L_singleJ_SJ', 'hip_R_singleJ_SJ', 'hand_L_palm_SJ', 'hand_R_palm_SJ', 'hand_L_toe_SJ', 'hand_R_toe_SJ']:\n        mc.setAttr( pre+jnt+'.visibility', 0)\n    for finger in ['thumb_', 'index_', 'middle_', 'ring_', 'pinky_']:\n        for lr in ['L_', 'R_']:\n            mc.setAttr( pre+finger+lr+'fingerRig_3_SJ.visibility', 0)\n            mc.setAttr( pre+finger+lr+'fingerRig_3_Ctr.visibility', lock=False)\n            mc.setAttr( pre+finger+lr+'fingerRig_3_Ctr.visibility', 0)\n            for attr in ['.bend_3', '.roll_3', '.twist_3', '.stretch_3']:\n                mc.setAttr( pre+finger+lr+'fingerRig_driven_Ctr'+attr, lock=True, keyable=False, channelBox=False)\n            for attr in ['.bend_3', '.roll_3', '.twist_3']:\n                mc.setAttr( pre+finger+lr+'fingerRig_driven_doctor'+attr, lock=True, keyable=False, channelBox=False)\n            for attr in ['.bend_0', '.bend_1', '.bend_2']:\n                mc.setAttr( pre+finger+lr+'fingerRig_driven_doctor'+attr, 9.0)\n    for lr in ['L','R']:\n        mc.setAttr( pre+'hand_%s_driven_Ctr.IK_FK'%lr,1 )\n        mc.setAttr( pre+'hand_%s_upLimb_FK_Ctr.rotateOrder'%lr,0 )\n        mc.transformLimits( pre+'hand_%s_dwLimb_FK_Ctr'%lr, rx=(-30,30), ry=(-10,10), erx=(1,1), ery=(1,1) )\n        for limb in ['hand_','leg_']:\n            mc.setAttr( pre+limb+lr+'_driven_Ctr.IK_FK', keyable=False, channelBox=False )\n    for ctr in [ 'spine_M_Ctr', 'spine_M_lr1_Ctr', 'spine_M_lr2_Ctr',\n                 'hand_L_limb_IK_Ctr', 'hand_R_limb_IK_Ctr', 'leg_L_limb_IK_Ctr', 'leg_R_limb_IK_Ctr' ]:\n        for attr in [ '.scaleX', '.scaleY', '.scaleZ']:\n            mc.setAttr( pre+ctr+attr, lock=True, keyable=False, channelBox=False)\n    mc.select( clear=True )\n    \n#########################################################\n    \ndef CreateNeckLoc(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    loc=[]\n    loc.append( mc.spaceLocator( name=pre+'neck_jnt_loc' )[0] )\n    mc.move( 0,110,0, loc[0] )\n    loc.append( mc.spaceLocator( name=pre+'neck_jnted_loc' )[0] )\n    mc.move( 0,120,0, loc[1] )\n    loc.append( mc.spaceLocator( name=pre+'head_jnted_loc' )[0] )\n    mc.move( 0,130,0, loc[2] )\n    crv = mc.curve( name=pre+'neck_curve', degree=1, point=[(0,110,0),(0,120,0),(0,130,0)])\n    crvs = mc.listRelatives( crv, shapes=True )[0]\n    for i in range(3):\n        mc.connectAttr( loc[i]+'.translate', crvs+'.controlPoints[%d]'%i )\n    mc.parentConstraint( loc[0], loc[1], name=pre+'neck_jnted_PC', maintainOffset=True, weight=1 )\n    mc.parentConstraint( loc[1], loc[2], name=pre+'head_jnted_PC', maintainOffset=True, weight=1 )\n    for attr in ['.translateX', '.translateZ']:\n        mc.setAttr( loc[2]+attr, lock=True, keyable=False, channelBox=False)\n    mc.setAttr( crv+'.overrideEnabled', 1 )\n    mc.setAttr( crv+'.overrideDisplayType', 1 )\n    for attr in ['.translateX', '.translateY', '.translateZ', '.rotateX', '.rotateY', '.rotateZ', '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n        mc.setAttr( crv+attr, lock=True, keyable=False, channelBox=False )\n    mc.select( clear=True )\n\n###########################################################\n\ndef CreateNeckControl(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    try: mc.delete('*_head_Rig_SP', '*_neck_jnt_Grp', '*_neck_str_Grp', '*_neck_CT_Grp', '*_neck_ikH_Grp', '*_neck_BC*' )\n    except: pass\n    try: mc.delete( '*neck_M__SJ_GP' )\n    except: pass\n    loc0 = pre+'neck_jnt_loc'\n    loc1 = pre+'neck_jnted_loc'\n    loc2 = pre+'head_jnted_loc'\n    try: mc.delete( pre+'head_jnted_PC' ); mc.delete( pre+'neck_jnted_PC' )\n    except: pass\n    mc.tangentConstraint( pre+'neck_curve', loc0, weight=1, aimVector=(1,0,0), upVector=(0,1,0), worldUpType='vector', worldUpVector=(0,0,-1) )\n    mc.tangentConstraint( pre+'neck_curve', loc1, weight=1, aimVector=(1,0,0), upVector=(0,1,0), worldUpType='vector', worldUpVector=(0,0,-1) )\n    mc.select( clear=True )\n    nj0 = mc.joint( n=pre+'neck_jnt_SW', p=mc.xform( loc0, q=1, t=1, ws=1) )\n    mc.select( clear=True ) \n    nj2 = mc.joint( n=pre+'neck_jnted_SW', p=mc.xform( loc1, q=1, t=1, ws=1) )\n    mc.joint( nj0, e=1, o=mc.xform( loc0, q=1 ,ro=1, ws=1) )\n    mc.joint( nj2, e=1, o=mc.xform( loc0, q=1 ,ro=1, ws=1) )\n    mc.parent( nj2, nj0 )\n    mc.select( clear=True )\n    hj0 = mc.joint( n=pre+'head_jnt_SW', p=mc.xform( loc1, q=1, t=1, ws=1) )\n    mc.select( clear=True )   \n    hj1 = mc.joint( n=pre+'head_jnted_SW', p=mc.xform( loc2, q=1, t=1, ws=1) )\n    mc.joint( hj0, e=1, o=mc.xform( loc1, q=1 ,ro=1, ws=1) )\n    mc.parent( hj1, hj0 )\n    mc.select( clear=True )\n    \n    hcir = mc.circle ( name=pre+'head_Ctr', radius=8, normal=(1,0,0), sections=16, ch=0)[0]\n    mc.setAttr( hcir+'Shape.overrideEnabled', 1 )\n    mc.setAttr( hcir+'Shape.overrideColor', 17 )\n    hgrp = mc.group( name=pre+'head_Ctr_Grp', empty=True )  \n    mc.delete( mc.parentConstraint( loc1, hcir ) )\n    mc.delete( mc.parentConstraint( loc1, hgrp ) )\n    mc.parent( hcir, hgrp )\n    mc.setAttr( hgrp+'.rotateY', 0) \n    ngrp2 = mc.group( name=pre+'neck_str_ed', empty=True )\n    ngrp1 = mc.group( ngrp2, name=pre+'neck_str_st' )\n    ngrp = mc.group( ngrp1, name=pre+'neck_str_Grp' )\n    mc.delete( mc.parentConstraint( loc0, ngrp ) )\n    mc.pointConstraint( nj0, ngrp1, offset=(0,0,0), weight=1, maintainOffset=False )\n    nik = mc.ikHandle( name=pre+'neck_ikH', startJoint=nj0, endEffector=nj2, solver='ikSCsolver' )[0]\n    nikgrp = mc.group( name=pre+'neck_ikH_Grp', empty=True )\n    mc.delete( mc.parentConstraint( loc1, nikgrp ) )\n    mc.parent( nik, nikgrp )\n    mc.pointConstraint( hcir, nikgrp, offset=(0,0,0), weight=1, maintainOffset=False )\n    mc.pointConstraint( nik, ngrp2, offset=(0,0,0), weight=1, maintainOffset=False )\n    mc.aimConstraint( nik, ngrp1, offset=(0,0,0), weight=1, aimVector=(1,0,0), upVector=(0,-1,0), worldUpType='vector', worldUpVector=(0,1,0) )\n    nbc = mc.shadingNode( 'blendColors', name=pre+'neck_BC', asUtility=True )\n    mc.setAttr( nbc+'.color2R', mc.getAttr(nj2+'.translateX') )\n    mc.addAttr( hcir, longName='auto_str', keyable=True, min=0, max=1 )\n    mc.addAttr( hcir, longName='follow', keyable=True, min=0, max=1 )\n    mc.connectAttr( hcir+'.auto_str', nbc+'.blender')\n    mc.connectAttr( ngrp2+'.translateX', nbc+'.color1R')\n    mc.connectAttr( nbc+'.outputR', nj2+'.translateX')\n    njgrp = mc.group( name=pre+'neck_jnt_Grp', empty=True )\n    mc.delete( mc.parentConstraint( loc0, njgrp ) )\n    mc.parent( nj0, njgrp )\n    mc.parent( nikgrp, pre+'spine_M_lr4_SW' )\n    mc.parentConstraint( pre+'spine_M_lr4_SW', nj0, maintainOffset=True, weight=1 )\n    nmcir = mc.circle ( name=pre+'neck_mid_Ctr', radius=6, normal=(1,0,0), sections=16, ch=0)[0]\n    mc.setAttr( nmcir+'Shape.overrideEnabled', 1 )\n    mc.setAttr( nmcir+'Shape.overrideColor', 17 )\n    nmgrp = mc.group( name=pre+'neck_mid_Ctr_Grp', empty=True )\n    mc.parent( nmcir, nmgrp)\n    mc.pointConstraint( nj0, nmgrp, offset=(0,0,0), weight=1, maintainOffset=False )\n    mc.pointConstraint( nj2, nmgrp, offset=(0,0,0), weight=1, maintainOffset=False )\n    nmugrp = mc.group( name=pre+'neck_mid_upgrp', empty=True, parent=nj0 )\n    mc.setAttr( nmugrp+'.translateY', 10)\n    mc.aimConstraint( nj0, nmgrp, offset=(0,0,0), weight=1, aimVector=(-1,0,0), upVector=(0,1,0), worldUpType='object', worldUpObject=pre+'neck_mid_upgrp' )\n    mc.select( clear=True )\n    nj1 = mc.joint( name=pre+'neck_mid_jnt_SW' )\n    mc.joint( nj1, e=1, o=mc.xform( loc0, q=1 ,ro=1, ws=1) )\n    mc.parentConstraint( nmcir, nj1, maintainOffset=False, weight=1 )\n    mc.parent( nj1, njgrp )\n    \n    mc.delete( mc.parentConstraint( loc1, hgrp ) )\n    nctgrp = mc.group( name=pre+'neck_CT_Grp', empty=True )\n    mc.delete( mc.parentConstraint( loc0, nctgrp ) )\n    mc.parent( nmgrp, nctgrp)\n    mc.pointConstraint( nj2, hj0, offset=(0,0,0), weight=1, maintainOffset=False )\n    mc.orientConstraint( hcir, hj0, offset=(0,0,0), weight=1)\n    hjgrp=mc.group( n=pre+'head_jnt_Grp', empty=True)\n    mc.delete( mc.parentConstraint( loc1, hjgrp ) )\n    mc.parent( hj0, hjgrp )\n    hrsp=mc.group( n=pre+'head_Rig_SP', empty=True )\n    mc.delete( mc.parentConstraint( loc1, hrsp ) )\n    mc.parent( hrsp ,pre+'root_gimbal_1_Ctr')\n    mc.parent( hjgrp, hrsp )\n    mc.parent( hgrp, hrsp )\n    hgrppc = mc.parentConstraint( pre+'spine_M_lr4_SW', hgrp, maintainOffset=True, weight=1 )\n    mc.xform( hgrppc, ws=1, t=(mc.xform( hj0, q=1,t=1,ws=1 )))\n    mc.setKeyframe( hgrp+'.translate' )\n    mc.setKeyframe( hgrp+'.rotate' )\n    mc.connectAttr( hcir+'.follow', hgrp+'.blendParent1' )\n    mc.delete( mc.parentConstraint( loc0, pre+'neck_M_fingerRig_SP') )\n    mc.delete( mc.parentConstraint( loc0, pre+'neck_M_fingerRig_SP') )\n    mc.parent( ngrp, njgrp, nctgrp, pre+'neck_M_fingerRig_SP')\n    \n    nmsjgp = mc.group( n='neck_M__SJ_GP', parent=pre+'_skinJointGP', empty=True)\n    for i in range(3):\n        mc.select( clear=True )\n        nmfsj = mc.joint( n=pre+'neck_M_fingerRig_%d_SJ'%i)\n        nmfsjt = mc.group( nmfsj, n=nmfsj+'T')\n        nmfsjp = mc.group( nmfsjt, n=nmfsj+'P' )\n    mc.select( clear=True )\n    mc.parentConstraint( nj0, pre+'neck_M_fingerRig_0_SJP', maintainOffset=False, weight=1 )\n    mc.scaleConstraint( nj0, pre+'neck_M_fingerRig_0_SJP')\n    mc.parentConstraint( nj1, pre+'neck_M_fingerRig_1_SJP', maintainOffset=False, weight=1 )\n    mc.scaleConstraint( nj1, pre+'neck_M_fingerRig_1_SJP')\n    mc.parentConstraint( hj0, pre+'neck_M_fingerRig_2_SJP', maintainOffset=False, weight=1 )\n    mc.scaleConstraint( hj0, pre+'neck_M_fingerRig_2_SJP')\n    mc.parent( pre+'neck_M_fingerRig_0_SJP', pre+'neck_M_fingerRig_1_SJP', pre+'neck_M_fingerRig_2_SJP', 'neck_M__SJ_GP')\n    mc.connectAttr( pre+'_jointHide_displayLayer.drawInfo', nj0+'.drawOverride')\n    mc.connectAttr( pre+'_jointHide_displayLayer.drawInfo', hj0+'.drawOverride')\n    mc.connectAttr( pre+'_jointHide_displayLayer.drawInfo', nj1+'.drawOverride')\n    for attr in [ '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n        mc.setAttr( hcir+attr, lock=True, keyable=False, channelBox=False)\n        mc.setAttr( nmcir+attr, lock=True, keyable=False, channelBox=False)\n    nds=[pre+'neck_BC']\n    mc.rename( 'pairBlend1', pre+'head_pairBlend1')\n    nds.append( pre+'head_pairBlend1' )\n    for pbir in ['_inRotateX1', '_inRotateY1', '_inRotateZ1', '_inTranslateX1', '_inTranslateY1', '_inTranslateZ1']:\n        mc.rename( 'pairBlend1'+pbir, pre+'head_pairBlend1'+pbir)\n        nds.append( pre+'head_pairBlend1'+pbir )\n    mc.container('__'+pre+'_allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select( clear=True )\n    mc.setAttr( nik+'.visibility', 0) \n    mc.setAttr( nikgrp+'.visibility', 0)\n    \n    mc.addAttr( '*_head_Ctr', longName='local_to_world', attributeType='enum', enumName='__________', keyable=True )\n    mc.setAttr( '*_head_Ctr.local_to_world', lock=True )\n    mc.addAttr( '*_head_Ctr', longName='ro_follow', keyable=True, min=0, max=1 )\n    mc.createNode( 'pairBlend', n=pre+'_head_rofollow_pairblend' )\n    for ax in['X', 'Y', 'Z']:\n        mc.connectAttr( '*_head_pairBlend1.inRotate%s1'%ax, '*_head_rofollow_pairblend.inRotate%s1'%ax, force=True)\n        mc.connectAttr( '*_head_pairBlend1.outRotate%s'%ax, '*_head_rofollow_pairblend.inRotate%s2'%ax, force=True)\n        mc.connectAttr( '*_head_rofollow_pairblend.outRotate%s'%ax, '*_head_Ctr_Grp.rotate%s'%ax, force=True )\n    mc.connectAttr( '*_head_Ctr.ro_follow', '*_head_rofollow_pairblend.weight' )\n    mc.container('*__allRigNodes_container', addNode='*_head_rofollow_pairblend', edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.setAttr( hcir+'.follow', 1)\n    mc.delete( loc0, loc1, loc2, pre+'neck_curve' )\n    mc.select( clear=True )\n    \n#########################################################\n\ndef AdjustPoleVector(*args):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    for i in [('hand_','shoulder_'), ('leg_','hip_')]:\n        for j in ['L_', 'R_']:\n            pole_gp = pre+i[0]+j+'Cons_pole_IK_Ctr_GP'\n            pole_sp = pre+i[0]+j+'Cons_pole_IK_Ctr_locSP'\n            ik_ctr = pre+i[0]+j+'limb_IK_Ctr'\n            sj_ctr = pre+i[1]+j+'singleJ_Ctr'\n            for k in ['.rotateX', '.rotateY', '.rotateZ']:\n                mc.setAttr( pole_gp+k, lock=False )\n            mc.delete( mc.orientConstraint( ik_ctr, pole_gp ) )\n            for k in ['.rotateX', '.rotateY', '.rotateZ']:\n                mc.setAttr( pole_gp+k, lock=True  )\n            mc.parentConstraint( pre+'root_gimbal_1_Ctr', pole_sp, mo=1, weight=1 )\n            mc.setKeyframe( pole_sp+'.translate' )\n            mc.setKeyframe( pole_sp+'.rotate' )\n            mc.addAttr( sj_ctr, longName='pole_follow', keyable=True, min=0, max=1 )\n            mc.connectAttr( sj_ctr+'.pole_follow', pole_sp+'.blendParent1')\n    nds = []\n    for pb in['pairBlend1','pairBlend2','pairBlend3','pairBlend4']:\n        mc.rename( pb, pre+'_'+pb)\n        nds.append( pre+'_'+pb )\n        for pbir in ['_inRotateX1', '_inRotateY1', '_inRotateZ1', '_inTranslateX1', '_inTranslateY1', '_inTranslateZ1']:\n            mc.rename( pb+pbir, pre+'_'+pb+pbir)\n            nds.append( pre+'_'+pb+pbir )\n    mc.container('__'+pre+'_allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select( clear=True )\n                \n#########################################################\n\ndef CreateNulls(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    for hl in ['hand_', 'leg_']:\n        for lr in ['L_', 'R_']:\n            for ctr in ['upLimb_FK_', 'dwLimb_FK_', 'ankle_FK_', 'limb_IK_', 'Cons_pole_IK_']:\n                grp = mc.group( name=pre+hl+lr+ctr+'Null' , empty=True)\n                if ctr == 'limb_IK_':\n                    mc.parent( grp, pre+hl+lr+ctr+'Ctr_locSP' )\n                elif ctr == 'Cons_pole_IK_':\n                    mc.parent( grp, pre+hl+lr+ctr+'Ctr_GP' ) \n                else:\n                    mc.parent( grp, pre+hl+lr+ctr+'Ctr' )\n                for attr in ['.translateX', '.translateY', '.translateZ', '.rotateX', '.rotateY', '.rotateZ']:\n                    mc.setAttr( grp+attr, 0 )\n    mc.select(clear=True )\n    \n#########################################################\n\ndef CreateFaceLocator(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    fc_loc=[]\n    fc_loc.append( mc.spaceLocator( name=pre+'head_mid_jnt_loc' )[0] )\n    mc.move( 0,125,0, fc_loc[0] )\n    fc_loc.append( mc.spaceLocator( name=pre+'jaw_jnt_loc' )[0] )\n    mc.move( 0,120,5, fc_loc[1] )\n    fc_loc.append( mc.spaceLocator( name=pre+'jaw_jnted_loc' )[0] )\n    mc.move( 0,120,10, fc_loc[2] )\n    fc_loc.append( mc.spaceLocator( name=pre+'eye_L_jnt_loc' )[0] )\n    mc.move( 5,130,5, fc_loc[3] )\n    fc_loc.append( mc.spaceLocator( name=pre+'eye_L_jnted_loc' )[0] )\n    mc.move( 5,130,10, fc_loc[4] )\n    fc_loc.append( mc.spaceLocator( name=pre+'tongue_jnt_st_loc' )[0] )\n    mc.move( 0,125,1, fc_loc[5] )\n    fc_loc.append( mc.spaceLocator( name=pre+'tongue_jnt_mid1_loc' )[0] )\n    mc.move( 0,125,4, fc_loc[6] )\n    fc_loc.append( mc.spaceLocator( name=pre+'tongue_jnt_mid2_loc' )[0] )\n    mc.move( 0,125,7, fc_loc[7] )\n    fc_loc.append( mc.spaceLocator( name=pre+'tongue_jnt_ed_loc' )[0] )\n    mc.move( 0,125,10, fc_loc[8] )\n    mc.parent( fc_loc[1:], fc_loc[0] )\n    mc.parent( fc_loc[2], fc_loc[1] )\n    mc.parent( fc_loc[4], fc_loc[3] )\n    mc.parent( fc_loc[6:], fc_loc[5] )\n    jaw_crv = mc.curve( n='jaw_jnt_curve', degree=1, point=((0,120,5), (0,120,10)) )\n    eye_crv = mc.curve( n='eye_jnt_curve', degree=1, point=((5,130,5), (5,130,10)) )\n    ton_crv = mc.curve( n='tongue_jnt_curve', degree=3, point=((0,125,1), (0,125,4), (0,125,7), (0,125,10)) )\n    mc.connectAttr( fc_loc[1]+'Shape.worldPosition', jaw_crv+'.cv[0]' )\n    mc.connectAttr( fc_loc[2]+'Shape.worldPosition', jaw_crv+'.cv[1]' )\n    mc.connectAttr( fc_loc[3]+'Shape.worldPosition', eye_crv+'.cv[0]' )\n    mc.connectAttr( fc_loc[4]+'Shape.worldPosition', eye_crv+'.cv[1]' )\n    mc.connectAttr( fc_loc[5]+'Shape.worldPosition', ton_crv+'.cv[0]' )\n    mc.connectAttr( fc_loc[6]+'Shape.worldPosition', ton_crv+'.cv[1]' )\n    mc.connectAttr( fc_loc[7]+'Shape.worldPosition', ton_crv+'.cv[2]' )\n    mc.connectAttr( fc_loc[8]+'Shape.worldPosition', ton_crv+'.cv[3]' )\n    mc.setAttr( jaw_crv+'.overrideEnabled', 1 )\n    mc.setAttr( jaw_crv+'.overrideDisplayType', 1 )\n    mc.setAttr( eye_crv+'.overrideEnabled', 1 )\n    mc.setAttr( eye_crv+'.overrideDisplayType', 1 )\n    mc.setAttr( ton_crv+'.overrideEnabled', 1 )\n    mc.setAttr( ton_crv+'.overrideDisplayType', 1 )\n    mc.select( clear=True )\n\ndef CreateFaceSkeleton(self):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    mc.select( clear=True ) \n    hm_sw = mc.joint( n=pre+'head_mid_jnt_SW', p=mc.xform( '*head_mid_jnt_loc', q=1, t=1, ws=1) )\n    mc.select( clear=True ) \n    jaw_sw = mc.joint( n=pre+'jaw_jnt_SW', p=mc.xform( '*jaw_jnt_loc', q=1, t=1, ws=1) )\n    jawed_sw = mc.joint( n=pre+'jaw_jnted_SW', p=mc.xform( '*jaw_jnted_loc', q=1, t=1, ws=1) )\n    mc.select( clear=True )\n    eye_l_asw = mc.joint( n=pre+'eye_L_aim_jnt_SW', p=mc.xform( '*eye_L_jnt_loc', q=1, t=1, ws=1) )\n    mc.select( clear=True )\n    eye_l_sw = mc.joint( n=pre+'eye_L_jnt_SW', p=mc.xform( '*eye_L_jnt_loc', q=1, t=1, ws=1) )\n    eye_l_fsw = mc.joint( n=pre+'eye_L_fk_jnt_SW', p=mc.xform( '*eye_L_jnt_loc', q=1, t=1, ws=1) )\n    eyeed_lsw = mc.joint( n=pre+'eye_L_jnted_SW', p=mc.xform( '*eye_L_jnted_loc', q=1, t=1, ws=1) )\n    mc.select( clear=True )\n    mc.delete( '*tongue_jnt_*_loc' )\n    mc.rebuildCurve( '*tongue_jnt_curve', ch=0, d=3, s=11 )\n    mc.delete( '*tongue_jnt_curve.cv[1]' )\n    mc.delete( '*tongue_jnt_curve.cv[11]' )\n    ton_sw = []\n    for i in range(12):\n        ton_sw.append( mc.joint(n=pre+'tongue_jnt_%d_SW'%i, p=mc.xform( '*tongue_jnt_curve.cv[%d]'%i, q=1, t=1, ws=1) ) )\n        if i > 0:\n            mc.joint( ton_sw[i-1], e=1, zso=1, oj='xyz', sao='yup' )\n        if i == 11:\n            mc.joint( ton_sw[i], e=1, zso=1, oj='none', sao='yup' )\n    mc.parent( jaw_sw, eye_l_asw, eye_l_sw, ton_sw[0], hm_sw )\n    mc.mirrorJoint( eye_l_asw, mirrorYZ=1, mirrorBehavior=0, searchReplace=['_L_', '_R_'] )\n    mc.mirrorJoint( eye_l_sw, mirrorYZ=1, mirrorBehavior=0, searchReplace=['_L_', '_R_'] )\n    mc.parent( hm_sw, '*head_jnt_SW')\n    mc.group( n=pre+'eye_L_aim_up', parent=pre+'eye_L_aim_jnt_SW', empty=True)\n    mc.group( n=pre+'eye_R_aim_up', parent=pre+'eye_R_aim_jnt_SW', empty=True)\n    mc.move( 0,10,0, pre+'eye_L_aim_up', r=1 )\n    mc.move( 0,10,0, pre+'eye_R_aim_up', r=1 )\n    hd_sjgp = mc.group( n='head_M__SJ_GP', parent=pre+'_skinJointGP', empty=True)\n    mc.select( clear=True )\n    for jnt in [ 'head_jnted_', 'jaw_jnt_', 'eye_L_jnt_', 'eye_R_jnt_']:\n        fc_sj = mc.joint( n=pre+jnt+'SJ' )\n        fc_sjt = mc.group( fc_sj, n=fc_sj+'T')\n        fc_sjp = mc.group( fc_sjt, n=fc_sj+'P' )\n        if 'eye' in jnt: jnt=jnt[0:6]+'fk_'+jnt[6:]\n        mc.parentConstraint( pre+jnt+'SW', fc_sjp, maintainOffset=False, weight=1 )\n        mc.scaleConstraint( pre+jnt+'SW', fc_sjp)\n        mc.parent( fc_sjp, hd_sjgp)\n        mc.select( clear=True )\n    for i in range(12):\n        ton_sj = mc.joint( n=pre+'tongue_jnt_%d_SJ'%i )\n        ton_sjt = mc.group( ton_sj, n=ton_sj+'T')\n        ton_sjp = mc.group( ton_sjt, n=ton_sj+'P' )\n        mc.parentConstraint( pre+'tongue_jnt_%d_SW'%i, ton_sjp, maintainOffset=False, weight=1 )\n        mc.scaleConstraint( pre+'tongue_jnt_%d_SW'%i, ton_sjp)\n        mc.parent( ton_sjp, hd_sjgp)\n        mc.select( clear=True )\n    mc.delete( '*_jnt*loc', '*_jnt_curve' )\n\n#########################################################\n\ndef CreateEyeControl(*args):    \n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    for lr in ['_L_','_R_']:\n        eye = pre+'eye'+lr\n        if lr == '_R_':\n            cl = 14\n        elif lr == '_L_':\n            cl = 6\n        eye_ac = mc.circle( n=eye+'aim_Ctr', r=2, ch=0, normal=(0,0,1) )[0]\n        eye_as = mc.listRelatives( eye_ac, shapes=True)[0]\n        mc.setAttr( eye_as+'.overrideEnabled', 1 )\n        mc.setAttr( eye_as+'.overrideColor', cl )\n        eye_ag = mc.group( eye_ac, n=eye_ac+'_Grp' )\n        mc.delete( mc.parentConstraint( eye+'jnt_SW', eye_ag ) )\n        mc.move( 0,0,20, eye_ag, r=1 )\n        mc.aimConstraint( eye_ac, eye+'jnt_SW', aimVector=(0,0,1), upVector=(0,1,0), worldUpType='object', worldUpObject=eye+'aim_up' )\n        eye_fc = mc.curve( n=eye+'fk_Ctr', d=1, p=((-1,1,0),(-1,1,5),(-1,-1,5),(-1,-1,0),(-1,1,0),(1,1,0),(1,1,5),(-1,1,5),(1,-1,5),(1,1,5),(-1,-1,5),(1,-1,5),(1,-1,0),(-1,-1,0),(1,1,0),(1,-1,0),(-1,1,0)) )\n        eye_fs = mc.listRelatives( eye_fc, shapes=True)[0]\n        mc.setAttr( eye_fs+'.overrideEnabled', 1 )\n        mc.setAttr( eye_fs+'.overrideColor', cl )\n        eye_fg = mc.group( n=eye_fc+'_Grp', empty=True )\n        mc.parent( eye_fc, eye_fg )\n        mc.parentConstraint( eye+'jnt_SW', eye_fg )\n        mc.orientConstraint( eye_fc, eye+'fk_jnt_SW' )\n        for attr in ['.rotateX', '.rotateY', '.rotateZ', '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n            mc.setAttr( eye_ac+attr, lock=True, keyable=False, channelBox=False )\n        for attr in ['.translateX', '.translateY', '.translateZ', '.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n            mc.setAttr( eye_fc+attr, lock=True, keyable=False, channelBox=False )\n        mc.setAttr( eye_fc+'.rotateZ', lock=True )\n    aim_ctr = mc.curve( n=pre+'eye_aim_Ctr', d=1, p=((-8,4,0),(8,4,0),(8,-4,0),(-8,-4,0),(-8,4,0)) )\n    aim_sh = mc.listRelatives( aim_ctr, shapes=True)[0]\n    mc.setAttr( aim_sh+'.overrideEnabled', 1 )\n    mc.setAttr( aim_sh+'.overrideColor', 17 )\n    aim_grp = mc.group( aim_ctr, n=pre+'eye_aim_Ctr_Grp' )\n    tx, ty, tz = mc.xform( pre+'eye_L_aim_Ctr_Grp', q=1, t=1, ws=1)\n    mc.move( 0, ty, tz, aim_grp )\n    mc.parent( pre+'eye_R_aim_Ctr_Grp', pre+'eye_L_aim_Ctr_Grp', aim_ctr )\n    for attr in ['.rotateX', '.rotateY', '.scaleY', '.scaleZ']:\n        mc.setAttr( aim_ctr+attr, lock=True, keyable=False, channelBox=False )\n    eye_rg = mc.group( n=pre+'eye_Rig_Ctr_Grp', empty=True )\n    mc.delete( mc.pointConstraint( pre+'head_Ctr', eye_rg ) )\n    mc.parent( '*_eye_*_fk_Ctr_Grp', aim_grp, eye_rg )\n    mc.parent( eye_rg, pre+'head_Rig_SP' )\n    mc.parentConstraint( pre+'head_Ctr', aim_grp, maintainOffset=True )\n    mc.setKeyframe( aim_grp+'.translate' )\n    mc.setKeyframe( aim_grp+'.rotate' )\n    mc.addAttr( aim_ctr, ln='head_follow',  keyable=True, min=0, max=1 )\n    mc.connectAttr( aim_ctr+'.head_follow', aim_grp+'.blendParent1' )\n    nds = []\n    nds.append( mc.rename( 'pairBlend1', pre+'eye_pairBlend1') )\n    for i in ['_inRotateX1', '_inRotateY1', '_inRotateZ1', '_inTranslateX1', '_inTranslateY1', '_inTranslateZ1']:\n        nds.append( mc.rename( 'pairBlend1'+i, pre+'tongue_pairBlend1'+i) )\n    mc.container('__'+pre+'_allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.setAttr( aim_ctr+'.head_follow',1 )\n    mc.select( clear=True )\n\n#########################################################\n\ndef CreateTongueControl(*args):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    jnt_len = 0.0\n    for i in range(1,12):\n        jnt_len += mc.getAttr( '*tongue_jnt_%d_SW.translateX'%i )\n    sj_len = jnt_len/11.0\n    for i in range(1,12):\n        mc.setAttr( '*tongue_jnt_%d_SW.translateX'%i, sj_len)\n    ton_ikhandle = mc.ikHandle( n=pre+'tongue_ikHandle', sj=pre+'tongue_jnt_0_SW', ee=pre+'tongue_jnt_11_SW', sol='ikSplineSolver', scv=False, pcv=False )\n    ton_ik = ton_ikhandle[0]\n    ton_crv = ton_ikhandle[2]\n    ton_crv = mc.rename( ton_crv, pre+'tongue_ik_curve' )\n    ton_dcrv = mc.duplicate( ton_crv, name=pre+'tongue_sm_curve' )\n    crv_sh = mc.listRelatives( ton_crv, shapes=True)[0]\n    dcrv_sh = mc.listRelatives( ton_dcrv, shapes=True)[0]\n    crv_info = mc.createNode( 'curveInfo', n=pre+'tongue_ik_curveinfo' )\n    mc.connectAttr( crv_sh+'.worldSpace[0]', crv_info+'.inputCurve' )\n    dcrv_info = mc.createNode( 'curveInfo', n=pre+'tongue_scale_curveinfo' )\n    mc.connectAttr( dcrv_sh+'.worldSpace[0]', dcrv_info+'.inputCurve' )\n    crv_len = mc.getAttr( crv_info+'.arcLength' )\n    ton_ig = mc.group( n=pre+'tongue_ikHandle_Grp', empty=True )\n    ton_ikgp = mc.group( n=pre+'tongue_IK_SP', empty=True )\n    mc.parent( ton_ik, ton_crv, ton_ig )\n    mc.parent( ton_dcrv, ton_ig, ton_ikgp )\n    mc.setAttr( ton_ig+'.inheritsTransform', 0 )\n    ton_cj = []\n    for i in [0,3,6,9,13]:\n        mc.select(clear=True)\n        ton_cj.append( mc.joint( n=pre+'tongue_%d_Ctr_jnt'%i, p=mc.xform( ton_crv+'.cv[%d]'%i, q=1, t=1, ws=1) ) )\n    ton_ct = []\n    ton_cs = []\n    ton_cg = []\n    for i in range(5):\n        ton_ct.append( mc.circle( n=pre+'tongue_%d_Ctr'%i, r=2 ,ch=0, normal=(1,0,0) )[0] )\n        ton_cs.append( mc.listRelatives( ton_ct[i], shapes=True)[0] )\n        mc.setAttr( ton_cs[i]+'.overrideEnabled', 1 )\n        mc.setAttr( ton_cs[i]+'.overrideColor', 17 )\n        ton_cg.append( mc.group( ton_ct[i], n=ton_ct[i]+'_Grp' ) )\n        mc.xform( ton_cg[i], ws=1, t=mc.xform( ton_cj[i], q=1, t=1, ws=1 ) )\n        mc.delete( mc.tangentConstraint( ton_crv, ton_cg[i] ) )\n        mc.parent( ton_cj[i], ton_ct[i] )\n        mc.setAttr( ton_cj[i]+'.visibility', 0)\n        for attr in ['.scaleX', '.scaleY', '.scaleZ', '.visibility']:\n            mc.setAttr( ton_ct[i]+attr, l=1, k=0, cb=0 )\n    for i in range(1,5):\n        mc.parent( ton_cg[i], ton_ct[i-1] )\n    ton_cg.append( mc.group( n=pre+'tongue_Ctr_Grp', em=1 ) )\n    mc.delete( mc.pointConstraint( ton_cg[0], ton_cg[5] ) )\n    mc.parent( ton_cg[0], ton_cg[5] )\n    ton_md1 = mc.createNode( 'multiplyDivide', n=pre+'tongue_MD1' )\n    ton_md2 = mc.createNode( 'multiplyDivide', n=pre+'tongue_MD2' )\n    mc.setAttr( ton_md1+'.operation', 2)\n    mc.connectAttr( crv_info+'.arcLength', ton_md1+'.input1X' )\n    mc.connectAttr( dcrv_info+'.arcLength', ton_md1+'.input2X' )\n    mc.connectAttr( ton_md1+'.outputX', ton_md2+'.input1X' )\n    mc.setAttr( ton_md2+'.input2X', sj_len )\n    for i in range(1,12):\n        mc.connectAttr( ton_md2+'.outputX', pre+'tongue_jnt_%d_SW'%i+'.translateX' )\n    mc.setAttr( ton_ikgp+'.visibility', 0 )\n    nds = [ '*_tongue_ik_curveinfo', '*_tongue_scale_curveinfo', '*_tongue_MD1', '*_tongue_MD2' ]\n    mc.container('__*__allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    ton_sp = mc.group( n=pre+'tongue_Rig_SP', em=1 )\n    mc.delete( mc.parentConstraint( ton_cg[5], ton_sp ) )\n    mc.parent( ton_sp, pre+'head_Rig_SP' )\n    mc.parentConstraint( pre+'jaw_jnt_SW', ton_sp, maintainOffset=True )\n    mc.parent( ton_cg[5], ton_ikgp, ton_sp )\n    mc.select( ton_cj, ton_crv )\n\n###########################################\n\ndef AnkleShoulderFix(*args):\n    pre = mc.textField('pre_textfield', query=True, text=True)+'_'\n    nds=[]\n    nds.append(mc.createNode('multDoubleLinear',n=pre+'leg_L_DW_SIK_mDL'))\n    mc.setAttr(pre+'leg_L_DW_SIK_mDL.input2',-1)\n    mc.connectAttr(pre+'leg_L_ankle_SW.rotateY',pre+'leg_L_DW_SIK_mDL.input1')\n    mc.connectAttr(pre+'leg_L_DW_SIK_mDL.output',pre+'leg_L_DW_endUp_LOC.rotateX',force=True)\n    mc.connectAttr(pre+'leg_R_ankle_SW.rotateY',pre+'leg_R_DW_endUp_LOC.rotateX',force=True)\n    for i in ('L','R'):\n        ctr=pre+'shoulder_%s_singleJ_Ctr'%i\n        mc.addAttr(ctr,ln='fix',at='enum',en='======:',k=0)\n        mc.setAttr(ctr+'.fix',e=1,channelBox=1 )\n        mc.addAttr(ctr,ln='arm_fix',at='float',k=1)\n        for j in range(5):\n            sj=pre+'hand_%s_UP_bend_%d_SJ'%(i,j)\n            mdl=mc.createNode('multDoubleLinear',n=sj.replace('SJ','mDL'))\n            nds.append(mdl)\n            mc.setAttr(mdl+'.input2',10-2*j)\n            mc.connectAttr(ctr+'.arm_fix',mdl+'.input1')\n            mc.connectAttr(mdl+'.output',sj+'.rotateX')\n    mc.container('__*__allRigNodes_container', addNode=nds, edit=True, includeShapes=True, includeTransform=True, force=True)\n    mc.select(clear=True)\n    \n#########################################################\n\ndef SmallToolWindow():\n    if mc.window( 'smalltool', query=True, exists=True ):\n        mc.deleteUI( 'smalltool', window=True )\n    smalltool = mc.window( 'smalltool', title='Small Tool', width=400, height=360 )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 50, 100) )\n    mc.separator( style='none' )\n    mc.text(label='½ÇɫÃû')\n    nodelist = mc.ls(dependencyNodes=True)\n    charn = ''\n    try: mc.select('*__world'); charn = (mc.ls(sl=1)[0]).split('_')[0]; mc.select( clear=True)\n    except: pass\n    mc.textField( 'pre_textfield', text=charn )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='¾±²¿¶¨λ', width=100, command = CreateNeckLoc )\n    mc.button( label='´´½¨¾±²¿¿ØÖÆÆ÷', width=100, command = CreateNeckControl )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='Ã沿¶¨λ', width=100, command = CreateFaceLocator )\n    mc.button( label='´´½¨Ã沿¹Ç÷À', width=100, command = CreateFaceSkeleton)\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='×Զ¯´¦Àíspace½ڵã', width=200, command = AutoParentSpace )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='´´½¨×㲿¿ØÖÆÆ÷', width=200, command = CreateFootControl )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='µ÷Õû¼粿¼°¿貿¿ØÖÆÆ÷', width=200, command = AdjustShoulderHip )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='Òþ²ضàÓàǹµ㼰ÊôÐÔ', width=200, command = HideJointAttr )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='µ÷Õû¼«ÏòÁ¿', width=200, command = AdjustPoleVector )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=2, columnWidth2=(50, 200) )\n    mc.separator( style='none' )\n    mc.button( label='´´½¨¿Õ×é', width=200, command = CreateNulls )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='´´½¨Ñ۾µ¿ØÖÆ', width=200, command = CreateEyeControl )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='´´½¨Éàͷ¿ØÖÆ', width=200, command = CreateTongueControl )\n    mc.setParent( '..' )\n    mc.setParent( '..' )\n    mc.columnLayout( adjustableColumn=True )\n    mc.separator( style='none', height=10 )\n    mc.rowLayout( numberOfColumns=3, columnWidth3=(50, 100, 100) )\n    mc.separator( style='none' )\n    mc.button( label='Ö÷´ÎÐÞÕý', width=200, command = AnkleShoulderFix )\n    mc.showWindow( smalltool )\n    \nSmallToolWindow()" 
-        -sourceType "python" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -803,7 +725,7 @@ global proc shelf_zclpop123_yahoo_cn_bd_QQ_136166416 () {
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
+        -overlayLabelBackColor 0 0 0 0.2 
         -image "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/quanzhongaa.bmp" 
         -image1 "E:/360data/ÖØҪÊý¾Ý/ÎҵÄÎĵµ/maya/2011/prefs/icons/quanzhongaa.bmp" 
         -style "iconOnly" 
@@ -822,20 +744,21 @@ global proc shelf_zclpop123_yahoo_cn_bd_QQ_136166416 () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "User-defined Python command" 
+        -annotation "import maya.cmds as mc\nimport maya.mel as mel\n\nsel = mc.ls(sl=True, fl=True)\n\nfor vtx in sel:\n    mc.select(vtx)\n    mel.eval('weightHammerVerts')\n    mc.refresh()\n\nmc.select(sel)" 
         -enableBackground 0
         -align "center" 
-        -label "Python Command" 
+        -label "import maya.cmds as mc\nimport maya.mel as mel\n\nsel = mc.ls(sl=Tr..." 
         -labelOffset 0
         -font "plainLabelFont" 
+        -imageOverlayLabel "WHM" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
+        -overlayLabelBackColor 0 0 0 0.2 
         -image "pythonFamily.png" 
         -image1 "pythonFamily.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "import sys\nPath = \"Z:/Mudan/Script/RiginggTools/BSRigTools\"\nif not Path in sys.path:\n    sys.path.append(Path)\nimport FaceRIG\nreload(FaceRIG)\nFaceRIG.showUI()" 
+        -command "import maya.cmds as mc\nimport maya.mel as mel\n\nsel = mc.ls(sl=True, fl=True)\n\nfor vtx in sel:\n    mc.select(vtx)\n    mel.eval('weightHammerVerts')\n    mc.refresh()\n\nmc.select(sel)" 
         -sourceType "python" 
         -commandRepeatable 1
         -flat 1
@@ -848,73 +771,21 @@ global proc shelf_zclpop123_yahoo_cn_bd_QQ_136166416 () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "User-defined MEL command" 
+        -annotation "import time\n\n\nL = (\n     '\\n' * 4,\n     '#' + '=' * 40,\n     '# author: changlong.zang',\n     '#   mail: zclongpop@163.com',\n     '#   date: %s'%(time.strftime(\"%a, %d %b %Y, %H:%M:%S\", time.localtime())),\n     '#' + '=' * 40,\n     '#' + '--+' * 40\n     )\n\nprint '\\n'.join(L)" 
         -enableBackground 0
         -align "center" 
-        -label "MEL Command" 
+        -label "import time\n\n\nL = (\n     '\\n' * 4,\n     '#' + '=' * 40,\n     '# ..." 
         -labelOffset 0
         -font "plainLabelFont" 
+        -imageOverlayLabel "CPR" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "commandButton.png" 
-        -image1 "commandButton.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "{\nstring $obj;\nstring $selection[] = `ls -sl`;\nstring $selectionShape[] = `listRelatives -s -path $selection`;\nfor($obj in $selectionShape)\n{\nfloat $cy = `getAttr ($obj + \".template\")`;\nif($cy == 0)\nsetAttr ($obj + \".template\")1;\nelse\nsetAttr ($obj + \".template\")0;\n}\n}" 
-        -sourceType "mel" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Set the wireframe color of all selected objects" 
-        -enableBackground 0
-        -align "center" 
-        -label "Wireframe Color..." 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -imageOverlayLabel "WC" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "menuIconDisplay.png" 
-        -image1 "menuIconDisplay.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "objectColorPalette ()" 
-        -sourceType "mel" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "User-defined Python command" 
-        -enableBackground 0
-        -align "center" 
-        -label "Python Command" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
+        -overlayLabelBackColor 0 0 0 0.2 
         -image "pythonFamily.png" 
         -image1 "pythonFamily.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "import zhcg_renamePro; zhcg_renamePro.ui()" 
+        -command "import time\n\n\nL = (\n     '\\n' * 4,\n     '#' + '=' * 40,\n     '# author: changlong.zang',\n     '#   mail: zclongpop@163.com',\n     '#   date: %s'%(time.strftime(\"%a, %d %b %Y, %H:%M:%S\", time.localtime())),\n     '#' + '=' * 40,\n     '#' + '--+' * 40\n     )\n\nprint '\\n'.join(L)" 
         -sourceType "python" 
         -commandRepeatable 1
         -flat 1
@@ -927,21 +798,180 @@ global proc shelf_zclpop123_yahoo_cn_bd_QQ_136166416 () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "User-defined MEL command" 
+        -annotation "AdvancedSkeleton5" 
         -enableBackground 0
         -align "center" 
-        -label "MEL Command" 
+        -label "AdvancedSkeleton5" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.25 
+        -image "D:/Work/AdvancedSkeleton5/AdvancedSkeleton5Files/icons/AS5.png" 
+        -image1 "D:/Work/AdvancedSkeleton5/AdvancedSkeleton5Files/icons/AS5.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"D:/Work/AdvancedSkeleton5/AdvancedSkeleton5.mel\";AdvancedSkeleton5;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Selector:biped" 
+        -enableBackground 0
+        -align "center" 
+        -label "Selector:biped" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "D:/Work/AdvancedSkeleton5/AdvancedSkeleton5Files/icons/asBiped.png" 
+        -image1 "D:/Work/AdvancedSkeleton5/AdvancedSkeleton5Files/icons/asBiped.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"D:/Work/AdvancedSkeleton5//AdvancedSkeleton5Files/Selector/biped.mel\";asSelectorbiped;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Selector:face" 
+        -enableBackground 0
+        -align "center" 
+        -label "Selector:face" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "D:/Work/AdvancedSkeleton5/AdvancedSkeleton5Files/icons/asFace.png" 
+        -image1 "D:/Work/AdvancedSkeleton5/AdvancedSkeleton5Files/icons/asFace.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"D:/Work/AdvancedSkeleton5//AdvancedSkeleton5Files/Selector/face.mel\";asSelectorface;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as mc\nsel =  mc.ls(sl=True)\n\nfor c in sel:\n    jnt = mc.createNode('jnt', name=c.replace('ctl', 'jnt'))\n    mc.delete(mc.pointConstraint(c, jnt))\n    mc.parent(jnt, c)" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as mc\nsel =  mc.ls(sl=True)\n\nfor c in sel:\n    ..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CTJ" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as mc\nsel =  mc.ls(sl=True)\n\nfor c in sel:\n    jnt = mc.createNode('joint', name=c.replace('ctl', 'jnt'))\n    mc.delete(mc.pointConstraint(c, jnt))\n    mc.parent(jnt, c)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import sys\n\nPath = 'D:/Work/RiggingTeamTools'\nif Path not in sys.path:\n    sys.path.append(Path)\n\n\nimport RootUI\nreload(RootUI)\nRootUI.PlugTool()" 
+        -enableBackground 0
+        -align "center" 
+        -label "import sys\n\nPath = 'D:/Work/RiggingTeamTools'\nif Path not in sys..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "RTT" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\n\nPath = 'D:/Work/RiggingTeamTools'\nif Path not in sys.path:\n    sys.path.append(Path)\n\n\nimport RootUI\nreload(RootUI)\nRootUI.PlugTool()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "select(`skinCluster -q -inf`)" 
+        -enableBackground 0
+        -align "center" 
+        -label "select(`skinCluster -q -inf`)" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "SLI" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
         -image "commandButton.png" 
         -image1 "commandButton.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "{\n{\nstring $thisWindow = \"PointCurveWindow\";\nif(`window -ex $thisWindow`)deleteUI -wnd $thisWindow;\nif(`windowPref -ex $thisWindow`) windowPref -r $thisWindow;\nwindow -t \"Create PointOnCurveInfo Window\" -w 270 -h 170 $thisWindow;\nstring $Layout = `formLayout`;\nstring $selCurve = `textField -w 180 -h 30 -tx \"Select One Curve And Load...\" -bgc 1.0 0.726 0.826 selCurve`;\nstring $nameLabel = `text -l \"Node Name\" -w 60 -h 30 nameLabel`;\nstring $Nodename = `textField   -w 190 -h 30 -tx \"\" -en 0 -bgc 1.0 0.726 0.826 Nodename`;\nstring $loadCurveButton = `button -l \"< < <\" -w 70 -h 30 -c (\"loadCur\") loadCurveButton`;\nstring $pointInt = `intSliderGrp  -field 1 -min 1 -max 100 -v 0 -w 260 -h 25 -en 0 -ss 1 pointInt`;\nstring $createButton = `button -l \">  >   create    <  <\" -w 257 -h 40 -en 0 -c (\"createIT\") createButton`;\nformLayout -edit \n-attachForm  $selCurve \"top\" 8 \n-attachForm  $selCurve \"left\" 6\n\n-attachForm   $loadCurveButton \"top\" 8\n-attachControl  $loadCurveButton \"left\" 8 $selCurve\n\n-attachControl  $nameLabel \"top\" 8 $selCurve\n-attachForm   $nameLabel \"left\" 6\n\n-attachControl  $Nodename \"top\" 8  $selCurve\n-attachControl  $Nodename \"left\" 8 $nameLabel\n\n-attachControl  $pointInt \"top\" 10 $nameLabel\n-attachForm   $pointInt \"left\" 6\n\n-attachControl  $createButton \"top\" 8 $pointInt\n-attachForm   $createButton \"left\" 6\n\n$Layout;\nshowWindow $thisWindow;\n}\nproc loadCur()\n{\nstring $selCurves[] = `ls -sl`;\nfloat $selCueveInt = `size($selCurves)`;\nif($selCueveInt == 1)\n{textField -e -tx $selCurves[0]  selCurve;\ntextField -e -en 1  Nodename;\nintSliderGrp  -e -en 1  pointInt;\nbutton -e -en 1 createButton;}\nelse\n{textField -e -tx \"Select One Curve And Load...\"  selCurve;\ntextField -e -en 0  Nodename;\nintSliderGrp  -e -en 0  pointInt;\nbutton -e -en 0 createButton;}\n}\nproc createIT()\n{\nstring $loadedCurv = `textField -q -tx  selCurve`;\nstring $loadedCurShape[] = `listRelatives -s -path $loadedCurv`;\nint $i;\nint $imax = `intSliderGrp  -q -v pointInt`;\nfloat $beis;\nif($imax == 1)\n{$beis = 1;}\nelse\n{float $Maxvalue = `getAttr ($loadedCurShape[0]+ \".maxValue\")`;\n$beis = $Maxvalue / ($imax - 1);\n}\nstring $nameSpace = `textField   -q -tx Nodename`;\nfor ($i = 0;$i < $imax;$i ++ )\n{\nstring $Node = `createNode -n ($nameSpace + \"Node\")pointOnCurveInfo`;\nstring $Jnt = `joint -p 0 0 0 -n ($nameSpace + \"Jnt\")`;\nconnectAttr ($loadedCurShape[0] + \".worldSpace\") ($Node + \".inputCurve\");\nconnectAttr ($Node + \".result.position\") ($Jnt + \".translate\");\nfloat $NodePosi = $beis * $i;\nsetAttr ($Node + \".parameter\") $NodePosi;\n}\n}\n}\n\n\n" 
+        -command "select(`skinCluster -q -inf`)" 
         -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as mc\n\ndef func():\n    sel_grp = mc.ls(sl=True)\n    \n    input_vis = mc.connectionInfo(sel_grp[0] + '.v', sfd=True)\n    if not input_vis:\n        return\n    \n    mc.connectAttr(input_vis, sel_grp[1] + '.v')\n\nfunc()" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as mc\n\ndef func():\n    sel_grp = mc.ls(sl=True)..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as mc\n\ndef func():\n    sel_grp = mc.ls(sl=True)\n    input_vis = mc.connectionInfo(sel_grp[0] + '.v', sfd=True)\n    if not input_vis:\n        return\n\n    for obj in sel_grp[1:]:\n        mc.connectAttr(input_vis, obj + '.v', f=True)\n\nfunc()" 
+        -sourceType "python" 
         -commandRepeatable 1
         -flat 1
     ;

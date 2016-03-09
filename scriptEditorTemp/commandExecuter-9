@@ -1,4 +1,6 @@
-import sys
+from rigSystem.face.utils import weights
+reload(weights)
 
-for p in sys.path:
-    print p
+weights.exportWeightsBySel('D:/123.xml')
+
+weights.importWeights('D:/123.xml')

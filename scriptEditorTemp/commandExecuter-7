@@ -1,10 +1,11 @@
-import sys
 
-Path = '/Users/zangchanglong/Work/RiggingTeamTools'
-if Path not in sys.path:
-    sys.path.append(Path)
+#sys.path.append('d:/')
 
 
-import RootUI
-reload(RootUI)
-RootUI.PlugTool()
+import lid
+reload(lid)
+
+lid.create_crv_and_loc('R')
+
+
+lid.rig_lips_by_locator('R')

@@ -7,15 +7,253 @@ global proc shelf_Custom () {
     shelfButton
         -enableCommandRepeat 1
         -enable 1
-        -width 34
-        -height 34
+        -width 35
+        -height 35
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "User-defined MEL command" 
+        -annotation "Select an object(s)" 
         -enableBackground 0
         -align "center" 
-        -label "MEL Command" 
+        -label "Center Pivot" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CP" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CenterPivot" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Delete construction history on the selected object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "History" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Hist" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconEdit.png" 
+        -image1 "menuIconEdit.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "DeleteHistory" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select an object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Freeze Transformations" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "FT" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "FreezeTransformations" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Freeze transformations options" 
+        -enableBackground 0
+        -align "center" 
+        -label "identityApplyItemOption" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Fto" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "FreezeTransformationsOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import time\n\nTM = time.localtime()\n\nL1 = '#' + '=' * 40\nL2 = '# author: changlong.zang'\nL3 = '#   mail: zclongpop@163.com'\nL4 = '#   date: %s'%(time.strftime(\"%a, %d %b %Y, %H:%M:%S\", time.localtime()))\nL5 = '#' + '=' * 40\nL6 = '#' + '--+' * 40\n\nprint '\\n'.join([L1, L2, L3, L4, L5, L6])" 
+        -enableBackground 0
+        -align "center" 
+        -label "import time\n\nTM = time.localtime()\n\nL1 = '#' + '=' * 40\nL2 = '# ..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import time\n\n\nL = (\n     '\\n' * 4,\n     '#' + '=' * 40,\n     '# author: changlong.zang',\n     '#   mail: zclongpop@163.com',\n     '#   date: %s'%(time.strftime(\"%a, %d %b %Y, %H:%M:%S\", time.localtime())),\n     '#' + '=' * 40,\n     '#' + '--+' * 40\n     )\n\nprint '\\n'.join(L)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Paint skin weights tool options" 
+        -enableBackground 0
+        -align "center" 
+        -label "skinWeightPaintDialogItem" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "paintSkinWeights.png" 
+        -image1 "paintSkinWeights.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ArtPaintSkinWeightsToolOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Skin cluster options" 
+        -enableBackground 0
+        -align "center" 
+        -label "skinClusterDialog" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "smoothSkin.png" 
+        -image1 "smoothSkin.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "SmoothBindSkinOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as mc\nimport maya.mel as mel\n\nvetx = mc.ls(sl=True, fl=True)\nfor v in vetx:\n    mc.select(v)\n    mel.eval('weightHammerVerts;')\n    mc.refresh()" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as mc\nimport maya.mel as mel\n\nvetx = mc.ls(sl=T..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as mc\nimport maya.mel as mel\n\nvetx = mc.ls(sl=True, fl=True)\nfor v in vetx:\n    mc.select(v)\n    mel.eval('weightHammerVerts;')\n    mc.refresh()\nmc.select(vetx)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as mc\nsel = mc.ls(sl=True)\nmc.select(sel[:-1])\nmc.skinPercent('skinCluster1', tv=(sel[-1], 1))" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as mc\nsel = mc.ls(sl=True)\nmc.select(sel[:-1])\n..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as mc\nsel = mc.ls(sl=True)\nmc.select(sel[:-1])\nmc.skinPercent('skinCluster1', tv=(sel[-1], 1))" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Joint tool options" 
+        -enableBackground 0
+        -align "center" 
+        -label "skeletonDialogItem" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
@@ -25,59 +263,115 @@ global proc shelf_Custom () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "JointTool" 
+        -command "JointToolOptions" 
         -sourceType "mel" 
         -commandRepeatable 1
+        -flat 1
     ;
     shelfButton
         -enableCommandRepeat 1
         -enable 1
-        -width 34
-        -height 34
+        -width 35
+        -height 35
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "User-defined MEL command" 
+        -annotation "Mirror joint options" 
         -enableBackground 0
         -align "center" 
-        -label "MEL Command" 
+        -label "mirrorJointOptionItem" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.25 
-        -image "curveCV.png" 
-        -image1 "curveCV.png" 
+        -image "kinMirrorJoint_S.png" 
+        -image1 "kinMirrorJoint_S.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "CVCurveToolOptions" 
+        -command "MirrorJointOptions" 
         -sourceType "mel" 
         -commandRepeatable 1
+        -flat 1
     ;
     shelfButton
         -enableCommandRepeat 1
         -enable 1
-        -width 34
-        -height 34
+        -width 35
+        -height 35
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "User-defined MEL command" 
+        -annotation "Mirror skin weights options" 
         -enableBackground 0
         -align "center" 
-        -label "MEL Command" 
+        -label "mirrorSkinWeightsDialog" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.25 
-        -image "rebuildCurve.png" 
-        -image1 "rebuildCurve.png" 
+        -image "mirrorSkinWeight.png" 
+        -image1 "mirrorSkinWeight.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "RebuildCurveOptions" 
+        -command "MirrorSkinWeightsOptions" 
         -sourceType "mel" 
         -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Edit various component values for the selected object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Component Editor" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CpEd" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ComponentEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import sys\n\npath = 'd:/Work/bigbigSunRepo/rigSystem/source'\npath in sys.path or sys.path.append(path)\n\n\nfrom rigSystem.face import faceUI\n\nui = faceUI.FaceUI()\nui.show()\n" 
+        -enableBackground 0
+        -align "center" 
+        -label "import sys\n\npath = 'd:/Work/bigbigSunRepo/rigSystem/source'\npath..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\n\npath = 'd:/Work/bigbigSunRepo/rigSystem/source'\npath in sys.path or sys.path.append(path)\n\n\nfrom rigSystem.face import faceUI\n\nui = faceUI.FaceUI()\nui.show()\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
     ;
 
 } 

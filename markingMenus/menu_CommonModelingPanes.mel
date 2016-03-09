@@ -18,10 +18,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -echoCommand 0
-        -annotation "Perspective View" 
         -italicized 0
         -boldFont 0
-        menuItem86;
+        -sourceType "mel" 
+        menuItem91;
 
     menuItem
         -label "Side View" 
@@ -42,10 +42,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -echoCommand 0
-        -annotation "Side View" 
         -italicized 0
         -boldFont 0
-        menuItem87;
+        -sourceType "mel" 
+        menuItem92;
 
     menuItem
         -label "Front View" 
@@ -66,10 +66,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -echoCommand 0
-        -annotation "Front View" 
         -italicized 0
         -boldFont 0
-        menuItem88;
+        -sourceType "mel" 
+        menuItem93;
 
     menuItem
         -label "Top View" 
@@ -90,10 +90,85 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -echoCommand 0
-        -annotation "Top View" 
         -italicized 0
         -boldFont 0
-        menuItem89;
+        -sourceType "mel" 
+        menuItem94;
+
+    menuItem
+        -label "Left View" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "MTviewChange(\"left\", \"-ls\");" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -version "2014" 
+        menuItem95;
+
+    menuItem
+        -label "Back View" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "MTviewChange(\"back\", \"-b\");" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -version "2014" 
+        menuItem96;
+
+    menuItem
+        -label "Bottom View" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "MTviewChange(\"bottom\", \"-bo\");" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -version "2014" 
+        menuItem97;
 
     menuItem
         -label "Hotbox Style" 
@@ -110,10 +185,10 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
-        -annotation "Hotbox Style" 
         -italicized 0
         -boldFont 0
-        menuItem90;
+        -sourceType "mel" 
+        menuItem98;
 
         menuItem
             -label "Zones and Menu Rows" 
@@ -133,10 +208,10 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -echoCommand 0
-            -annotation "Zones and Menu Rows" 
             -italicized 0
             -boldFont 0
-            menuItem91;
+            -sourceType "mel" 
+            menuItem99;
 
         menuItem
             -label "Zones Only" 
@@ -156,10 +231,10 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -echoCommand 0
-            -annotation "Zones Only" 
             -italicized 0
             -boldFont 0
-            menuItem92;
+            -sourceType "mel" 
+            menuItem100;
 
         menuItem
             -label "Center Zone Only" 
@@ -179,10 +254,10 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -echoCommand 0
-            -annotation "Center Zone Only" 
             -italicized 0
             -boldFont 0
-            menuItem93;
+            -sourceType "mel" 
+            menuItem101;
 
     setParent -m ..;
 

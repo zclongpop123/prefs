@@ -1,4 +1,4 @@
-global proc shelf_Fluids () {
+global proc shelf_General () {
     global string $gBuffStr;
     global string $gBuffStr0;
     global string $gBuffStr1;
@@ -12,182 +12,20 @@ global proc shelf_Fluids () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "3D Fluid Container: Create a 3D fluid container" 
+        -annotation "Learning Movies: Shows movies demonstrating basic concepts" 
         -enableBackground 0
         -align "center" 
-        -label "3D Fluid Container" 
+        -label "Learning Movies" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidCreate3D.png" 
-        -image1 "fluidCreate3D.png" 
+        -image "LearningMovies.png" 
+        -image1 "LearningMovies.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "Create3DContainer" 
-        -sourceType "mel" 
-        -doubleClickCommand "Create3DContainerOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "2D Fluid Container: Create a 2D fluid container" 
-        -enableBackground 0
-        -align "center" 
-        -label "2D Fluid Container" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidCreate2D.png" 
-        -image1 "fluidCreate2D.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "Create2DContainer" 
-        -sourceType "mel" 
-        -doubleClickCommand "Create2DContainerOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Paint Fluids Tool: Paint fluid properties" 
-        -enableBackground 0
-        -align "center" 
-        -label "Paint Fluids Tool" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidPaint.png" 
-        -image1 "fluidPaint.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "PaintFluidsTool" 
-        -sourceType "mel" 
-        -doubleClickCommand "PaintFluidsToolOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "3D Fluid Container with Emitter: Create an emitter and a 3D fluid container" 
-        -enableBackground 0
-        -align "center" 
-        -label "3D Fluid Container with Emitter" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidCreate3DEmitter.png" 
-        -image1 "fluidCreate3DEmitter.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "Create3DContainerEmitter" 
-        -sourceType "mel" 
-        -doubleClickCommand "Create3DContainerEmitterOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "2D Fluid Container with Emitter: Create an emitter and a 2D fluid container" 
-        -enableBackground 0
-        -align "center" 
-        -label "2D Fluid Container with Emitter" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidCreate2DEmitter.png" 
-        -image1 "fluidCreate2DEmitter.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "Create2DContainerEmitter" 
-        -sourceType "mel" 
-        -doubleClickCommand "Create2DContainerEmitterOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Fluid Emitter: Create an emitter and attach it to a fluid shape" 
-        -enableBackground 0
-        -align "center" 
-        -label "Fluid Emitter" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidEmitterAdd.png" 
-        -image1 "fluidEmitterAdd.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "FluidEmitter" 
-        -sourceType "mel" 
-        -doubleClickCommand "FluidEmitterOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Ocean Material: Assign a new ocean material to the active objects" 
-        -enableBackground 0
-        -align "center" 
-        -label "Ocean Material" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "render_oceanShader.png" 
-        -image1 "render_oceanShader.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "createAndAssignShader oceanShader \"\"" 
+        -command "mayaLearningMoviesPage" 
         -sourceType "mel" 
         -commandRepeatable 1
         -flat 1
@@ -200,128 +38,20 @@ global proc shelf_Fluids () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Emit Fluid from Object: Select a fluid and the emitting object(s)" 
+        -annotation "Help" 
         -enableBackground 0
         -align "center" 
-        -label "Emit Fluid from Object" 
+        -label "Help" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidObjectEmit.png" 
-        -image1 "fluidObjectEmit.png" 
+        -image "menuIconHelp.png" 
+        -image1 "menuIconHelp.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "EmitFluidFromObject" 
-        -sourceType "mel" 
-        -doubleClickCommand "EmitFluidFromObjectOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Extend Fluid Resolution: Extend fluid resolution, preserving contents and voxel size" 
-        -enableBackground 0
-        -align "center" 
-        -label "Extend Fluid Resolution" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidExtend.png" 
-        -image1 "fluidExtend.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "ExtendFluid" 
-        -sourceType "mel" 
-        -doubleClickCommand "ExtendFluidOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Edit Fluid Resolution: Modify fluid resolution, preserving contents" 
-        -enableBackground 0
-        -align "center" 
-        -label "Edit Fluid Resolution" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidEditRes.png" 
-        -image1 "fluidEditRes.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "EditFluidResolution" 
-        -sourceType "mel" 
-        -doubleClickCommand "EditFluidResolutionOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Make Collide: Select fluid object(s) and geometry object(s) to collide" 
-        -enableBackground 0
-        -align "center" 
-        -label "Make Collide" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidCollide.png" 
-        -image1 "fluidCollide.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "MakeFluidCollide" 
-        -sourceType "mel" 
-        -doubleClickCommand "MakeFluidCollideOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Set Initial State: Set current state of fluid as its initial conditions" 
-        -enableBackground 0
-        -align "center" 
-        -label "Set Initial State" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidInitialStateSet.png" 
-        -image1 "fluidInitialStateSet.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "SetInitialState" 
+        -command "Help" 
         -sourceType "mel" 
         -commandRepeatable 1
         -flat 1
@@ -334,20 +64,128 @@ global proc shelf_Fluids () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Clear Initial State: Remove previously set initial conditions" 
+        -annotation "Tumble Tool: Rotate the point of view around the centre of interest (Alt + LMB)" 
         -enableBackground 0
         -align "center" 
-        -label "Clear Initial State" 
+        -label "Tumble Tool" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidInitialStateClear.png" 
-        -image1 "fluidInitialStateClear.png" 
+        -image "tumble.png" 
+        -image1 "tumble.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "ClearInitialState" 
+        -command "TumbleTool" 
+        -sourceType "mel" 
+        -doubleClickCommand "ToolSettingsWindow" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Track Tool: Track the camera (Alt + MMB)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Track Tool" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "track.png" 
+        -image1 "track.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "TrackTool" 
+        -sourceType "mel" 
+        -doubleClickCommand "ToolSettingsWindow" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Dolly Tool: Move the camera in and out (Alt + RMB)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Dolly Tool" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "dolly.png" 
+        -image1 "dolly.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "DollyTool" 
+        -sourceType "mel" 
+        -doubleClickCommand "ToolSettingsWindow" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Zoom Tool: Zoom the camera in and out" 
+        -enableBackground 0
+        -align "center" 
+        -label "Zoom Tool" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "boxZoom.png" 
+        -image1 "boxZoom.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ZoomTool" 
+        -sourceType "mel" 
+        -doubleClickCommand "ToolSettingsWindow" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Undo: Undo the last action" 
+        -enableBackground 0
+        -align "center" 
+        -label "Undo" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "undo.png" 
+        -image1 "undo.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "Undo" 
         -sourceType "mel" 
         -commandRepeatable 1
         -flat 1
@@ -360,22 +198,21 @@ global proc shelf_Fluids () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Create Cache: Runup to create playback and render cache" 
+        -annotation "Redo: Redo the last undone action" 
         -enableBackground 0
         -align "center" 
-        -label "Create Cache" 
+        -label "Redo" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidCacheCreate.png" 
-        -image1 "fluidCacheCreate.png" 
+        -image "redo.png" 
+        -image1 "redo.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "CreateFluidCache" 
+        -command "Redo" 
         -sourceType "mel" 
-        -doubleClickCommand "CreateFluidCacheOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -387,22 +224,313 @@ global proc shelf_Fluids () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Delete Cache: Delete cache on selected fluid object." 
+        -annotation "Delete: Delete the selected object(s)" 
         -enableBackground 0
         -align "center" 
-        -label "Delete Cache" 
+        -label "Delete" 
         -labelOffset 0
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
         -overlayLabelBackColor 0 0 0 0.25 
-        -image "fluidCacheDelete.png" 
-        -image1 "fluidCacheDelete.png" 
+        -image "deleteActive.png" 
+        -image1 "deleteActive.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "fluidDeleteCache" 
+        -command "Delete" 
         -sourceType "mel" 
-        -doubleClickCommand "fluidDeleteCacheOpt" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Group: Group the selected object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Group" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "group.png" 
+        -image1 "group.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "Group" 
+        -sourceType "mel" 
+        -doubleClickCommand "GroupOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Ungroup: Ungroup the selected object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Ungroup" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "ungroup.png" 
+        -image1 "ungroup.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "Ungroup" 
+        -sourceType "mel" 
+        -doubleClickCommand "UngroupOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Parent: Parent the selected object(s) to the last selected object" 
+        -enableBackground 0
+        -align "center" 
+        -label "Parent" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "parent.png" 
+        -image1 "parent.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "Parent" 
+        -sourceType "mel" 
+        -doubleClickCommand "ParentOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Unparent: Unparent the selected object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Unparent" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "unparent.png" 
+        -image1 "unparent.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "Unparent" 
+        -sourceType "mel" 
+        -doubleClickCommand "UnparentOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Hypergraph: Display and edit relationships among nodes in your scene graphically" 
+        -enableBackground 0
+        -align "center" 
+        -label "Hypergraph" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "hypergraph.png" 
+        -image1 "hypergraph.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "HypergraphWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select by hierarchy and combinations" 
+        -enableBackground 0
+        -align "center" 
+        -label "Select by Hierarchy" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "selectByHierarchy.png" 
+        -image1 "selectByHierarchy.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "changeSelectMode -hierarchical" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select by object type" 
+        -enableBackground 0
+        -align "center" 
+        -label "Select by Object" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "selectByObject.png" 
+        -image1 "selectByObject.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "changeSelectMode -object" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select by component type" 
+        -enableBackground 0
+        -align "center" 
+        -label "Select by Component" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "selectByComponent.png" 
+        -image1 "selectByComponent.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "changeSelectMode -component" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Paint Selection Tool: Paint selection of CVs, vertices, faces, and edges" 
+        -enableBackground 0
+        -align "center" 
+        -label "Paint Selection Tool" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "artSelect.png" 
+        -image1 "artSelect.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ArtPaintSelectTool" 
+        -sourceType "mel" 
+        -doubleClickCommand "ArtPaintSelectToolOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Universal Manipulator: Select any object(s)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Universal Manipulator" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "globalManip.png" 
+        -image1 "globalManip.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "UniversalManip" 
+        -sourceType "mel" 
+        -doubleClickCommand "UniversalManipOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Show Manipulator Tool: Select any node" 
+        -enableBackground 0
+        -align "center" 
+        -label "Show Manipulator Tool" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "showManip.png" 
+        -image1 "showManip.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ShowManipulatorTool" 
+        -sourceType "mel" 
         -commandRepeatable 1
         -flat 1
     ;

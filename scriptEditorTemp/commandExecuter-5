@@ -1,0 +1,23 @@
+import sys, random
+import maya.cmds as mc
+
+path = 'D:/Work/facial'
+path in sys.path or sys.path.append(path)
+
+
+
+import facial_ui
+reload(facial_ui)
+facial_ui.UI()
+
+import mouth_lips
+reload(mouth_lips)
+
+import mouth
+reload(mouth)
+
+import brow
+reload(brow)
+
+import cluster
+reload(cluster)

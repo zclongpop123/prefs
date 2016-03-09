@@ -24,7 +24,7 @@ displayColor -c -dormant fluidsVelocity 4;
 displayColor -c -dormant ghostsAfter 21;
 displayColor -c -dormant ghostsBefore 18;
 displayColor -c -dormant gravity 11;
-displayColor -c -dormant grid 1;
+displayColor -c -dormant grid 3;
 displayColor -c -dormant gridAxis 8;
 displayColor -c -dormant gridHighlight 3;
 displayColor -c -dormant guideLine 2;

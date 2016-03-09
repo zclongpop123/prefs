@@ -18,10 +18,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
-        -annotation "NURBS Mask" 
         -italicized 0
         -boldFont 0
-        menuItem78;
+        -sourceType "mel" 
+        menuItem83;
 
     menuItem
         -label "Hierarchy" 
@@ -42,10 +42,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
-        -annotation "Hierarchy" 
         -italicized 0
         -boldFont 0
-        menuItem79;
+        -sourceType "mel" 
+        menuItem84;
 
     menuItem
         -label "Animation Mask" 
@@ -66,10 +66,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
-        -annotation "Animation Mask" 
         -italicized 0
         -boldFont 0
-        menuItem80;
+        -sourceType "mel" 
+        menuItem85;
 
     menuItem
         -label "Deformations Mask" 
@@ -90,10 +90,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
-        -annotation "Deformations Mask" 
         -italicized 0
         -boldFont 0
-        menuItem81;
+        -sourceType "mel" 
+        menuItem86;
 
     menuItem
         -label "Dynamics Mask" 
@@ -114,10 +114,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
-        -annotation "Dynamics Mask" 
         -italicized 0
         -boldFont 0
-        menuItem82;
+        -sourceType "mel" 
+        menuItem87;
 
     menuItem
         -label "Polygons Mask" 
@@ -138,10 +138,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
-        -annotation "Polygons Mask" 
         -italicized 0
         -boldFont 0
-        menuItem83;
+        -sourceType "mel" 
+        menuItem88;
 
     menuItem
         -label "Rendering Mask" 
@@ -162,10 +162,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
-        -annotation "Rendering Mask" 
         -italicized 0
         -boldFont 0
-        menuItem84;
+        -sourceType "mel" 
+        menuItem89;
 
     menuItem
         -label "Object/Components" 
@@ -186,10 +186,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
-        -annotation "Object/Components" 
         -italicized 0
         -boldFont 0
-        menuItem85;
+        -sourceType "mel" 
+        menuItem90;
 
 setParent -m ..;
 
