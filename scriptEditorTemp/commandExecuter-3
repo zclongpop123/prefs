@@ -1,2 +1,5 @@
-import maya.cmds as mc
-sorted(mc.ls(sl=True))
+import psutil
+
+dir(psutil)
+
+psutil.pids()

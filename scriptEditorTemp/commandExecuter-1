@@ -1,1 +1,9 @@
-mc.connectionInfo('L_cheek_ctl_0.tx', dfs=True)[0]
+import maya.cmds as mc
+import maya.mel as mel
+
+for side in ('L', 'R'):
+    for obj in ('upperLid1Attach_{0}', 'lowerLid1Attach_{0}'):
+        mc.select(mc.duplicate(obj.format(side), rc=True))
+        mel.eval('searchReplaceNames "Lid1" "Lid"  "hierarchy";')
+        mel.eval('searchReplaceNames "_L1"  "_L"   "hierarchy";')
+        mel.eval('searchReplaceNames "_R1"  "_R"   "hierarchy";')

@@ -1,2 +1,1 @@
-for attr in mc.listAttr('L_eyeOffset_ctl_0', k=True):
-    mc.connectAttr('{0}.{1}'.format('L_eyeOffset_ctl_0', attr), '{0}.{1}'.format('ctrlEye_L', attr), )
+mc.cluster('hdl_wz_head_Geo')

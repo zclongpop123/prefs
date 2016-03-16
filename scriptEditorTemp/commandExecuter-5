@@ -21,3 +21,9 @@ reload(brow)
 
 import cluster
 reload(cluster)
+
+import eye
+reload(eye)
+
+import lid
+reload(lid)
