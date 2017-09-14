@@ -1,9 +1,0 @@
-import sys
-path = 'E:/package'
-path in sys.path or sys.path.append(path)
-import weights
-
-
-weights.exportWeightsBySel('D:/123.xml')
-
-weights.importWeights('D:/123.xml')

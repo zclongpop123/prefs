@@ -1,8 +1,0 @@
-import maya.cmds as mc
-
-joints = ('necklace_Con_A', 'necklace_Con_A2', 'necklace_Con_A3', 'necklace_Con_B1', 'necklace_Con_B2', 'necklace_Con_B3', 'necklace_Con_C1', 'necklace_Con_C2', 'necklace_Con_C3', 'necklace_Con_D1', 'necklace_Con_D2', 'necklace_Con_D3', 'necklace_Con_E1', 'necklace_Con_E2', 'necklace_Con_E3', 'necklace_Con_F1', 'necklace_Con_F2', 'necklace_Con_F3', 'necklace_Con_G1', 'necklace_Con_G2', 'necklace_Con_G3', 'necklace_Con_H1', 'necklace_Con_H2', 'necklace_Con_H3')
-
-for i, jnt in enumerate(joints):
-    shapes = mc.listRelatives('curve{0}'.format(i+1), s=True, path=True)
-    mc.parent(shapes, jnt, r=True, path=True)
-    mc.rename(shapes[0], jnt+'Shape')

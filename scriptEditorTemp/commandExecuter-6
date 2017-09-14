@@ -1,3 +1,0 @@
-import RIGBox.RigsetAttr
-reload(RIGBox.RigsetAttr)
-RIGBox.RigsetAttr.GOSet()

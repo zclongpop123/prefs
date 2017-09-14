@@ -1,8 +1,0 @@
-import sys
-
-sys.path.append('d:/Work/fix_advs')
-
-
-import add_drv
-reload(add_drv)
-add_drv.fix_drv_constraint()

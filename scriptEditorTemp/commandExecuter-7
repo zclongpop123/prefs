@@ -1,6 +1,0 @@
-import maya.cmds as mc
-
-mc.connectAttr('volumeBlendArmBlendTwo_L.output', 'ScaleBlendElbow_L.color1R', f=True)
-mc.connectAttr('volumeBlendArmBlendTwo_R.output', 'ScaleBlendElbow_R.color1R', f=True)
-mc.connectAttr('volumeBlendArmBlendTwo_L.output', 'ScaleBlendShoulder_L.color1R', f=True)
-mc.connectAttr('volumeBlendArmBlendTwo_R.output', 'ScaleBlendShoulder_R.color1R', f=True)

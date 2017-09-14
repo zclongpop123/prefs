@@ -1,4 +1,4 @@
-global proc shelf_General () {
+global proc shelf_Rigging () {
     global string $gBuffStr;
     global string $gBuffStr0;
     global string $gBuffStr1;
@@ -12,20 +12,24 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Learning Movies: Shows movies demonstrating basic concepts" 
+        -annotation "Create Locator: Create a locator object on the grid" 
         -enableBackground 0
         -align "center" 
-        -label "Learning Movies" 
+        -label "Create Locator" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "LearningMovies.png" 
-        -image1 "LearningMovies.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "locator.png" 
+        -image1 "locator.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "mayaLearningMoviesPage" 
+        -command "CreateLocator" 
         -sourceType "mel" 
         -commandRepeatable 1
         -flat 1
@@ -38,21 +42,26 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Help" 
+        -annotation "Create Joints: Click to place joint, click on existing joint to add to skeleton, click/drag to position joint" 
         -enableBackground 0
         -align "center" 
-        -label "Help" 
+        -label "Create Joints" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "menuIconHelp.png" 
-        -image1 "menuIconHelp.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "kinJoint.png" 
+        -image1 "kinJoint.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "Help" 
+        -command "JointTool" 
         -sourceType "mel" 
+        -doubleClickCommand "JointToolOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -64,22 +73,26 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Tumble Tool: Rotate the point of view around the centre of interest (Alt + LMB)" 
+        -annotation "Create IK Handle: Create IK handle on joint chain" 
         -enableBackground 0
         -align "center" 
-        -label "Tumble Tool" 
+        -label "Create IK Handle" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "tumble.png" 
-        -image1 "tumble.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "kinHandle.png" 
+        -image1 "kinHandle.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "TumbleTool" 
+        -command "IKHandleTool" 
         -sourceType "mel" 
-        -doubleClickCommand "ToolSettingsWindow" 
+        -doubleClickCommand "IKHandleToolOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -91,22 +104,26 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Track Tool: Track the camera (Alt + MMB)" 
+        -annotation "Bind Skin: Smooth bind skin" 
         -enableBackground 0
         -align "center" 
-        -label "Track Tool" 
+        -label "Bind Skin" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "track.png" 
-        -image1 "track.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "smoothSkin.png" 
+        -image1 "smoothSkin.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "TrackTool" 
+        -command "SmoothBindSkin" 
         -sourceType "mel" 
-        -doubleClickCommand "ToolSettingsWindow" 
+        -doubleClickCommand "SmoothBindSkinOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -118,22 +135,69 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Dolly Tool: Move the camera in and out (Alt + RMB)" 
+        -annotation "Human IK: Display the Character Controls Window" 
         -enableBackground 0
         -align "center" 
-        -label "Dolly Tool" 
+        -label "Human IK" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "dolly.png" 
-        -image1 "dolly.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "humanIK_CharCtrl.png" 
+        -image1 "humanIK_CharCtrl.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "DollyTool" 
+        -version "2016" 
+        -command "HIKCharacterControlsTool" 
         -sourceType "mel" 
-        -doubleClickCommand "ToolSettingsWindow" 
+        -doubleClickCommand "HIKCharacterControlsToolOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    separator
+        -enable 1
+        -width 12
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -style "shelf" 
+        -horizontal 0
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Paint Skin Weights: Paint weights on smooth bound skins" 
+        -enableBackground 0
+        -align "center" 
+        -label "Paint Skin Weights" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "paintSkinWeights.png" 
+        -image1 "paintSkinWeights.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ArtPaintSkinWeightsTool" 
+        -sourceType "mel" 
+        -doubleClickCommand "ArtPaintSkinWeightsToolOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -145,22 +209,27 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Zoom Tool: Zoom the camera in and out" 
+        -annotation "Blend Shapes: Select two or more objects to blend between; Select the base shape last" 
         -enableBackground 0
         -align "center" 
-        -label "Zoom Tool" 
+        -label "Blend Shapes" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "boxZoom.png" 
-        -image1 "boxZoom.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "blendShape.png" 
+        -image1 "blendShape.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "ZoomTool" 
+        -version "2016" 
+        -command "CreateBlendShape" 
         -sourceType "mel" 
-        -doubleClickCommand "ToolSettingsWindow" 
+        -doubleClickCommand "CreateBlendShapeOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -172,21 +241,27 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Undo: Undo the last action" 
+        -annotation "Create Lattice: Create a lattice for the selected object(s)" 
         -enableBackground 0
         -align "center" 
-        -label "Undo" 
+        -label "Create Lattice" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "undo.png" 
-        -image1 "undo.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "lattice.png" 
+        -image1 "lattice.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "Undo" 
+        -version "2016" 
+        -command "CreateLattice" 
         -sourceType "mel" 
+        -doubleClickCommand "CreateLatticeOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -198,21 +273,69 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Redo: Redo the last undone action" 
+        -annotation "Create Cluster: Create a cluster for the selected object(s)" 
         -enableBackground 0
         -align "center" 
-        -label "Redo" 
+        -label "Create Cluster" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "redo.png" 
-        -image1 "redo.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "cluster.png" 
+        -image1 "cluster.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "Redo" 
+        -version "2016" 
+        -command "CreateCluster" 
         -sourceType "mel" 
+        -doubleClickCommand "CreateClusterOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    separator
+        -enable 1
+        -width 12
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -style "shelf" 
+        -horizontal 0
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Parent Constraint: Parent constraint" 
+        -enableBackground 0
+        -align "center" 
+        -label "Parent Constraint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "parentConstraint.png" 
+        -image1 "parentConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ParentConstraint" 
+        -sourceType "mel" 
+        -doubleClickCommand "ParentConstraintOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -224,21 +347,57 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Delete: Delete the selected object(s)" 
+        -annotation "Point Constraint: Point constraint" 
         -enableBackground 0
         -align "center" 
-        -label "Delete" 
+        -label "Point Constraint" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "deleteActive.png" 
-        -image1 "deleteActive.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "posConstraint.png" 
+        -image1 "posConstraint.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "Delete" 
+        -command "PointConstraint" 
         -sourceType "mel" 
+        -doubleClickCommand "PointConstraintOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 36
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Orient Constraint: Orient constraint" 
+        -enableBackground 0
+        -align "center" 
+        -label "Orient Constraint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "orientConstraint.png" 
+        -image1 "orientConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "OrientConstraint" 
+        -sourceType "mel" 
+        -doubleClickCommand "OrientConstraintOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -250,22 +409,26 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Group: Group the selected object(s)" 
+        -annotation "Scale Constraint: Scale constraint" 
         -enableBackground 0
         -align "center" 
-        -label "Group" 
+        -label "Scale Constraint" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "group.png" 
-        -image1 "group.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "scaleConstraint.png" 
+        -image1 "scaleConstraint.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "Group" 
+        -command "ScaleConstraint" 
         -sourceType "mel" 
-        -doubleClickCommand "GroupOptions" 
+        -doubleClickCommand "ScaleConstraintOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -277,22 +440,26 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Ungroup: Ungroup the selected object(s)" 
+        -annotation "Aim Constraint: Aim constraint" 
         -enableBackground 0
         -align "center" 
-        -label "Ungroup" 
+        -label "Aim Constraint" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "ungroup.png" 
-        -image1 "ungroup.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "aimConstraint.png" 
+        -image1 "aimConstraint.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "Ungroup" 
+        -command "AimConstraint" 
         -sourceType "mel" 
-        -doubleClickCommand "UngroupOptions" 
+        -doubleClickCommand "AimConstraintOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -304,22 +471,68 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Parent: Parent the selected object(s) to the last selected object" 
+        -annotation "Pole Vector Constraint: Pole vector constraint" 
         -enableBackground 0
         -align "center" 
-        -label "Parent" 
+        -label "Pole Vector Constraint" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "parent.png" 
-        -image1 "parent.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "poleVectorConstraint.png" 
+        -image1 "poleVectorConstraint.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "Parent" 
+        -command "PoleVectorConstraint" 
         -sourceType "mel" 
-        -doubleClickCommand "ParentOptions" 
+        -doubleClickCommand "PoleVectorConstraintOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    separator
+        -enable 1
+        -width 12
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -style "shelf" 
+        -horizontal 0
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Set Key: Select object(s) to key" 
+        -enableBackground 0
+        -align "center" 
+        -label "Set Key" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "setKeyframe.png" 
+        -image1 "setKeyframe.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "SetKey" 
+        -sourceType "mel" 
+        -doubleClickCommand "SetKeyOptions" 
         -commandRepeatable 1
         -flat 1
     ;
@@ -331,206 +544,27 @@ global proc shelf_General () {
         -manage 1
         -visible 1
         -preventOverride 0
-        -annotation "Unparent: Unparent the selected object(s)" 
+        -annotation "Set Driven Key: Set driven key options" 
         -enableBackground 0
         -align "center" 
-        -label "Unparent" 
+        -label "Set Driven Key" 
         -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
         -font "plainLabelFont" 
         -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "unparent.png" 
-        -image1 "unparent.png" 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "setDrivenKeyframe.png" 
+        -image1 "setDrivenKeyframe.png" 
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "Unparent" 
+        -version "2016" 
+        -command "SetDrivenKeyOptions" 
         -sourceType "mel" 
-        -doubleClickCommand "UnparentOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Hypergraph: Display and edit relationships among nodes in your scene graphically" 
-        -enableBackground 0
-        -align "center" 
-        -label "Hypergraph" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "hypergraph.png" 
-        -image1 "hypergraph.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "HypergraphWindow" 
-        -sourceType "mel" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Select by hierarchy and combinations" 
-        -enableBackground 0
-        -align "center" 
-        -label "Select by Hierarchy" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "selectByHierarchy.png" 
-        -image1 "selectByHierarchy.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "changeSelectMode -hierarchical" 
-        -sourceType "mel" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Select by object type" 
-        -enableBackground 0
-        -align "center" 
-        -label "Select by Object" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "selectByObject.png" 
-        -image1 "selectByObject.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "changeSelectMode -object" 
-        -sourceType "mel" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Select by component type" 
-        -enableBackground 0
-        -align "center" 
-        -label "Select by Component" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "selectByComponent.png" 
-        -image1 "selectByComponent.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "changeSelectMode -component" 
-        -sourceType "mel" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Paint Selection Tool: Paint selection of CVs, vertices, faces, and edges" 
-        -enableBackground 0
-        -align "center" 
-        -label "Paint Selection Tool" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "artSelect.png" 
-        -image1 "artSelect.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "ArtPaintSelectTool" 
-        -sourceType "mel" 
-        -doubleClickCommand "ArtPaintSelectToolOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Universal Manipulator: Select any object(s)" 
-        -enableBackground 0
-        -align "center" 
-        -label "Universal Manipulator" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "globalManip.png" 
-        -image1 "globalManip.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "UniversalManip" 
-        -sourceType "mel" 
-        -doubleClickCommand "UniversalManipOptions" 
-        -commandRepeatable 1
-        -flat 1
-    ;
-    shelfButton
-        -enableCommandRepeat 1
-        -enable 1
-        -width 35
-        -height 35
-        -manage 1
-        -visible 1
-        -preventOverride 0
-        -annotation "Show Manipulator Tool: Select any node" 
-        -enableBackground 0
-        -align "center" 
-        -label "Show Manipulator Tool" 
-        -labelOffset 0
-        -font "plainLabelFont" 
-        -overlayLabelColor 0.8 0.8 0.8 
-        -overlayLabelBackColor 0 0 0 0.25 
-        -image "showManip.png" 
-        -image1 "showManip.png" 
-        -style "iconOnly" 
-        -marginWidth 1
-        -marginHeight 1
-        -command "ShowManipulatorTool" 
-        -sourceType "mel" 
+        -doubleClickCommand "SetDrivenKeyOptions" 
         -commandRepeatable 1
         -flat 1
     ;

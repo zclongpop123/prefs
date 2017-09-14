@@ -1,2 +1,0 @@
-mc.skinCluster('LidCorner1Joint_{0}_PoseEnd'.format(side), 'upperLid2Joint_{0}_PoseEnd'.format(side), 'upperLid1Joint_{0}_PoseEnd'.format(side), 'upperLid3Joint_{0}_PoseEnd'.format(side), 'LidCorner2Joint_{0}_PoseEnd'.format(side), 'upperLidCurve1Pose_L'.format(side), mi=4, dr=5, tsb=True)
-mc.skinCluster('lowerLid3Joint_{0}_PoseEnd'.format(side), 'lowerLid1Joint_{0}_PoseEnd'.format(side), 'lowerLid2Joint_{0}_PoseEnd'.format(side), 'LidCorner2Joint_{0}_PoseEnd'.format(side), 'LidCorner1Joint_{0}_PoseEnd'.format(side), 'lowerLidCurve1Pose_L'.format(side), mi=4, dr=5, tsb=True)
